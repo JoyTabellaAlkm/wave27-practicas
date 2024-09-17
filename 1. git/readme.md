@@ -1,0 +1,1 @@
+Eliminé el .git para que no reconociera el proyecto como un submodulo
