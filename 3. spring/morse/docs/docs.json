@@ -1,0 +1,88 @@
+{
+	"info": {
+		"_postman_id": "47b9bfbc-7cd8-4bdc-b0c4-a2ea6fb5cf42",
+		"name": "Morse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38178465"
+	},
+	"item": [
+		{
+			"name": "Parse \"Hola\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/morseToText?morse=.... --- .-.. .-",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"morseToText"
+					],
+					"query": [
+						{
+							"key": "morse",
+							"value": ".... --- .-.. .-"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse \"Mercado Libre\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/morseToText?morse=-- . .-. -.-. .- -.. ---   .-.. .. -... .-. . ",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"morseToText"
+					],
+					"query": [
+						{
+							"key": "morse",
+							"value": "-- . .-. -.-. .- -.. ---   .-.. .. -... .-. . "
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Parse \"Spring\"",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/morseToText?morse=... .--. .-. .. -. --.",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"morseToText"
+					],
+					"query": [
+						{
+							"key": "morse",
+							"value": "... .--. .-. .. -. --."
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
