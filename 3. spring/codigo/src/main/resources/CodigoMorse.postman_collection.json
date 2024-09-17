@@ -1,0 +1,86 @@
+{
+	"info": {
+		"_postman_id": "95f28fb5-1e39-45c0-8178-acfb9c8374eb",
+		"name": "CodigoMorse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38175171"
+	},
+	"item": [
+		{
+			"name": "pruebaPalabraHola",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/mensaje/.... --- .-.. .- ",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"mensaje",
+						".... --- .-.. .- "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pruebaPalabraSprint",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/mensaje/... .--. .-. .. -. --. ",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"mensaje",
+						"... .--. .-. .. -. --. "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pruebaPalabraMeli",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/mensaje/-- . .-. -.-. .- -.. --- .-.. .. -... .-. .",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"mensaje",
+						"-- . .-. -.-. .- -.. --- .-.. .. -... .-. ."
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "pruebaCodificarMensaje",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/mensaje/-- . .-. -.-. .- -.. --- .-.. .. -... .-. .",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"mensaje",
+						"-- . .-. -.-. .- -.. --- .-.. .. -... .-. ."
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
