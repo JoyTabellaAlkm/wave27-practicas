@@ -1,0 +1,161 @@
+{
+	"info": {
+		"_postman_id": "29de233b-bb54-4793-8f94-db360ec166d6",
+		"name": "Covid-19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38178465"
+	},
+	"item": [
+		{
+			"name": "Syntoms",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"Tos seca\",\n    \"severity\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{symptoms}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{symptoms}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{symptoms}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{symptoms}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get severity",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{symptoms}}/Tos%20seca",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{symptoms}}",
+								"Tos%20seca"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "People",
+			"item": [
+				{
+					"name": "Create not risky",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Felipe\",\n    \"lastName\": \"Cafici\",\n    \"age\": 22,\n    \"symptomNames\": []\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{people}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{people}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create risky",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"firstName\": \"Jorge\",\n    \"lastName\": \"Riesgo\",\n    \"age\": 65,\n    \"symptomNames\": [\n        \"Tos seca\"\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/{{people}}",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{people}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get risky",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/{{people}}/risky",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"{{people}}",
+								"risky"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "symptoms",
+			"value": "symptoms"
+		},
+		{
+			"key": "people",
+			"value": "people"
+		}
+	]
+}

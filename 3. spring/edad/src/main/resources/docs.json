@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "ca155c9a-d31a-44e9-b5d2-c0d24e932c48",
+		"name": "Age",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38178465"
+	},
+	"item": [
+		{
+			"name": "Con error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/0/13/-5",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"0",
+						"13",
+						"-5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sin error",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/02/04/2002",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"02",
+						"04",
+						"2002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
