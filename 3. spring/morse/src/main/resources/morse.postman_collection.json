@@ -1,0 +1,48 @@
+{
+	"info": {
+		"_postman_id": "1a62dc41-1378-4b82-9e1e-c4139a181a17",
+		"name": "morse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409508"
+	},
+	"item": [
+		{
+			"name": "{{host}}/api/morse/{{texto}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/morseATexto/{{textoMorse}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"morseATexto",
+						"{{textoMorse}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "{{host}}/api/textoAMorse/{{texto}}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/textoAMorse/{{texto}}",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"textoAMorse",
+						"{{texto}}"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
