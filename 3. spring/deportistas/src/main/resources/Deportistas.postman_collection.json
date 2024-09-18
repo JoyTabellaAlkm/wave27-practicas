@@ -1,0 +1,77 @@
+{
+	"info": {
+		"_postman_id": "0cdbe91c-cf98-4e82-abea-8651dfdbd850",
+		"name": "Deportistas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38175171"
+	},
+	"item": [
+		{
+			"name": "Buscar todos los deportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sportsman/findSports",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sportsman",
+						"findSports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar nivel de deporte",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/sportsman/findsport/Judo",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sportsman",
+						"findsport",
+						"Judo"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Listar todos los deportes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/sportsman/findSportsPersons",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"sportsman",
+						"findSportsPersons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
