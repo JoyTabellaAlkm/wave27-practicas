@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "66a19ed6-c4ea-45df-b49e-f6df6f1d38e2",
+		"name": "CollectionMorse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409313"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/morse/-- . .-. -.-. .- -.. --- .-.. .. -... .-. . .-.-.- --..--",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/morse/-- . .-. -.-. .- -.. --- .-.. .. -... .-. . .-.-.- --..--",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"morse",
+						"-- . .-. -.-. .- -.. --- .-.. .. -... .-. . .-.-.- --..--"
+					],
+					"query": [
+						{
+							"key": "??hola",
+							"value": null,
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
