@@ -1,0 +1,50 @@
+{
+	"info": {
+		"_postman_id": "768bd8aa-0e5e-452a-90b6-842bdb399f33",
+		"name": "calcular-edad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38408711"
+	},
+	"item": [
+		{
+			"name": "calcular-edad",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/calcular-edad/10/11/1993",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"calcular-edad",
+						"10",
+						"11",
+						"1993"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calcular-edad-fechafutura",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/calcular-edad/10/1/2040",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"calcular-edad",
+						"10",
+						"1",
+						"2040"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
