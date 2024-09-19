@@ -21,10 +21,6 @@ public class PersonajesServiceImpl implements PersonajesService {
                         personaje.getName(),
                         personaje.getHeight(),
                         personaje.getMass(),
-                        personaje.getHairColor(),
-                        personaje.getSkinColor(),
-                        personaje.getEyeColor(),
-                        personaje.getBirthYear(),
                         personaje.getGender(),
                         personaje.getHomeworld(),
                         personaje.getSpecies()
