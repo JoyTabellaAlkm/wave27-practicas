@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "3f437fc5-b918-4ff1-a90a-8c718769d5d9",
+		"name": "DeportistasAPI",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "findAllSports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/findSports",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Sport",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/findSport/Basquet",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSport",
+						"Basquet"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSportByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/findSportPersons/Basquet",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSportPersons",
+						"Basquet"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
