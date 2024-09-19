@@ -6,10 +6,7 @@ import ar.com.mercadolibre.dto.sportman.model.SportmanDTO;
 import ar.com.mercadolibre.dto.sportman.service.ISportmanService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class SportmanController {
         Sport response = sportmanService.getSport(name);
 
         if (response == null) {
-            return ResponseEntity.status(404).body("Sport Not Found");
+            ResponseEntity.notFound();
         }
 
         return ResponseEntity.ok(response);

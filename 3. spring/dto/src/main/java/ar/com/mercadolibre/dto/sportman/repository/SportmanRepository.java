@@ -2,10 +2,13 @@ package ar.com.mercadolibre.dto.sportman.repository;
 
 import ar.com.mercadolibre.dto.sportman.model.Sport;
 import ar.com.mercadolibre.dto.sportman.model.SportmanDTO;
+import org.springframework.stereotype.Repository;
 
 import java.util.ArrayList;
 import java.util.List;
 
+
+@Repository
 public class SportmanRepository {
     private List<Sport> sportList = new ArrayList<>();
     private List<SportmanDTO> sportmanDTOS = new ArrayList<>();

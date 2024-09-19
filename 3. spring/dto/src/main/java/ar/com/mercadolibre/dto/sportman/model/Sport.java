@@ -8,7 +8,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class Sport implements Serializable {
+public class Sport {
     private String name;
     private String level;
 }

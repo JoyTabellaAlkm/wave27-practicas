@@ -6,6 +6,7 @@ import ar.com.mercadolibre.dto.sportman.model.SportmanDTO;
 import java.util.List;
 
 public interface ISportmanService {
+
     List<Sport> getSportList();
 
     Sport getSport(String name);

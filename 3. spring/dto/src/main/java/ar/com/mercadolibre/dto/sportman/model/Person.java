@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class Person implements Serializable {
+public class Person {
     private String nombre;
     private String apellido;
     private Integer edad;

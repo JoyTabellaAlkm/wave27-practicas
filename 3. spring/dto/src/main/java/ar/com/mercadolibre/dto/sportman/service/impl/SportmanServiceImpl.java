@@ -5,7 +5,6 @@ import ar.com.mercadolibre.dto.sportman.model.Sport;
 import ar.com.mercadolibre.dto.sportman.model.SportmanDTO;
 import ar.com.mercadolibre.dto.sportman.repository.SportmanRepository;
 import ar.com.mercadolibre.dto.sportman.service.ISportmanService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
