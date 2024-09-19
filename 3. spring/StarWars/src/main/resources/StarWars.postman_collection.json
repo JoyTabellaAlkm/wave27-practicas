@@ -1,0 +1,26 @@
+{
+	"info": {
+		"_postman_id": "7dbd90d3-62a2-487e-bf57-886b76fa68a6",
+		"name": "StarWars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409319"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/personajes/Darth",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": []
+				},
+				"url": "http://localhost:8080/personajes/Darth"
+			},
+			"response": []
+		}
+	]
+}
