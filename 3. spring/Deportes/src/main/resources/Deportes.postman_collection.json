@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "2a41e9f4-bcad-4761-aee8-1e16148d9fab",
+		"name": "Deportes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "GET Personas con deportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSportsPersons",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSportsPersons"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Deportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSports",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Deporte por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSport/Futbol",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSport",
+						"Futbol"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
