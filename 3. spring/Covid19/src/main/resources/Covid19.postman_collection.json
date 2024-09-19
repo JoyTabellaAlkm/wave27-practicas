@@ -1,0 +1,68 @@
+{
+	"info": {
+		"_postman_id": "2c4717bb-8981-4e39-bd23-a5a7df621f85",
+		"name": "Covid19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "GET sintomas por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSymptom/Fiebre",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSymptom",
+						"Fiebre"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET personas con riesgo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSymptoms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSymptoms"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET sintomas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/findSymptoms",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"findSymptoms"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

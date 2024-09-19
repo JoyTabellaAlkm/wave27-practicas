@@ -1,7 +1,12 @@
 package com.ejercicios.covid19.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.util.List;
 
+@Data @AllArgsConstructor @NoArgsConstructor
 public class Persona {
     private Long id;
             private String nombre;
@@ -9,54 +14,5 @@ public class Persona {
     private Integer edad;
     private List<Sintoma> listaSintomas;
 
-    public Persona() {
-    }
 
-    public Persona(Long id, String nombre, String apellido, Integer edad, List<Sintoma> listaSintomas) {
-        this.id = id;
-        this.nombre = nombre;
-        this.apellido = apellido;
-        this.edad = edad;
-        this.listaSintomas = listaSintomas;
-    }
-
-    public List<Sintoma> getSintoma() {
-        return listaSintomas;
-    }
-
-    public void setSintoma(List<Sintoma> sintoma) {
-        this.listaSintomas = sintoma;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public Integer getEdad() {
-        return edad;
-    }
-
-    public void setEdad(Integer edad) {
-        this.edad = edad;
-    }
 }

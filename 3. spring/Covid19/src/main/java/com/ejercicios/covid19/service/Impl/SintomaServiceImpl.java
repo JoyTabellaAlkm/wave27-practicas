@@ -22,6 +22,9 @@ public class SintomaServiceImpl implements ISintomaService {
     @Override
     public String consultarSintoma(String nombre) {
       Optional<Sintoma> sintomaEcontrado =  verSintomas().stream().filter(sintoma -> sintoma.getNombre().equalsIgnoreCase(nombre)).findAny();
+      if(sintomaEcontrado.isEmpty()){
+          return null;
+      }
       return sintomaEcontrado.get().getNivelDeGravedad();
     }
 }

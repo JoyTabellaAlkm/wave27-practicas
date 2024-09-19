@@ -19,13 +19,7 @@ public class SintomaRepositoryImpl implements ISintomaRepository {
         listaSintomas.add(new Sintoma(3L,"Perdida del gusto","Bajo"));
     }
 
-    public List<Sintoma> getListaSintomas() {
-        return listaSintomas;
-    }
 
-    public void setListaSintomas(List<Sintoma> listaSintomas) {
-        this.listaSintomas = listaSintomas;
-    }
 
     @Override
     public List<Sintoma> verSintomas() {
