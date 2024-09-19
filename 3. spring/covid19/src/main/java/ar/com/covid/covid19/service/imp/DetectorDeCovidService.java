@@ -19,21 +19,21 @@ public class DetectorDeCovidService implements IDetectorDeCovidService {
     List<PersonaDTO> personaDTOS = new ArrayList<>();
 
     private void cargarPersonas() {
-        personas.add(new Persona("38444099","Stephanie", "Castillo",20));
-        personas.add(new Persona("38448899","Camila", "Laiza",18));
-        personas.add(new Persona("39999099","Celeste", "Carballal",22));
-        personas.add(new Persona("32099393","Soledad", "Carbajal",23));
-        personas.add(new Persona("42887333","Fernando", "Loude",34));
-        personas.add(new Persona("12223388","Facundo", "Llanos",25));
-        personas.add(new Persona("22299988","Mauro", "Lopez",20));
-        personas.add(new Persona("12121212","Magali", "Castaño",28));
-        personas.add(new Persona("92992898","Sofia", "Paredes",29));
+        personas.add(new Persona("38444099","Stephanie", "Castillo",60));
+        personas.add(new Persona("38448899","Camila", "Laiza",65));
+        personas.add(new Persona("39999099","Celeste", "Carballal",50));
+        personas.add(new Persona("32099393","Soledad", "Carbajal",45));
+        personas.add(new Persona("42887333","Fernando", "Loude",44));
+        personas.add(new Persona("12223388","Facundo", "Llanos",61));
+        personas.add(new Persona("22299988","Mauro", "Lopez",62));
+        personas.add(new Persona("12121212","Magali", "Castaño",75));
+        personas.add(new Persona("92992898","Sofia", "Paredes",96));
         personas.add(new Persona("22211111","Gerard", "Perez",26));
-        personas.add(new Persona("21212121","Juan", "Miguel",27));
-        personas.add(new Persona("10101010","Matias", "Reinaldo",19));
-        personas.add(new Persona("11100993","Leo", "Messi",23));
-        personas.add(new Persona("00099999","Luciana", "Waldof",21));
-        personas.add(new Persona("30004099","Emilia", "Mernes",22));
+        personas.add(new Persona("21212121","Juan", "Miguel",18));
+        personas.add(new Persona("10101010","Matias", "Reinaldo",66));
+        personas.add(new Persona("11100993","Leo", "Messi",88));
+        personas.add(new Persona("00099999","Luciana", "Waldof",91));
+        personas.add(new Persona("30004099","Emilia", "Mernes",64));
     }
 
     private void cargarSintomas() {
@@ -84,6 +84,19 @@ public class DetectorDeCovidService implements IDetectorDeCovidService {
     @Override
     public List<PersonaDTO> findRiskPerson() {
         cargarPersonaDTO();
-        return personaDTOS;
+        cargarPersonas();
+        cargarSintomas();
+
+        List<PersonaDTO> personaDeRiesgo = new ArrayList<>();
+
+        for (Persona persona : personas) {
+            if (persona.getEdad() > 60) {
+                Sintoma sintomaRiego = sintomas.stream().filter(s -> s.getNombre().equals(persona.getNombre())).findAny().orElse(null);
+                PersonaDTO personaAux = new PersonaDTO(persona.getNombre(), persona.getApellido(), sintomaRiego.getNombre());
+                personaDeRiesgo.add(personaAux);
+            }
+        }
+
+        return personaDeRiesgo;
     }
 }
