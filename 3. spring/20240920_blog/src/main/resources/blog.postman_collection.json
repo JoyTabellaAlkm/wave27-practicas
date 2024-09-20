@@ -1,0 +1,73 @@
+{
+	"info": {
+		"_postman_id": "e98936de-e28f-4a10-ade8-ef814713c3c8",
+		"name": "blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38408711"
+	},
+	"item": [
+		{
+			"name": "create_blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":5,\n    \"titulo\":\"blog creado\",\n    \"autor\":\"Emilia\",\n    \"fecha_publicacion\":\"3 de septiembre de 2023\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/blog",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_all_blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":1,\n    \"titulo\":\"emi\",\n    \"autor\":\"yo\",\n    \"fecha_publicacion\":\"eee\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/blogs",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get_blog_by_id",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
