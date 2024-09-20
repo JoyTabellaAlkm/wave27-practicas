@@ -16,7 +16,13 @@ public class GlobalExceptionHandler {
 
     @ExceptionHandler(BuscarPorIdException.class)
     public ResponseEntity<ExceptionDTO> buscarEntradaBlogException(BuscarPorIdException ex) {
-        ExceptionDTO dto = new ExceptionDTO("Holaaa"+ex.getMessage(), HttpStatus.NOT_FOUND);
+        ExceptionDTO dto = new ExceptionDTO(ex.getMessage(), HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
+    }
+
+    @ExceptionHandler(IdRegistradaEnEntradaBlogException.class)
+    public ResponseEntity<ExceptionDTO> IdRegistradoEnEntradaBlogException(IdRegistradaEnEntradaBlogException ex) {
+        ExceptionDTO dto = new ExceptionDTO(ex.getMessage(), HttpStatus.NOT_FOUND);
         return new ResponseEntity<>(dto, HttpStatus.NOT_FOUND);
     }
 }
