@@ -1,0 +1,243 @@
+[ {
+  "id" : 1,
+  "namePlato" : "Plato 1",
+  "peso" : 687.0,
+  "ingredienteList" : [ {
+    "calories" : 245,
+    "name" : "Queso crema"
+  }, {
+    "calories" : 81,
+    "name" : "Uva"
+  }, {
+    "calories" : 16,
+    "name" : "Hinojo"
+  }, {
+    "calories" : 55,
+    "name" : "Perejil"
+  }, {
+    "calories" : 290,
+    "name" : "Pies de cerdo"
+  } ]
+}, {
+  "id" : 2,
+  "namePlato" : "Plato 2",
+  "peso" : 2167.0,
+  "ingredienteList" : [ {
+    "calories" : 312,
+    "name" : "Anís"
+  }, {
+    "calories" : 361,
+    "name" : "Pasta de sémola"
+  }, {
+    "calories" : 900,
+    "name" : "Aceite de oliva"
+  }, {
+    "calories" : 153,
+    "name" : "Cerdo, hígado"
+  }, {
+    "calories" : 151,
+    "name" : "Sardinas"
+  }, {
+    "calories" : 74,
+    "name" : "Mejillón"
+  }, {
+    "calories" : 100,
+    "name" : "Batido lácteo de cacao"
+  }, {
+    "calories" : 116,
+    "name" : "Sofrito"
+  } ]
+}, {
+  "id" : 3,
+  "namePlato" : "Plato 3",
+  "peso" : 724.0,
+  "ingredienteList" : [ {
+    "calories" : 325,
+    "name" : "Salami"
+  }, {
+    "calories" : 290,
+    "name" : "Ternera, solomillo"
+  }, {
+    "calories" : 109,
+    "name" : "Pez espada"
+  } ]
+}, {
+  "id" : 4,
+  "namePlato" : "Plato 4",
+  "peso" : 951.0,
+  "ingredienteList" : [ {
+    "calories" : 326,
+    "name" : "Butifarra, salchicha fresca"
+  }, {
+    "calories" : 67,
+    "name" : "Langosta"
+  }, {
+    "calories" : 127,
+    "name" : "Atún en lata con agua"
+  }, {
+    "calories" : 350,
+    "name" : "Centeno"
+  }, {
+    "calories" : 20,
+    "name" : "Rábanos"
+  }, {
+    "calories" : 61,
+    "name" : "Pera"
+  } ]
+}, {
+  "id" : 5,
+  "namePlato" : "Plato 5",
+  "peso" : 1270.0,
+  "ingredienteList" : [ {
+    "calories" : 265,
+    "name" : "Mortadela"
+  }, {
+    "calories" : 40,
+    "name" : "Frambuesa"
+  }, {
+    "calories" : 28,
+    "name" : "Col"
+  }, {
+    "calories" : 51,
+    "name" : "Piña"
+  }, {
+    "calories" : 259,
+    "name" : "Caldos concentrados"
+  }, {
+    "calories" : 24,
+    "name" : "Calabaza"
+  }, {
+    "calories" : 468,
+    "name" : "Chorizo"
+  }, {
+    "calories" : 49,
+    "name" : "Leche semi descremada"
+  }, {
+    "calories" : 86,
+    "name" : "Merluza"
+  } ]
+}, {
+  "id" : 6,
+  "namePlato" : "Plato 6",
+  "peso" : 712.0,
+  "ingredienteList" : [ {
+    "calories" : 175,
+    "name" : "Anchoas"
+  }, {
+    "calories" : 73,
+    "name" : "Gallo"
+  }, {
+    "calories" : 50,
+    "name" : "Almejas"
+  }, {
+    "calories" : 30,
+    "name" : "Coliflor"
+  }, {
+    "calories" : 186,
+    "name" : "Pollo, Muslo"
+  }, {
+    "calories" : 167,
+    "name" : "Helados lácteos"
+  }, {
+    "calories" : 31,
+    "name" : "Melón"
+  } ]
+}, {
+  "id" : 7,
+  "namePlato" : "Plato 7",
+  "peso" : 1298.0,
+  "ingredienteList" : [ {
+    "calories" : 51,
+    "name" : "Kiwi"
+  }, {
+    "calories" : 353,
+    "name" : "Harina de trigo refinada"
+  }, {
+    "calories" : 45,
+    "name" : "Yogur desnatado"
+  }, {
+    "calories" : 381,
+    "name" : "Queso cheddar"
+  }, {
+    "calories" : 40,
+    "name" : "Frambuesa"
+  }, {
+    "calories" : 50,
+    "name" : "Soja, Brotes de"
+  }, {
+    "calories" : 82,
+    "name" : "Calamar"
+  }, {
+    "calories" : 296,
+    "name" : "Jamón crudo"
+  } ]
+}, {
+  "id" : 8,
+  "namePlato" : "Plato 8",
+  "peso" : 2381.0,
+  "ingredienteList" : [ {
+    "calories" : 35,
+    "name" : "Sidra seca"
+  }, {
+    "calories" : 900,
+    "name" : "Aceite de girasol"
+  }, {
+    "calories" : 660,
+    "name" : "Piñones"
+  }, {
+    "calories" : 620,
+    "name" : "Almendras"
+  }, {
+    "calories" : 112,
+    "name" : "Vermouth amargo"
+  }, {
+    "calories" : 54,
+    "name" : "Col de Bruselas"
+  } ]
+}, {
+  "id" : 9,
+  "namePlato" : "Plato 9",
+  "peso" : 658.0,
+  "ingredienteList" : [ {
+    "calories" : 367,
+    "name" : "Avena"
+  }, {
+    "calories" : 140,
+    "name" : "Ternera, hígado"
+  }, {
+    "calories" : 151,
+    "name" : "Sardinas"
+  } ]
+}, {
+  "id" : 10,
+  "namePlato" : "Plato 10",
+  "peso" : 3958.0,
+  "ingredienteList" : [ {
+    "calories" : 160,
+    "name" : "Leche condensada s/azúcar"
+  }, {
+    "calories" : 581,
+    "name" : "Pistacho"
+  }, {
+    "calories" : 290,
+    "name" : "Ciruela seca"
+  }, {
+    "calories" : 550,
+    "name" : "Chocolate con leche"
+  }, {
+    "calories" : 112,
+    "name" : "Vermouth amargo"
+  }, {
+    "calories" : 338,
+    "name" : "Yuca"
+  }, {
+    "calories" : 127,
+    "name" : "Cabrito"
+  }, {
+    "calories" : 900,
+    "name" : "Aceite de girasol"
+  }, {
+    "calories" : 900,
+    "name" : "Aceite de oliva"
+  } ]
+} ]

@@ -1,0 +1,240 @@
+[ {
+  "id" : 1,
+  "namePlato" : "Plato 1",
+  "peso" : 479.0,
+  "ingredienteList" : [ {
+    "calories" : 86,
+    "name" : "Papas cocidas"
+  }, {
+    "calories" : 290,
+    "name" : "Ternera, solomillo"
+  }, {
+    "calories" : 21,
+    "name" : "Porotos verdes"
+  }, {
+    "calories" : 31,
+    "name" : "Melón"
+  }, {
+    "calories" : 51,
+    "name" : "Kiwi"
+  } ]
+}, {
+  "id" : 2,
+  "namePlato" : "Plato 2",
+  "peso" : 519.0,
+  "ingredienteList" : [ {
+    "calories" : 40,
+    "name" : "Remolacha"
+  }, {
+    "calories" : 92,
+    "name" : "Trufa"
+  }, {
+    "calories" : 44,
+    "name" : "Ciruela"
+  }, {
+    "calories" : 343,
+    "name" : "Judías"
+  } ]
+}, {
+  "id" : 3,
+  "namePlato" : "Plato 3",
+  "peso" : 589.0,
+  "ingredienteList" : [ {
+    "calories" : 49,
+    "name" : "Leche semi descremada"
+  }, {
+    "calories" : 22,
+    "name" : "Pimiento"
+  }, {
+    "calories" : 134,
+    "name" : "Pollo"
+  }, {
+    "calories" : 72,
+    "name" : "Leche de cabra"
+  }, {
+    "calories" : 312,
+    "name" : "Queso cammembert"
+  } ]
+}, {
+  "id" : 4,
+  "namePlato" : "Plato 4",
+  "peso" : 1223.0,
+  "ingredienteList" : [ {
+    "calories" : 29,
+    "name" : "Berenjena"
+  }, {
+    "calories" : 439,
+    "name" : "Cacao en polvo sin azúcar a la taza"
+  }, {
+    "calories" : 70,
+    "name" : "Queso blanco desnatado"
+  }, {
+    "calories" : 374,
+    "name" : "Mayonesa light"
+  }, {
+    "calories" : 215,
+    "name" : "Dulce de membrillo"
+  }, {
+    "calories" : 96,
+    "name" : "Gambas"
+  } ]
+}, {
+  "id" : 5,
+  "namePlato" : "Plato 5",
+  "peso" : 1330.0,
+  "ingredienteList" : [ {
+    "calories" : 340,
+    "name" : "Harina de trigo integral"
+  }, {
+    "calories" : 660,
+    "name" : "Nueces"
+  }, {
+    "calories" : 330,
+    "name" : "Cerdo, chuleta"
+  } ]
+}, {
+  "id" : 6,
+  "namePlato" : "Plato 6",
+  "peso" : 1972.0,
+  "ingredienteList" : [ {
+    "calories" : 109,
+    "name" : "Pez espada"
+  }, {
+    "calories" : 397,
+    "name" : "Galletas de mantequilla tipo “Danesas”"
+  }, {
+    "calories" : 118,
+    "name" : "Besugo"
+  }, {
+    "calories" : 368,
+    "name" : "Sémola de trigo"
+  }, {
+    "calories" : 208,
+    "name" : "Cerdo, lomo"
+  }, {
+    "calories" : 646,
+    "name" : "Coco"
+  }, {
+    "calories" : 126,
+    "name" : "Flan de huevo"
+  } ]
+}, {
+  "id" : 7,
+  "namePlato" : "Plato 7",
+  "peso" : 1840.0,
+  "ingredienteList" : [ {
+    "calories" : 129,
+    "name" : "Pollo, Hígado"
+  }, {
+    "calories" : 665,
+    "name" : "Bacon (Panceta ahumada)"
+  }, {
+    "calories" : 127,
+    "name" : "Cabrito"
+  }, {
+    "calories" : 279,
+    "name" : "Dátil"
+  }, {
+    "calories" : 94,
+    "name" : "Trucha"
+  }, {
+    "calories" : 140,
+    "name" : "Ternera, hígado"
+  }, {
+    "calories" : 405,
+    "name" : "Queso roquefort"
+  }, {
+    "calories" : 1,
+    "name" : "Café"
+  } ]
+}, {
+  "id" : 8,
+  "namePlato" : "Plato 8",
+  "peso" : 678.0,
+  "ingredienteList" : [ {
+    "calories" : 168,
+    "name" : "Ternera, chuleta"
+  }, {
+    "calories" : 18,
+    "name" : "Lechuga"
+  }, {
+    "calories" : 29,
+    "name" : "Nabos"
+  }, {
+    "calories" : 140,
+    "name" : "Ternera, hígado"
+  }, {
+    "calories" : 154,
+    "name" : "Salmón ahumado"
+  }, {
+    "calories" : 73,
+    "name" : "Lenguado"
+  }, {
+    "calories" : 96,
+    "name" : "Requesón"
+  } ]
+}, {
+  "id" : 9,
+  "namePlato" : "Plato 9",
+  "peso" : 1493.0,
+  "ingredienteList" : [ {
+    "calories" : 82,
+    "name" : "Calamar"
+  }, {
+    "calories" : 376,
+    "name" : "Queso manchego"
+  }, {
+    "calories" : 65,
+    "name" : "Granada"
+  }, {
+    "calories" : 601,
+    "name" : "Chicharrón"
+  }, {
+    "calories" : 118,
+    "name" : "Lubina"
+  }, {
+    "calories" : 134,
+    "name" : "Pavo, Pechuga"
+  }, {
+    "calories" : 37,
+    "name" : "Cerveza negra"
+  }, {
+    "calories" : 80,
+    "name" : "Higos"
+  } ]
+}, {
+  "id" : 10,
+  "namePlato" : "Plato 10",
+  "peso" : 3270.0,
+  "ingredienteList" : [ {
+    "calories" : 144,
+    "name" : "Faisán"
+  }, {
+    "calories" : 67,
+    "name" : "Langosta"
+  }, {
+    "calories" : 134,
+    "name" : "Pavo, Pechuga"
+  }, {
+    "calories" : 169,
+    "name" : "Ajos"
+  }, {
+    "calories" : 718,
+    "name" : "Mayonesa"
+  }, {
+    "calories" : 660,
+    "name" : "Piñones"
+  }, {
+    "calories" : 361,
+    "name" : "Garbanzos"
+  }, {
+    "calories" : 312,
+    "name" : "Anís"
+  }, {
+    "calories" : 45,
+    "name" : "Cerveza rubia"
+  }, {
+    "calories" : 660,
+    "name" : "Nueces"
+  } ]
+} ]
