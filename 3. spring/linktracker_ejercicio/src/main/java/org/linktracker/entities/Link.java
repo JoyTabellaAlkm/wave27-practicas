@@ -9,13 +9,17 @@ public class Link {
     private URI url;
     private Integer visits;
     private String password;
-    public Link(URI url){
+    private Long id;
+
+    public Link(Long id, URI url){
+        this.id = id;
         this.url = url;
         this.password = null;
         visits = 0;
     }
 
-    public Link(URI url, String password){
+    public Link(Long id, URI url, String password){
+        this.id = id;
         this.url = url;
         this.password = password;
         visits = 0;

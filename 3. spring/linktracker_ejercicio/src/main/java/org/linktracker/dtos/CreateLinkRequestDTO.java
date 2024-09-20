@@ -3,7 +3,7 @@ package org.linktracker.dtos;
 import lombok.Data;
 
 @Data
-public class CreateLinkDTO {
+public class CreateLinkRequestDTO {
     private String URL;
     private String password;
 }
