@@ -1,0 +1,107 @@
+{
+	"info": {
+		"_postman_id": "e2763827-7ef3-4604-8e78-de00bfddb8c0",
+		"name": "Calories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38178465"
+	},
+	"item": [
+		{
+			"name": "Create meals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meals",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meals"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get calories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meals/plato1/calories",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meals",
+						"plato1",
+						"calories"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get meal",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/meals/plato1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meals",
+						"plato1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get most caloric",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Get multiple full meals",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"name\": \"plato1\",\n        \"weightInGrams\": 100.0\n    },\n    {\n        \"name\": \"plato2\",\n        \"weightInGrams\": 200.0\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/meals/multiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"meals",
+						"multiple"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
