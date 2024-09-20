@@ -1,0 +1,74 @@
+{
+	"info": {
+		"_postman_id": "9a7cc56d-2f70-4312-b951-6d2114efbb05",
+		"name": "Blog API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "create blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 2,\n    \"title\": \"asdas\",\n    \"author\": \"asafas\",\n    \"date\": \"2020-06-01\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/blog",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find blog by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/blog/2",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blog",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list all blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/blogs",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
