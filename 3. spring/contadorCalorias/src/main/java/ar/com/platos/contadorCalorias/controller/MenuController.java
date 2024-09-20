@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/menu")
 public class MenuController {
@@ -20,4 +22,8 @@ public class MenuController {
         return  ResponseEntity.ok(calculadoraDeCalService.mostrarInfoDePlato(nombre));
     }
 
+    @GetMapping("/plato/{nombre}")
+    public ResponseEntity<?> infoListaDePlatos(@PathVariable List<String> platos) {
+        return  ResponseEntity.ok(calculadoraDeCalService.mostrarInfoDeCadaPlato(platos));
+    }
 }
