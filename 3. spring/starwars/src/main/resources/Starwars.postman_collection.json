@@ -1,0 +1,47 @@
+{
+	"info": {
+		"_postman_id": "d20b50a7-9a13-4a2d-a2f0-e072079ee4fd",
+		"name": "Starwars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "GET All characters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/characters",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Characters by name",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/characters/Luke",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"characters",
+						"Luke"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

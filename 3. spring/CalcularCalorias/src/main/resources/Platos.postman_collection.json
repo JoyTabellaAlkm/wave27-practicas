@@ -1,0 +1,80 @@
+{
+	"info": {
+		"_postman_id": "fa29787f-aa58-4dd6-a8c8-f07ed06e843e",
+		"name": "Platos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "GET Platos en lista",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"name\" : \"Hamburguesa\",\n    \"peso\" : 400\n},\n{\n    \"name\" : \"Pizza\",\n    \"peso\" : 800\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/platos",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"platos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GET Plato",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"name\" : \"Hamburguesa\",\n    \"peso\" : 400\n},\n{\n    \"name\" : \"Pizza\",\n    \"peso\" : 800\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/plato?nombre=Hamburguesa&peso=400",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"plato"
+					],
+					"query": [
+						{
+							"key": "nombre",
+							"value": "Hamburguesa"
+						},
+						{
+							"key": "peso",
+							"value": "400"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
