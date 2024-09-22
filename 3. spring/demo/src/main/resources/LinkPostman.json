@@ -1,0 +1,122 @@
+{
+  "info": {
+    "_postman_id": "6663cdb8-6731-4436-b76c-cf5ec3942233",
+    "name": "Link Tracker",
+    "schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+    "_exporter_id": "38181492"
+  },
+  "item": [
+    {
+      "name": "Create Link",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "console.log(pm.response.text().replaceAll('\"', \"\"))",
+              "pm.collectionVariables.set(\"link_id\", pm.response.text().replaceAll('\"', \"\"));"
+            ],
+            "type": "text/javascript",
+            "packages": {}
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n    \"url\": \"https://www.stackoverflow.com\",\n    \"password\": 123\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": "localhost:8080/new"
+      },
+      "response": []
+    },
+    {
+      "name": "Get redirection",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/link/{{link_id}}?password=123",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "link",
+            "{{link_id}}"
+          ],
+          "query": [
+            {
+              "key": "password",
+              "value": "123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get metrics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/metrics/{{link_id}}?password=123",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "metrics",
+            "{{link_id}}"
+          ],
+          "query": [
+            {
+              "key": "password",
+              "value": "123"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Invalidate Link",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "localhost:8080/invalidate/{{link_id}}?password=123",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "invalidate",
+            "{{link_id}}"
+          ],
+          "query": [
+            {
+              "key": "password",
+              "value": "123"
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ],
+  "variable": [
+    {
+      "key": "link_id",
+      "value": ""
+    }
+  ]
+}

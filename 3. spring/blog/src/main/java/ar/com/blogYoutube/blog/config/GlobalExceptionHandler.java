@@ -1,6 +1,9 @@
-package ar.com.blogYoutube.blog.exception;
+package ar.com.blogYoutube.blog.config;
 
 import ar.com.blogYoutube.blog.dto.ExceptionDTO;
+import ar.com.blogYoutube.blog.exception.BuscarPorIdException;
+import ar.com.blogYoutube.blog.exception.CrearEntradaBlogException;
+import ar.com.blogYoutube.blog.exception.IdRegistradaEnEntradaBlogException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.ControllerAdvice;
