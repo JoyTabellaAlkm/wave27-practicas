@@ -1,0 +1,85 @@
+{
+	"info": {
+		"_postman_id": "0a4378f1-7052-4380-846f-819b935f1163",
+		"name": "Calorias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38158098"
+	},
+	"item": [
+		{
+			"name": "getAllIngredientes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}ingredientes/all",
+					"host": [
+						"{{Host}}ingredientes"
+					],
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllPlatos",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}plato/all",
+					"host": [
+						"{{Host}}plato"
+					],
+					"path": [
+						"all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getPlatoByName",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pure\",\n    \"weight\": 120\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{Host}}plato/byname",
+					"host": [
+						"{{Host}}plato"
+					],
+					"path": [
+						"byname"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

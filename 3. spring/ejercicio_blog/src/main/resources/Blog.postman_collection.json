@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "e3767f1d-9643-4726-a6fe-5331370acc89",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38175171"
+	},
+	"item": [
+		{
+			"name": "crear un blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\":\"999999\",\n    \"titulo\": \"\",\n    \"nombreAutor\": \"\",\n    \"fechaPublicacion\": \"\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/blog",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"blog"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/blogs",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/blog/9999990",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"blog",
+						"9999990"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

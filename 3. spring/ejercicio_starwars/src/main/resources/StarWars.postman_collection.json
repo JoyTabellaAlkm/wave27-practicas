@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "04bf0946-4015-4eba-9233-b104f870c24c",
+		"name": "StarWars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38158098"
+	},
+	"item": [
+		{
+			"name": "getAlll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}personaje/search_all",
+					"host": [
+						"{{Host}}personaje"
+					],
+					"path": [
+						"search_all"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}personaje/search_by_name/luke sk",
+					"host": [
+						"{{Host}}personaje"
+					],
+					"path": [
+						"search_by_name",
+						"luke sk"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
