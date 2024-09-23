@@ -1,0 +1,45 @@
+{
+	"info": {
+		"_postman_id": "805be645-fa60-4ff6-aa25-25a55eca67cf",
+		"name": "CodeReview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38158098"
+	},
+	"item": [
+		{
+			"name": "getByBrandYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}vehicles/brand/Toyota/between/1900/2000",
+					"host": [
+						"{{Host}}vehicles"
+					],
+					"path": [
+						"brand",
+						"Toyota",
+						"between",
+						"1900",
+						"2000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{Host}}vehicles",
+					"host": [
+						"{{Host}}vehicles"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
