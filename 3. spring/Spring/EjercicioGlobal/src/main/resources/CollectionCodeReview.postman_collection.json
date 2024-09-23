@@ -1,0 +1,221 @@
+{
+	"info": {
+		"_postman_id": "f29874d6-3e12-4a77-858e-8516cda703d4",
+		"name": "CollectionCodeReview",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409313"
+	},
+	"item": [
+		{
+			"name": "OBTENER LA CAPACIDAD PROMEDIO DE PERSONAS POR MARCA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/vehicles/average_capacity/brand/Pontiac"
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCAR VEHÍCULOS POR DIMENSIONES",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehicles/dimensions?min_length=100.0&max_length=200.0&min_width=200.0&max_width=300.0",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"dimensions"
+					],
+					"query": [
+						{
+							"key": "min_length",
+							"value": "100.0"
+						},
+						{
+							"key": "max_length",
+							"value": "200.0"
+						},
+						{
+							"key": "min_width",
+							"value": "200.0"
+						},
+						{
+							"key": "max_width",
+							"value": "300.0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR VEHÍCULOS POR RANGO DE PESO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/vehicles/weight?min=270&max=274",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "270"
+						},
+						{
+							"key": "max",
+							"value": "274"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "LISTADO DE VEHICULOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "AÑADIR UN VEHICULO",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{       \"id\": 800,\n        \"brand\": \"Pontiac\",\n        \"model\": \"Fiero\",\n        \"registration\": \"6603\",\n        \"color\": \"Mauv\",\n        \"year\": 1986,\n        \"max_speed\": 85,\n        \"passengers\": 2,\n        \"fuel_type\": \"gasoline\",\n        \"transmission\": \"semi-automatic\",\n        \"height\": 105.43,\n        \"width\": 280.28,\n        \"weight\": 288.8\n    }",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCAR VEHÍCULOS POR COLOR Y AÑO",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/vehicles/color/Mauv/year/1986"
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCAR VEHÍCULOS POR MARCA Y RANGO DE AÑOS",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/vehicles/brand/Pontiac/between/1986/2000"
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTAR VELOCIDAD PROMEDIO POR MARCA",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/vehicles/average_speed/brand/Pontiac"
+			},
+			"response": []
+		},
+		{
+			"name": "AÑADIR MÚLTIPLES VEHÍCULOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n        \"id\": 800,\n        \"brand\": \"Pontiac\",\n        \"model\": \"Fiero\",\n        \"registration\": \"6603\",\n        \"color\": \"Mauv\",\n        \"year\": 1986,\n        \"max_speed\": 85,\n        \"passengers\": 2,\n        \"fuel_type\": \"gasoline\",\n        \"transmission\": \"semi-automatic\",\n        \"height\": 105.43,\n        \"width\": 280.28,\n        \"weight\": 288.8\n    },\n    {\n        \"id\": 801,\n        \"brand\": \"Buick\",\n        \"model\": \"LeSabre\",\n        \"registration\": \"81962\",\n        \"color\": \"Green\",\n        \"year\": 2005,\n        \"max_speed\": 240,\n        \"passengers\": 6,\n        \"fuel_type\": \"gasoline\",\n        \"transmission\": \"semi-automatic\",\n        \"height\": 207.93,\n        \"width\": 125.94,\n        \"weight\": 199.22\n    }]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/vehicles/batch"
+			},
+			"response": []
+		},
+		{
+			"name": "ACTUALIZAR VELOCIDAD MÁXIMA DE UN VEHÍCULO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "90",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/vehicles/1/update_speed"
+			},
+			"response": []
+		},
+		{
+			"name": "LISTAR VEHÍCULOS POR TIPO DE COMBUSTIBLE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/vehicles/fuel_type/gasoline"
+			},
+			"response": []
+		},
+		{
+			"name": "ELIMINAR UN VEHÍCULO",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "localhost:8080/vehicles/1"
+			},
+			"response": []
+		},
+		{
+			"name": "BUSCAR VEHÍCULOS POR TIPO DE TRANSMISIÓN",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/vehicles/transmission/semi-automatic"
+			},
+			"response": []
+		},
+		{
+			"name": "ACTUALIZAR EL TIPO DE COMBUSTIBLE DE UN VEHÍCULO",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "diesel",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": "localhost:8080/vehicles/2/update_fuel"
+			},
+			"response": []
+		}
+	]
+}

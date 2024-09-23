@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "738eae8d-f24b-46b9-9b16-a90e16a70629",
+		"name": "CollectionYoutuber",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409313"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/api/blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"titulo\": \"La vida es sana\",\n    \"autor\": \"Delfina\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/api/blog"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/blogs"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/api/blog/1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/api/blog/5"
+			},
+			"response": []
+		}
+	]
+}

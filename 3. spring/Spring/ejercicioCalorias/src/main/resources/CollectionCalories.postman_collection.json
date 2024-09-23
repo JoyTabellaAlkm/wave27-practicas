@@ -1,0 +1,19 @@
+{
+	"info": {
+		"_postman_id": "b93ea52f-eb7a-40e8-8b8e-f9736262fa9d",
+		"name": "CollectionCalories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409313"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/api/calories/Plato 1",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/api/calories/Plato 1"
+			},
+			"response": []
+		}
+	]
+}
