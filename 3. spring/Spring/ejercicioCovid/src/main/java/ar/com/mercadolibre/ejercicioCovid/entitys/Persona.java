@@ -1,0 +1,21 @@
+package ar.com.mercadolibre.ejercicioCovid.entitys;
+
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+import org.springframework.stereotype.Component;
+
+@Component
+@NoArgsConstructor
+@AllArgsConstructor
+@Getter
+@Setter
+public class Persona extends Sintoma{
+    private String nombre;
+    private String apellido;
+    private int edad;
+    private Sintoma deporte;
+
+}
+
