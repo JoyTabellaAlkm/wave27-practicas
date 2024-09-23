@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "a283a930-f5b6-45b0-bcbb-dba5ae737129",
+		"name": "Deportistas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Get deportes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSports",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get deportes por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSport/Tennis",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSport",
+						"Tennis"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Buscar deportistas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSportsPersons",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSportsPersons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

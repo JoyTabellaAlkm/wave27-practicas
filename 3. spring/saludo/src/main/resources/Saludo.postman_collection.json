@@ -1,0 +1,30 @@
+{
+	"info": {
+		"_postman_id": "7362597c-a5f8-4f15-8ca9-7a8c91ebcba7",
+		"name": "Saludo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Saludo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/saludo/sofi/paez",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"saludo",
+						"sofi",
+						"paez"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

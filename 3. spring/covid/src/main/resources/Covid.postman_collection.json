@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "bbe3a57c-9c42-4453-bdbc-9d0a28001f15",
+		"name": "Covid",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Sintomas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSymptom",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSymptom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Sintoma por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSymptom/Tos",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSymptom",
+						"Tos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Personas con riesgo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findRiskPerson",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findRiskPerson"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

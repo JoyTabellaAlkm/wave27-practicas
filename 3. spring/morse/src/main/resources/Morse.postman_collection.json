@@ -1,0 +1,29 @@
+{
+	"info": {
+		"_postman_id": "0766d337-4496-4c6d-b33e-726438555423",
+		"name": "Morse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Morse",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/api/morse/-- . .-. -.-. .- -.. ---   .-.. .. -... .-. .",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"morse",
+						"-- . .-. -.-. .- -.. ---   .-.. .. -... .-. ."
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

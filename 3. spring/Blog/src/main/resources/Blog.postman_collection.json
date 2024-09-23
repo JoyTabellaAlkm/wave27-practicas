@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "d445ebe9-557f-4280-b07d-7b56576047c1",
+		"name": "Blog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Blog by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/blog/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"blog",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all blogs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/blogs",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"blogs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1,\n    \"titulo\" : \"Blog 1\",\n    \"autor\" : \"Maria\",\n    \"fecha_publicacion\" : \"20/09/2024\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/blog",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"blog"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
