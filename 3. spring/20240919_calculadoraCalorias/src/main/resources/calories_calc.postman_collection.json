@@ -1,0 +1,65 @@
+{
+	"info": {
+		"_postman_id": "6388371c-1766-481c-8bb7-eef2a7ba8871",
+		"name": "calories_calc",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38408711"
+	},
+	"item": [
+		{
+			"name": "find_Menu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/menu",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find Plate",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/menu/plate1/6000",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"menu",
+						"plate1",
+						"6000"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "find Plate_ bad request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/menu/plate 1/6000",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"menu",
+						"plate 1",
+						"6000"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
