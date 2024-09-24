@@ -1,0 +1,108 @@
+[
+  {
+    "id": 1,
+    "brand": "Chevrolet",
+    "model": "Corsa",
+    "manufacturingDate": "2000-11-20",
+    "doors": "5",
+    "price": "23000000",
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2003-05-20",
+        "kilometers": "0",
+        "descriptions": ""
+      }
+    ],
+    "countOfOwners": 0
+  },
+  {
+    "id":  2,
+    "brand": "Ford",
+    "model": "Fiesta",
+    "manufacturingDate": "2010-03-15",
+    "doors": "5",
+    "price": "18000000",
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2011-06-10",
+        "kilometers": "5000",
+        "descriptions": "Cambio de aceite"
+      },
+      {
+        "date": "2013-08-25",
+        "kilometers": "20000",
+        "descriptions": "Revisión general"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id":  3,
+    "brand": "Toyota",
+    "model": "Corolla",
+    "manufacturingDate": "2015-07-30",
+    "doors": "4",
+    "price": "30000000",
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2016-02-12",
+        "kilometers": "10000",
+        "descriptions": "Cambio de neumáticos"
+      }
+    ],
+    "countOfOwners": 2
+  },
+  {
+    "id":  4,
+    "brand": "Volkswagen",
+    "model": "Gol",
+    "manufacturingDate": "2018-01-05",
+    "doors": "5",
+    "price": "25000000",
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2019-03-15",
+        "kilometers": "15000",
+        "descriptions": "Mantenimiento preventivo"
+      },
+      {
+        "date": "2020-04-20",
+        "kilometers": "30000",
+        "descriptions": "Revisión de frenos"
+      }
+    ],
+    "countOfOwners": 1
+  },
+  {
+    "id":  5,
+    "brand": "Renault",
+    "model": "Sandero",
+    "manufacturingDate": "2020-05-10",
+    "doors": "5",
+    "price": "22000000",
+    "currency": "AR",
+    "services": [
+      {
+        "date": "2021-01-15",
+        "kilometers": "5000",
+        "descriptions": "Cambio de aceite y filtros"
+      }
+    ],
+    "countOfOwners": 0
+  },
+  {
+    "id":  6,
+    "brand": "Nissan",
+    "model": "Kicks",
+    "manufacturingDate": "2019-11-20",
+    "doors": "5",
+    "price": "35000000",
+    "currency": "AR",
+    "services": [],
+    "countOfOwners": 1
+  }
+]

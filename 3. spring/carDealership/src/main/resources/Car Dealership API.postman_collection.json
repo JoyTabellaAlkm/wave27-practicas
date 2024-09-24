@@ -1,0 +1,175 @@
+{
+	"info": {
+		"_postman_id": "f419e96f-aa7f-416c-8de0-3f9b9652e6e2",
+		"name": "Car Dealership API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "Find All Cars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/{{api}}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Cars By Manufactured Date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "since",
+							"value": "2015-01-01",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "2019-06-01",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/{{api}}/dates",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{{api}}",
+						"dates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Add new Car",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n    {\n        \"brand\": \"Peugeot\",\n        \"model\": \"208\",\n        \"manufacturingDate\": \"2023-11-20\",\n        \"numberOfKilometers\": null,\n        \"doors\": \"5\",\n        \"price\": \"25000000\",\n        \"currency\": \"AR\",\n        \"services\": [\n            {\n                \"date\": \"2024-01-01\",\n                \"kilometers\": 0,\n                \"descriptions\": \"\"\n            }\n        ],\n        \"countOfOwners\": 0\n    }\n    ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/{{api}}",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{{api}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Cars By Price",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "since",
+							"value": "22000000",
+							"type": "text"
+						},
+						{
+							"key": "to",
+							"value": "23000000",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "{{local}}/{{api}}/prices",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{{api}}",
+						"prices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Car By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/{{api}}/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"{{api}}",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:8080"
+		},
+		{
+			"key": "api",
+			"value": "v1/api/vehicles"
+		}
+	]
+}
