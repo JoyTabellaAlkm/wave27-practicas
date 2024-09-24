@@ -1,0 +1,58 @@
+{
+	"info": {
+		"_postman_id": "f533f016-7ee7-4710-b604-2bf10fa82ade",
+		"name": "exceptionsBlog",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38402197"
+	},
+	"item": [
+		{
+			"name": "localhost:8080/blogs",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/blogs"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/blog",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"id\": 5,\n  \"title\": \"Esta va desde Postman!\",\n  \"authorName\": \"Autor aqui!\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "localhost:8080/blog"
+			},
+			"response": []
+		},
+		{
+			"name": "localhost:8080/blogs/{id}",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "localhost:8080/blogs/{id}"
+			},
+			"response": []
+		}
+	]
+}
