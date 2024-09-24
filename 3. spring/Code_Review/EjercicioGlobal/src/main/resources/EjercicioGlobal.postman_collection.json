@@ -1,0 +1,534 @@
+{
+	"info": {
+		"_postman_id": "0a19477f-c8c4-4f0b-b237-d7cbb486a024",
+		"name": "EjercicioGlobal",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38408711"
+	},
+	"item": [
+		{
+			"name": "vehicles",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicles_BadRequest",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":510,\"brand\":\"Mitsubishi\",\"model\":\"Excel\",\"registration\":\"0904\",\"year\":1987,\"color\":\"Green\",\"max_speed\":89,\"fuel_type\":\"gas\",\"transmission\":\"automatic\",\"passengers\":5,\"height\":39.18,\"width\":290.82,\"weight\":121.17}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "vehicles_add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"id\":510,\"brand\":\"Mitsubishi\",\"model\":\"Excel\",\"registration\":\"0904\",\"year\":1987,\"color\":\"Green\",\"max_speed\":89,\"fuel_type\":\"gas\",\"transmission\":\"automatic\",\"passengers\":5,\"height\":39.18,\"width\":290.82,\"weight\":121.17}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindColorAndYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/color/Yellow/year/2007",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"color",
+						"Yellow",
+						"year",
+						"2007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByBrandAndYear_BadRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/brand/Ford/between/20024/2030",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"brand",
+						"Ford",
+						"between",
+						"20024",
+						"2030"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByBrandAndYear_OK",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/brand/Ford/between/2002/2007",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"brand",
+						"Ford",
+						"between",
+						"2002",
+						"2007"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Average",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/average_speed/brand/Dodge",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"average_speed",
+						"brand",
+						"Dodge"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":704,\"brand\":\"BMW\",\"model\":\"M6\",\"registration\":\"199\",\"year\":2006,\"color\":\"Khaki\",\"max_speed\":174,\"fuel_type\":\"biodiesel\",\"transmission\":\"semi-automatic\",\"passengers\":5,\"height\":62.35,\"width\":262.74,\"weight\":171.1},\n{\"id\":705,\"brand\":\"Ford\",\"model\":\"Mustang\",\"registration\":\"8232\",\"year\":2012,\"color\":\"Khaki\",\"max_speed\":146,\"fuel_type\":\"diesel\",\"transmission\":\"manual\",\"passengers\":1,\"height\":32.56,\"width\":274.29,\"weight\":82.06},\n{\"id\":706,\"brand\":\"BMW\",\"model\":\"530\",\"registration\":\"8666\",\"year\":2005,\"color\":\"Green\",\"max_speed\":217,\"fuel_type\":\"gas\",\"transmission\":\"automatic\",\"passengers\":2,\"height\":175.8,\"width\":133.46,\"weight\":174.91}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/batch",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch Existente",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":704,\"brand\":\"BMW\",\"model\":\"M6\",\"registration\":\"199\",\"year\":2006,\"color\":\"Khaki\",\"max_speed\":174,\"fuel_type\":\"biodiesel\",\"transmission\":\"semi-automatic\",\"passengers\":5,\"height\":62.35,\"width\":262.74,\"weight\":171.1},\n{\"id\":705,\"brand\":\"Ford\",\"model\":\"Mustang\",\"registration\":\"8232\",\"year\":2012,\"color\":\"Khaki\",\"max_speed\":146,\"fuel_type\":\"diesel\",\"transmission\":\"manual\",\"passengers\":1,\"height\":32.56,\"width\":274.29,\"weight\":82.06},\n{\"id\":3,\"brand\":\"BMW\",\"model\":\"530\",\"registration\":\"8666\",\"year\":2005,\"color\":\"Green\",\"max_speed\":217,\"fuel_type\":\"gas\",\"transmission\":\"automatic\",\"passengers\":2,\"height\":175.8,\"width\":133.46,\"weight\":174.91}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/batch",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "batch Existente_BadRequest",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\"id\":704,\"brand\":\"BMW\",\"model\":\"M6\",\"registration\":\"199\",\"year\":2006,\"color\":\"Khaki\",\"max_speed\":174,\"fuel_type\":\"biodiesel\",\"transmission\":\"semi-automatic\",\"passengers\":5,\"height\":62.35,\"width\":262.74,\"weight\":171.1},\n{\"id\":705,\"brand\":\"Ford\",\"model\":\"Mustang\",\"registration\":\"8232\",\"year\":2012,\"color\":\"Khaki\",\"max_speed\":146,\"fuel_type\":\"diesel\",\"transmission\":\"manual\",\"passengers\":1,\"height\":32.56,\"width\":274.29,\"weight\":82.06},\n{\"id\":3,\"brand\":\"BMW\",\"model\":\"530\",\"registration\":\"8666\",\"year\":2005,\"color\":\"Green\",\"max_speed\":217,\"fuel_type\":\"gas\",\"transmission\":\"automatic\",\"passengers\":2,\"height\":175.8,\"width\":133.46,\"weight\":174.91}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/batch",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Speed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"max_speed\": 11111\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/3/update_speed",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"3",
+						"update_speed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Speed Bad Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n \"max_speed\": 11111\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/3/update_speed",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"3",
+						"update_speed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehiculos/3",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehiculos",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FuelType",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/fuel_type/biodiesel",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"fuel_type",
+						"biodiesel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "FindByTransmision",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Update Fuel _ NotFound",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/20/update_fuel",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"20",
+						"update_fuel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "average_passanger",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "average_passanger_NotFound",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/average_capacity/brand/f",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"average_capacity",
+						"brand",
+						"f"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Dimensions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/dimensions?length=2-47&width=60-100",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"dimensions"
+					],
+					"query": [
+						{
+							"key": "length",
+							"value": "2-47"
+						},
+						{
+							"key": "width",
+							"value": "60-100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByWeight_badRequest",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/weight?min=0&max=0",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "0"
+						},
+						{
+							"key": "max",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "GetByWeight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/weight?min=30&max=200",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "30"
+						},
+						{
+							"key": "max",
+							"value": "200"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
