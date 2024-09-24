@@ -1,0 +1,349 @@
+{
+	"info": {
+		"_postman_id": "7886fb78-8c04-4965-b2a0-7109fff92c09",
+		"name": "Vehicles Code Review",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "38409319"
+	},
+	"item": [
+		{
+			"name": "Create vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicle",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles"
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicle by color and year",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/color/Blue/year/1993"
+			},
+			"response": []
+		},
+		{
+			"name": "Get vehicle by brand between years",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/brand/Ford/between/1984/1995"
+			},
+			"response": []
+		},
+		{
+			"name": "Average speed brand",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/average_speed/brand/Ford"
+			},
+			"response": []
+		},
+		{
+			"name": "Add multiple Vehicles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"id\": 1,\n        \"brand\": \"Toyota\",\n        \"model\": \"Corolla\",\n        \"registration\": \"ABC123\",\n        \"color\": \"Rojo\",\n        \"year\": 2021,\n        \"max_speed\": \"180\",\n        \"passengers\": 5,\n        \"fuel_type\": \"Gasolina\",\n        \"transmission\": \"Automático\",\n        \"height\": 1.45,\n        \"width\": 1.76,\n        \"weight\": 1300\n    },\n    {\n        \"id\": 2,\n        \"brand\": \"Honda\",\n        \"model\": \"Civic\",\n        \"registration\": \"DEF456\",\n        \"color\": \"Azul\",\n        \"year\": 2020,\n        \"max_speed\": \"200\",\n        \"passengers\": 5,\n        \"fuel_type\": \"Gasolina\",\n        \"transmission\": \"Manual\",\n        \"height\": 1.43,\n        \"width\": 1.80,\n        \"weight\": 1250\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/batch"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Fuel",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/fuel_type/gasoline"
+			},
+			"response": []
+		},
+		{
+			"name": "Delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/2"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Transmission",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/transmission/semi-automatic"
+			},
+			"response": []
+		},
+		{
+			"name": "Update Fuel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fuel_type\" : \"gas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/1/update_fuel"
+			},
+			"response": []
+		},
+		{
+			"name": "Get average capacity",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/average_capacity/brand/Pontiac"
+			},
+			"response": []
+		},
+		{
+			"name": "Get by Dimensions",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vehicles/dimensions?length=20-300&width=40-500",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"dimensions"
+					],
+					"query": [
+						{
+							"key": "length",
+							"value": "20-300"
+						},
+						{
+							"key": "width",
+							"value": "40-500"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get by weight range",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 501,\n    \"brand\" : \"toyota\",\n    \"model\" : \"corolla\",\n    \"registration\" : \"registration\",\n    \"color\" : \"grey\",\n    \"year\" : 2024,\n    \"max_speed\" : \"250\",\n    \"passengers\" : 5,\n    \"fuel_type\" : \"oil\",\n    \"transmission\" : \"transmission\",\n    \"height\" : 1.60,\n    \"width\" : 5.0,\n    \"weight\" : 500.0\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vehicles/weight?min=60&max=100",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehicles",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "60"
+						},
+						{
+							"key": "max",
+							"value": "100"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Speed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"max_speed\" : \"250\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/1/update_speed"
+			},
+			"response": []
+		},
+		{
+			"name": "Update SpeedV2",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"speed\" : 250\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/vehicles/1/update_speed2"
+			},
+			"response": []
+		}
+	]
+}
