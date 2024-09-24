@@ -1,0 +1,316 @@
+{
+	"info": {
+		"_postman_id": "1b0e2789-4b22-48ec-bfcb-1101197bdd5a",
+		"name": "CodeReview1",
+		"description": "API para el primer code review del bootcamp Java.  \n  \nEjercicio simulado:  \nConcesionaria de autos.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "Get All Vehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Vehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 501,\n    \"brand\": \"Ford\",\n    \"model\": \"Tempo\",\n    \"registration\": \"1283\",\n    \"year\": 1984,\n    \"color\": \"Aquamarine\",\n    \"max_speed\": 245,\n    \"fuel_type\": \"gasoline\",\n    \"transmission\": \"automatic\",\n    \"passengers\": 6,\n    \"height\": 250.28,\n    \"width\": 182.39,\n    \"weight\": 196.32\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicle By Color and Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/color/Green/year/1987",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"color",
+						"Green",
+						"year",
+						"1987"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Average Speed by Brand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/average_speed/brand/nissan",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"average_speed",
+						"brand",
+						"nissan"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Batch of Vehicles",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n    \"id\": 559,\n    \"brand\": \"Saab\",\n    \"model\": \"9000\",\n    \"registration\": \"5507\",\n    \"year\": 1991,\n    \"color\": \"Violet\",\n    \"max_speed\": 219,\n    \"fuel_type\": \"biodiesel\",\n    \"transmission\": \"automatic\",\n    \"passengers\": 6,\n    \"height\": 222.18,\n    \"width\": 204.72,\n    \"weight\": 151.79\n},\n{\n    \"id\": 558,\n    \"brand\": \"GMC\",\n    \"model\": \"2500\",\n    \"registration\": \"23\",\n    \"year\": 1997,\n    \"color\": \"Purple\",\n    \"max_speed\": 150,\n    \"fuel_type\": \"gas\",\n    \"transmission\": \"manual\",\n    \"passengers\": 6,\n    \"height\": 30.93,\n    \"width\": 279.0,\n    \"weight\": 90.27\n},\n{\n    \"id\": 550,\n    \"brand\": \"Pontiac\",\n    \"model\": \"Random\",\n    \"registration\": \"7311\",\n    \"year\": 1988,\n    \"color\": \"Purple\",\n    \"max_speed\": 137,\n    \"fuel_type\": \"biodiesel\",\n    \"transmission\": \"automatic\",\n    \"passengers\": 6,\n    \"height\": 295.34,\n    \"width\": 139.65,\n    \"weight\": 110.97\n}]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/batch",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"batch"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Max Speed",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "150",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/1/update_speed",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"1",
+						"update_speed"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles by Fuel Type",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/fuel_type/gas",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"fuel_type",
+						"gas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Vehicle By Id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/14",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"14"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles By Transmission",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/transmission/automatic",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"transmission",
+						"automatic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Fuel",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "mentos con coca",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehicles/5/update_fuel",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"5",
+						"update_fuel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Average Capacity by Brand",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/average_capacity/brand/Toyota",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"average_capacity",
+						"brand",
+						"Toyota"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles by Dimensions",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/dimensions?length=50-60&width=50-60",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"dimensions"
+					],
+					"query": [
+						{
+							"key": "length",
+							"value": "50-60"
+						},
+						{
+							"key": "width",
+							"value": "50-60"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Vehicles By Weight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehicles/weight?min=200&max=210",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehicles",
+						"weight"
+					],
+					"query": [
+						{
+							"key": "min",
+							"value": "200"
+						},
+						{
+							"key": "max",
+							"value": "210"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "local",
+			"value": "localhost:8080"
+		}
+	]
+}
