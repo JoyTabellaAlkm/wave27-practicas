@@ -1,0 +1,15 @@
+Ejercicios de GIT
+
+Imaginemos que tenemos muchos archivos por crear y mover en nuestra computadora y, por alguna razón, no podemos utilizar por un día entero la Interfaz Gráfica de nuestros sistemas operativos… ¿Qué hacemos? ¡Podemos usar la terminal! ¡Practiquemos!
+
+Abramos nuestra terminal y empecemos con los siguientes comandos:
+
+1. Crear una carpeta llamada “archivos”
+2. Situarse dentro de dicha carpeta
+3. Crear un archivo llamado “prueba.txt” y otro llamado “hola.txt”
+4. Utilizar el comando para ver los archivos que tenemos dentro de la carpeta.
+5. Cambiar el nombre de “hola.txt” a “prueba2.txt”
+6. Cambiar el nombre de “prueba.txt” a “prueba1.txt”. Utilizar nuevamente el comando para ver los archivos que tenemos dentro de la carpeta, para ver si se efectuaron los cambios.
+8. Eliminar el archivo “prueba2.txt”
+9. Utilizar el comando para subir un directorio arriba de la carpeta “archivos” donde estamos trabajando.
+10. Limpiar la pantalla de la terminal
