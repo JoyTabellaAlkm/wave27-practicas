@@ -1,0 +1,15 @@
+Cuando se trabaja sobre un proyecto muchas veces se necesita probar distintas funcionalidades y para ello se crean distintas copias o versiones. Git permite manejar estas versiones de una manera mucho más eficiente, por lo que para aprender a utilizarlo vamos a crear nuestro primer repositorio local.
+
+1. Abrir la terminal y realizar los siguientes comandos:
+a. Elegir una carpeta para crear nuestro repositorio local y situarse en ella.
+b. Una vez dentro de la carpeta, iniciar un repositorio local de git.
+c. Una vez creado el repositorio, definir nuestra identidad (usuario y correo).
+d. Crear un archivo llamado “lorem.txt” y colocar un texto “random” dentro de él.
+e. Agregar el archivo creado al stage.
+f. Confirmar definitivamente el archivo agregado a stage.
+
+2. Crear un repositorio en GitHub, obtener su URL y realizar las siguientes acciones:
+a.Configurar en el repositorio local la dirección al repositorio remoto para poder compartir luego los archivos.
+b.Consultar el estado del repositorio local para ver en qué situación está el archivo “lorem.txt”.
+c.Si está todo ok, enviar el archivo “lorem.txt” al repositorio remoto.
+d.Entrar a GitHub y ver si el archivo llegó correctamente al repositorio remoto.
