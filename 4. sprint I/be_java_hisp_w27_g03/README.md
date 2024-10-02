@@ -13,7 +13,7 @@
 
 ## Descripción del Proyecto
 
-Social Meli es una aplicación desarrollada con Spring Boot que permite gestionar las relaciones entre usuarios y vendedores, sus publicaciones y productos en promoción.
+Social Meli es una aplicación desarrollada con Spring Boot que permite gestionar las relaciones entre usuarios y vendedores, sus publicaciones y productos en promoción. El desarrollo del proyecto fue realizado en: https://github.com/SebastianValleRang/be_java_hisp_w27_g03
 
 ## Tecnologías Utilizadas
 
