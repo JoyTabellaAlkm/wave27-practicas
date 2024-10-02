@@ -1,0 +1,51 @@
+{
+	"info": {
+		"_postman_id": "7ab822a2-2151-4bc3-8f0a-3c6b0362af00",
+		"name": "Clase15-StarWars",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "ShowAllCharacters",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/characters",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"characters"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showCharacterByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/starwars/characters/Da",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"starwars",
+						"characters",
+						"Da"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

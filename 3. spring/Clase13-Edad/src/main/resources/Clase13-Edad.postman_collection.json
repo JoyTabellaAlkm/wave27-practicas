@@ -1,0 +1,52 @@
+{
+	"info": {
+		"_postman_id": "ba3f2d0b-1704-4499-8c46-1f2a88d498d1",
+		"name": "Clase13-Edad",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "Fecha Invalida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/31/12/2029",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"31",
+						"12",
+						"2029"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fecha Valida",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/31/07/2002",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"31",
+						"07",
+						"2002"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

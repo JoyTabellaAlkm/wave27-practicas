@@ -1,0 +1,71 @@
+{
+	"info": {
+		"_postman_id": "24828e8c-f4df-41e0-ae52-4e184dc7912c",
+		"name": "Covid19",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "findSymptom",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid19/findSymptom",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid19",
+						"findSymptom"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSymptom/tos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid19/findSymptom/tos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid19",
+						"findSymptom",
+						"tos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findRiskPerson",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/covid19/findRiskPerson",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"covid19",
+						"findRiskPerson"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

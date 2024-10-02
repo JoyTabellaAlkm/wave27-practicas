@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "fffba902-141b-4a7f-8d9e-0c4167bdddda",
+		"name": "Clase16-Calorias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "showMenu",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/menu",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"menu"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showPlateByNameWeight",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/menu/plato0/400",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"menu",
+						"plato0",
+						"400"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

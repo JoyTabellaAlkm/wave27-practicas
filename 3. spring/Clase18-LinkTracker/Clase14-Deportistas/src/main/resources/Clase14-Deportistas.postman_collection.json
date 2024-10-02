@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "a23cc902-1225-481a-b0e8-01aa6d283ab9",
+		"name": "Clase14-Deportistas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "findSports",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSports",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSports"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSportByName",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSport/Natación",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSport",
+						"Natación"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findSportsPeople",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/findSportsPersons",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"findSportsPersons"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

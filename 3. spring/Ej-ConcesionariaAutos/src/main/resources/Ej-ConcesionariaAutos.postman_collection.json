@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "f9bcfea1-967d-448b-ac18-d0c8c99f022f",
+		"name": "Ej-ConcesionariaAutos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "listVehiclesByDate",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "addVehicle",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"brand\": \"Chevrolet\",\n    \"model\": \"Corsa\",\n    \"manufacturingDate\": \"2000-11-20\",\n    \"numberOfKilometers\": \"115000\",\n    \"doors\": 5,\n    \"price\": 90000,\n    \"currency\": \"AR\",\n    \"services\": [\n        {\n            \"date\": \"2003-05-20\",\n            \"kilometers\": \"60000\",\n            \"descriptions\": \"Change air filters\"\n        }\n    ],\n    \"countOfOwners\": \"2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/v1/api/vehicles/add",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "showAllVehicles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/api/vehicles/show",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"show"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listVehiclesByprice",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "showById",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/v1/api/vehicles/8",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"v1",
+						"api",
+						"vehicles",
+						"8"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

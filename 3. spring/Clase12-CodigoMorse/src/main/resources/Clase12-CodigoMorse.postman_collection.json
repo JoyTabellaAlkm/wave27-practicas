@@ -1,0 +1,46 @@
+{
+	"info": {
+		"_postman_id": "09ab327b-f1a9-4f38-946e-d8ae0db787b1",
+		"name": "Clase12-CodigoMorse",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "Hola",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/morse/.... --- .-.. .- ",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"morse",
+						".... --- .-.. .- "
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "MERCADO LIBRE",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/morse/-- . .-. -.-. .- -.. ---   .-.. .. -... .-. .",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"morse",
+						"-- . .-. -.-. .- -.. ---   .-.. .. -... .-. ."
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
