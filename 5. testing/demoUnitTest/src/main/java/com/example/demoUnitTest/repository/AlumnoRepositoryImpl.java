@@ -35,6 +35,11 @@ public class AlumnoRepositoryImpl implements IAlumnoRepository{
         return this.alumnosList;
     }
 
+    public Alumno save(Alumno alumno) {
+        this.alumnosList.add(alumno);
+        return alumno;
+    }
+
     private List<Alumno> loadData() {
         List<Alumno> loadedData = null;
         File file;

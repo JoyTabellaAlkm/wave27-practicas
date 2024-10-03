@@ -10,4 +10,6 @@ public interface IAlumnoRepository {
 
     public List<Alumno> findAll();
 
+    public Alumno save(Alumno alumno);
+
 }

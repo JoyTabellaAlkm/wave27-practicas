@@ -1,7 +1,10 @@
 package com.example.demoUnitTest.service;
 
+import com.example.demoUnitTest.dto.AlumnoDTO;
+import com.example.demoUnitTest.dto.ResponseDTO;
 import com.example.demoUnitTest.model.Alumno;
 import com.example.demoUnitTest.repository.IAlumnoRepository;
+import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,6 +14,8 @@ public class CalculadoraPromedioServiceImpl implements ICalculadoraPromedioServi
     @Autowired
     private IAlumnoRepository AlumnoRepository;
 
+    @Autowired
+    ModelMapper modelMapper;
 
     /// SUMAR
     public Double sumar(Double n1, Double n2){
@@ -34,14 +39,9 @@ public class CalculadoraPromedioServiceImpl implements ICalculadoraPromedioServi
 
     }
 
-
-
-
-
-
-
-    /// APLICAR PROMEDIO A UN ALUMNO
-
-
-
+    public ResponseDTO addAlumno(AlumnoDTO alumnoDto){
+        Alumno alumno = modelMapper.map(alumnoDto,Alumno.class);
+        AlumnoRepository.save(alumno);
+        return new ResponseDTO("Alumno guardado");
+    }
 }
