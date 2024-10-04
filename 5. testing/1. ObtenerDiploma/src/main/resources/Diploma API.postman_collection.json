@@ -1,0 +1,66 @@
+{
+	"info": {
+		"_postman_id": "cf9ed7c1-f97d-4808-8e0b-ce0e4fc76545",
+		"name": "Diploma API",
+		"description": "For the first exercise of Testing Module in Java Bootcamp.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "Success Analyze Doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_name\": \"Usuario de prueba\",\n    \"message\": \"Este es un mensaje\",\n    \"averageScore\": \"0\",\n    \"subjects\": [\n        {\n            \"name\": \"asd\",\n            \"score\": \"7.5\"\n        },\n        {\n            \"name\": \"Analisis de sistemas\",\n            \"score\": \"8.5\"\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/analyzeScores",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"analyzeScores"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080",
+			"type": "string"
+		}
+	]
+}
