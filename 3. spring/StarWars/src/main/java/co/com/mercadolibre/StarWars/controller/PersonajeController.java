@@ -1,6 +1,7 @@
-package co.com.mercadolibre.hello.controller;
+package co.com.mercadolibre.StarWars.controller;
 
-import co.com.mercadolibre.hello.services.ISaludar;
+import co.com.mercadolibre.StarWars.dto.PersonajeDTO;
+import co.com.mercadolibre.StarWars.service.IPersonajeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
@@ -12,16 +13,16 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/api")
-public class HelloController {
+public class PersonajeController {
 
     @Autowired
-    ISaludar iSaludar;
-    @GetMapping("saludar/{name}")
-    public String soyHello(@PathVariable String name){
-        return iSaludar.sayHello(name);
+    IPersonajeService iPersonajeService;
+
+    @GetMapping("/personaje/{name}")
+    public ResponseEntity<?> getPersonaje (@PathVariable String name){
+        PersonajeDTO personajeDTO = iPersonajeService.getPersonaje(name);
+        return new ResponseEntity<>(personajeDTO, HttpStatus.OK);
+
     }
-    @GetMapping("saludar2")
-    public String soyHello2(){
-        return "Hola este es el segundo saludo";
-    }
+
 }
