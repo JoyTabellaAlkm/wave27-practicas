@@ -27,4 +27,10 @@ public class StudentDTO {
 
     @NotEmpty(message = "La lista de materias no puede estar vacía.")
     List<@Valid SubjectDTO> subjects;
+
+    public StudentDTO(Long id, String studentName, List<@Valid SubjectDTO> subjects) {
+        this.id = id;
+        this.studentName = studentName;
+        this.subjects = subjects;
+    }
 }
