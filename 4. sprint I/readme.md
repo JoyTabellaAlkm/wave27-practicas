@@ -25,6 +25,9 @@ Mercado Libre planea lanzar "SocialMeli" el próximo año, una herramienta que m
 Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las correcciones se realizaron en el momento. Esto asegura que cada detalle fue discutido y abordado de manera colaborativa.
 
 ## Endpoints
+<details>
+<summary> <code>US 0001:</code> Poder realizar la acción de “Follow” (seguir) a un determinado vendedor. </summary>
+  
 ```java
 1. POST /users/{userId}/follow/{userIdToFollow}. 
 ```
@@ -77,6 +80,10 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ### Responsables
 - [@LicFuraca](https://www.github.com/LicFuraca) Martín Díaz
 - [@fcafici](https://www.github.com/fcafici) Felipe Cafici
+</details>
+
+<details>
+<summary> <code>US 0002:</code> Obtener el resultado de la cantidad de usuarios que siguen a un determinado vendedor. </summary>
 
 ```java
 2. GET /users/{userId}/followers/count
@@ -119,6 +126,11 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ### Responsables
 - [@Inwinkelried](https://www.github.com/Inwinkelried) Santiago Inwinkelried
 
+</details>
+
+<details>
+<summary> <code>US 0003:</code> Obtener un listado de todos los usuarios que siguen a un determinado vendedor (¿Quién me sigue?). </summary>
+  
 ```java
 3. GET /users/{userId}/followers/list
 ```
@@ -173,6 +185,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 
 ### Responsables
 - [@mSoledadAmore](https://www.github.com/mSoledadAmore) Soledad Amore
+
+</details>
+
+<details>
+<summary> <code>US 0004:</code> Obtener  un listado de todos los vendedores a los cuales sigue un determinado usuario (¿A quién sigo?). </summary>
+
 ```java
 4. GET /users/{userId}/followed/list
 ```
@@ -215,6 +233,11 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ```
 ### Responsables
 - [@LicFuraca](https://www.github.com/LicFuraca) Martín Díaz
+
+</details>
+
+<details>
+<summary> <code>US 0005:</code> Dar de alta una nueva publicación. </summary>
 
 ```java
 5. POST /products/post
@@ -291,6 +314,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 - [@Celescis](https://www.github.com/Celescis) Celeste Cisternas
 - [@Inwinkelried](https://www.github.com/Inwinkelried) Santiago Inwinkelried
 - [@mSoledadAmore](https://www.github.com/mSoledadAmore) Soledad Amore
+
+</details>
+
+<details>
+<summary> <code>US 0006:</code> Obtener un listado de las publicaciones realizadas por los vendedores que un usuario sigue en las últimas dos semanas (para esto tener en cuenta ordenamiento por fecha, publicaciones más recientes primero). </summary>
+  
 ```java
 6. GET /products/followed/{userId}/list
 ```
@@ -350,6 +379,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 
 ### Responsables
 - [@fcafici](https://www.github.com/fcafici) Felipe Cafici
+
+</details>
+
+<details>
+<summary> <code>US 0007:</code> Poder realizar la acción de “Unfollow” (dejar de seguir) a un determinado vendedor. </summary>
+
 ```java
 7. POST /users/{userId}/unfollow/{userIdToUnfollow}
 ```
@@ -385,6 +420,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ```
 ### Responsables
 - [@Celescis](https://www.github.com/Celescis) Celeste Cisternas
+
+</details>
+
+<details>
+<summary> <code>US 0008:</code> Ordenamiento alfabético ascendente y descendente. </summary>
+
 ```java
 8. GET /users/{UserID}/followers/list?order=name_asc
        /users/{UserID}/followers/list?order=name_desc
@@ -476,6 +517,11 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ### Responsables
 - [@Inwinkelried](https://www.github.com/Inwinkelried) Santiago Inwinkelried
 
+</details>
+
+<details>
+<summary> <code>US 0009:</code> Ordenamiento por fecha ascendente y descendente. </summary>
+
 ```java
 9. GET /products/followed/{userId}/list?order=date_asc
        /products/followed/{userId}/list?order=date_desc
@@ -564,6 +610,13 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ```
 ### Responsables
 - [@mSoledadAmore](https://www.github.com/mSoledadAmore) Soledad Amore
+
+
+</details>
+
+<details>
+<summary> <code>US 0010:</code> Llevar a cabo la publicación de un nuevo producto en promoción. </summary>
+
 ```java
 10. POST /products/promo-post
 ```
@@ -646,6 +699,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ```
 ### Responsables
 - [@Celescis](https://www.github.com/Celescis) Celeste Cisternas
+
+</details>
+
+<details>
+<summary> <code>US 0011:</code> Obtener la cantidad de productos en promoción de un determinado vendedor. </summary>
+
 ```java
 11. GET /products/promo-post/count?user_id={userId}
 ```
@@ -690,6 +749,12 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 ```
 ### Responsables
 - [@LicFuraca](https://www.github.com/LicFuraca) Martín Díaz
+
+</details>
+
+<details>
+<summary> <code>US BONUS:</code> Obtener un listado de top 10 vendedores según la cantidad de seguidores y desempatan por la cantidad de publicaciones. </summary>
+  
 ```java
 12. GET /users/top-10
 ```
@@ -763,6 +828,8 @@ Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las corre
 
 ### Responsables
 - [@fcafici](https://www.github.com/fcafici) Felipe Cafici
+
+</details>
 
 # Integrantes EQUIPO 2 :handshake:
 - [@mSoledadAmore](https://www.github.com/mSoledadAmore) Soledad Amore
