@@ -1,0 +1,27 @@
+[
+    {
+      "id": "1",
+      "name": "Laptop Dell",
+      "price": 750.0
+    },
+    {
+      "id": "2",
+      "name": "iPhone 13",
+      "price": 999.99
+    },
+    {
+      "id": "3",
+      "name": "Headphones Sony",
+      "price": 150.0
+    },
+    {
+      "id": "4",
+      "name": "Smartwatch Samsung",
+      "price": 299.99
+    },
+    {
+      "id": "5",
+      "name": "Tablet Amazon Fire",
+      "price": 89.99
+    }
+  ]
