@@ -10,6 +10,7 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Repository
 public class VehicleRepositoryImpl implements IVehicleRepository{
@@ -38,7 +39,16 @@ public class VehicleRepositoryImpl implements IVehicleRepository{
 
     @Override
     public List<Vehicle> getVehiclesByBrand(String brand) {
-        return listOfVehicles.stream().filter(vehicle -> vehicle.getBrand().equals(brand)).toList();
+        return listOfVehicles.stream().filter(vehicle -> vehicle.getBrand().equalsIgnoreCase(brand)).toList();
+    }
+
+    @Override
+    public List<Double> getVehiclesSpeedByBrand(String brand) {
+        return listOfVehicles.stream()
+                .filter(vehicle -> vehicle.getBrand().equalsIgnoreCase(brand))
+                .mapToDouble(vehicle -> Double.parseDouble(vehicle.getMax_speed()))
+                .boxed()
+                .collect(Collectors.toList());
     }
 
     @Override

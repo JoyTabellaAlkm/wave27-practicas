@@ -11,6 +11,8 @@ public interface IVehicleRepository {
 
     List<Vehicle> getVehiclesByBrand(String brand);
 
+    List<Double> getVehiclesSpeedByBrand(String brand);
+
     Vehicle updateVehicle(Vehicle vehicle);
 
     Vehicle updateMaxSpeed(long id, String maxSpeed);

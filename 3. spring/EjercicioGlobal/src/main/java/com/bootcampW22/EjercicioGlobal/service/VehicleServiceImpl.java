@@ -6,6 +6,7 @@ import com.bootcampW22.EjercicioGlobal.dto.VelocityDTO;
 import com.bootcampW22.EjercicioGlobal.entity.Vehicle;
 import com.bootcampW22.EjercicioGlobal.exception.NotFoundException;
 import com.bootcampW22.EjercicioGlobal.exception.VehicleAlreadyExistException;
+import com.bootcampW22.EjercicioGlobal.exception.VehicleNotFoundException;
 import com.bootcampW22.EjercicioGlobal.repository.IVehicleRepository;
 import com.bootcampW22.EjercicioGlobal.repository.VehicleRepositoryImpl;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -64,13 +65,15 @@ public class VehicleServiceImpl implements IVehicleService{
         return vehicleDto;
     }
 
+    /* VERSION DEL CODE REVIEW
     @Override
     public AverageSpeedDTO getAverageSpeedByBrand(String brand) {
         List<Vehicle> vehicles = vehicleRepository.getVehiclesByBrand(brand);
         AverageSpeedDTO averageSpeedDTO = new AverageSpeedDTO();
         double averageSpeed = 0d;
 
-        if(vehicles.isEmpty()) throw new NotFoundException("No hay vehiculos de esa marca");
+        //Agregué esta excepción. Antes utilizaba el notFoundException que viene por defecto
+        if(vehicles.isEmpty()) throw new VehicleNotFoundException("No hay vehiculos de esa marca");
 
         averageSpeed = vehicles.stream()
                         .mapToDouble( value -> Double.parseDouble(value.getMax_speed()))
@@ -81,4 +84,27 @@ public class VehicleServiceImpl implements IVehicleService{
 
         return averageSpeedDTO;
     }
+    */
+
+    @Override
+    public AverageSpeedDTO getAverageSpeedByBrand(String brand) {
+        /*Si mal no recuerdo, lean me recomendó que en lugar de traerme una lista con los vehículos,
+        me trajera directamente solo los datos que necesito (en este caso las velocidades) */
+        List<Double> vehiclesSpeed = vehicleRepository.getVehiclesSpeedByBrand(brand);
+        AverageSpeedDTO averageSpeedDTO = new AverageSpeedDTO();
+        double averageSpeedValue;
+
+        //Agregué esta excepción. Antes utilizaba el notFoundException que viene por defecto
+        if(vehiclesSpeed.isEmpty()) throw new VehicleNotFoundException("No hay vehículos de esa marca");
+
+        averageSpeedValue = vehiclesSpeed.stream().
+                mapToDouble(Double::doubleValue).
+                average().
+                orElse(0.0d);
+
+        averageSpeedDTO.setAverage_speed( Double.toString(averageSpeedValue));
+
+        return averageSpeedDTO;
+    }
+
 }

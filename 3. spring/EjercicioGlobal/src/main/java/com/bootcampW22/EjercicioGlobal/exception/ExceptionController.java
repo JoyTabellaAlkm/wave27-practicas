@@ -17,6 +17,12 @@ public class ExceptionController {
         return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(VehicleNotFoundException.class)
+    public ResponseEntity<?> vehicleNotFound(VehicleNotFoundException e){
+        ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
+        return new ResponseEntity<>(exceptionDto, HttpStatus.NOT_FOUND);
+    }
+
     @ExceptionHandler(VehicleAlreadyExistException.class)
     public ResponseEntity<?> vehicleAlreadyExist(VehicleAlreadyExistException e){
         ExceptionDto exceptionDto = new ExceptionDto(e.getMessage());
