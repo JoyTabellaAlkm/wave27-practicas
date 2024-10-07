@@ -5,8 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75b3f77-2b5a-4820-8c7f-fa11d911ca9a" name="Default Changelist" comment="Testing_1 - ObtenerDiploma + CRUD Alumnos">
-      <change afterPath="$PROJECT_DIR$/../ejercicio_obtenerDiplomaValidacion/src/main/java/com/meli/obtenerdiploma/exception/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../ejercicio_obtenerDiplomaValidacion/src/main/java/com/meli/obtenerdiploma/model/ErrorDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../ejercicio_obtenerDiplomaIntegracion/src/test/java/com/meli/obtenerdiploma/controller/integration/StudentControllerIntegrationTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma/unit/StudentDAOTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma/unit/StudentRepositoryTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/users.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,12 +36,12 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
     <option name="RESET_MODE" value="KEEP" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Celescis"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Celescis&quot;
   }
-}]]></component>
+}</component>
   <component name="GitToolBoxStore">
     <option name="recentBranches">
       <RecentBranches>
@@ -61,15 +67,15 @@
       </RecentBranches>
     </option>
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/JoyTabellaAlkm/wave27-practicas.git",
-    "accountId": "546cfb96-4cc8-48e4-b52a-b1fa0a5f1e2a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/JoyTabellaAlkm/wave27-practicas.git&quot;,
+    &quot;accountId&quot;: &quot;546cfb96-4cc8-48e4-b52a-b1fa0a5f1e2a&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="1rr4iiqbWc4IwRLyT4RkGVb5rhC" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -80,9 +86,21 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "JUnit.All in ObtenerDiploma.executor": "Coverage",
+    "JUnit.StudentDAOTest.deleteShouldBeOk.executor": "Run",
+    "JUnit.StudentDAOTest.executor": "Run",
+    "JUnit.StudentDAOTest.findByIdShouldBeOk.executor": "Run",
+    "JUnit.StudentDAOTest.saveShouldBeOk.executor": "Run",
+    "JUnit.StudentDAOTest.testDeleteShouldBeOk.executor": "Run",
+    "JUnit.StudentDAOTest.testSaveShouldBeOk.executor": "Run",
+    "JUnit.StudentDAOTest.updateShouldBeOk.executor": "Run",
+    "JUnit.StudentRepositoryTest.executor": "Run",
+    "JUnit.StudentRepositoryTest.getAllShouldReturnOk.executor": "Run",
+    "JUnit.StudentRepositoryTest.testGetAllFileNotFoundException.executor": "Run",
+    "JUnit.StudentRepositoryTest.testGetAllOk.executor": "Run",
     "git-widget-placeholder": "cisternas__celeste",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ccisternas/Documents/GitHub/wave27-practicas/5. testing/ejercicio_obtenerDiplomaUnits",
+    "last_opened_file_path": "/Users/ccisternas/Documents/GitHub/wave27-practicas/5. testing/ejercicio_obtenerDiplomaUnits/src/test/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -96,103 +114,91 @@
       <recent name="com.meli.obtenerdiploma.exception" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/test/resources" />
+      <recent name="$PROJECT_DIR$/src/test" />
       <recent name="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma" />
       <recent name="$PROJECT_DIR$/src/main/java/com/meli/obtenerdiploma" />
       <recent name="$PROJECT_DIR$/src/main/java/com/meli/obtenerDiploma" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ObtenerDiplomaApplication">
-    <configuration name="ObtenerDiplomaApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.ObtenerDiplomaApplication" />
+  <component name="RunManager" selected="JUnit.StudentDAOTest">
+    <configuration name="All in ObtenerDiploma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObtenerDiploma" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.meli.obtenerdiploma.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObetenerDiplomaApplicationTests.test" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObtenerDiploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.meli.obtenerdiploma.*" />
+          <option name="PATTERN" value="com.meli.obtenerdiploma.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma" />
-      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.ObetenerDiplomaApplicationTests" />
-      <option name="METHOD_NAME" value="test" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ObetenerDiplomaApplicationTests.testObtenerDiploma" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ObtenerDiploma" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.meli.obtenerdiploma.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma" />
-      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.ObetenerDiplomaApplicationTests" />
-      <option name="METHOD_NAME" value="testObtenerDiploma" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ObtenerDiplomaControllerIntegrationTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ObtenerDiploma" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.meli.obtenerdiploma.controller.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.controller.ObtenerDiplomaControllerIntegrationTest" />
+      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.unit.StudentDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObtenerDiplomaControllerIntegrationTest.testObtenerDiplomaSinMaterias" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StudentDAOTest.deleteShouldBeOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ObtenerDiploma" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.meli.obtenerdiploma.controller.*" />
+          <option name="PATTERN" value="com.meli.obtenerdiploma.unit.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.controller" />
-      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.controller.ObtenerDiplomaControllerIntegrationTest" />
-      <option name="METHOD_NAME" value="testObtenerDiplomaSinMaterias" />
+      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.unit.StudentDAOTest" />
+      <option name="METHOD_NAME" value="deleteShouldBeOk" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ObtenerDiplomaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
-      <option name="FRAME_DEACTIVATION_UPDATE_POLICY" value="UpdateClassesAndResources" />
-      <module name="obtenerdiploma" />
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.meli.obtenerdiploma.ObtenerDiplomaApplication" />
+    <configuration name="StudentRepositoryTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObtenerDiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meli.obtenerdiploma.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.unit.StudentRepositoryTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentRepositoryTest.getAllShouldReturnOk" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ObtenerDiploma" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.meli.obtenerdiploma.unit.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.meli.obtenerdiploma.unit" />
+      <option name="MAIN_CLASS_NAME" value="com.meli.obtenerdiploma.unit.StudentRepositoryTest" />
+      <option name="METHOD_NAME" value="getAllShouldReturnOk" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ObtenerDiplomaApplication" />
-        <item itemvalue="JUnit.ObtenerDiplomaControllerIntegrationTest.testObtenerDiplomaSinMaterias" />
-        <item itemvalue="JUnit.ObtenerDiplomaControllerIntegrationTest" />
-        <item itemvalue="JUnit.ObetenerDiplomaApplicationTests.testObtenerDiploma" />
-        <item itemvalue="JUnit.ObetenerDiplomaApplicationTests.test" />
+        <item itemvalue="JUnit.StudentDAOTest" />
+        <item itemvalue="JUnit.StudentRepositoryTest" />
+        <item itemvalue="JUnit.StudentRepositoryTest.getAllShouldReturnOk" />
+        <item itemvalue="JUnit.All in ObtenerDiploma" />
+        <item itemvalue="JUnit.StudentDAOTest.deleteShouldBeOk" />
       </list>
     </recent_temporary>
   </component>
@@ -212,7 +218,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1619721005383</updated>
-      <workItem from="1728076389498" duration="603000" />
+      <workItem from="1728094401846" duration="4703000" />
+      <workItem from="1728247048517" duration="2326000" />
+      <workItem from="1728254365384" duration="2157000" />
+      <workItem from="1728256527089" duration="6548000" />
+      <workItem from="1728271916538" duration="586000" />
+      <workItem from="1728272505698" duration="1407000" />
     </task>
     <task id="LOCAL-00001" summary="Spring 2 - Practica TT - Obetener Diploma">
       <created>1619721212242</created>
@@ -340,5 +351,6 @@
     <SUITE FILE_PATH="coverage/PracticaTT$ObtenerDiplomaServiceTest_testAverageWithEmptySubjectList.ic" NAME="ObtenerDiplomaServiceTest.testAverageWithEmptySubjectList Coverage Results" MODIFIED="1620739844261" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
       <FILTER>com.meli.obtenerdiploma.service.*</FILTER>
     </SUITE>
+    <SUITE FILE_PATH="coverage/ObtenerDiploma$All_in_ObtenerDiploma.ic" NAME="All in ObtenerDiploma Coverage Results" MODIFIED="1728271923975" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="true" />
   </component>
 </project>

@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "studentName": "CelesteEditado",
+    "message": "test: updateShouldBeOk",
+    "averageScore": 9.0,
+    "subjects": [
+      {
+        "name": "Matemática",
+        "score": 10.0
+      },
+      {
+        "name": "Lengua",
+        "score": 8.0
+      }
+    ]
+  }
+]
