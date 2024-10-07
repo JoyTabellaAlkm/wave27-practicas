@@ -1,0 +1,62 @@
+{
+	"info": {
+		"_postman_id": "4abb7974-6c16-4249-a76f-135175760699",
+		"name": "ObtenerDiploma",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "{{$server}}/analyzeScores",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"student_name\": \"Juan\",\n    \"message\": \"Esto es un mensaje\",\n    \"subjects\": [\n        {\n            \"name\": \"Matemática\",\n            \"score\": 10\n        },\n        {\n            \"name\": \"Física\",\n            \"score\": 7\n        },\n        {\n            \"name\": \"Química\",\n            \"score\": 6\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{$server}}/analyzeScores",
+					"host": [
+						"{{$server}}"
+					],
+					"path": [
+						"analyzeScores"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "$server",
+			"value": "http://localhost:8080"
+		}
+	]
+}
