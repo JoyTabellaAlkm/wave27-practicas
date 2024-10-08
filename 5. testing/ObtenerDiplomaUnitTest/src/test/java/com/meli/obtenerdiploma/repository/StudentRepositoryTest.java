@@ -2,6 +2,7 @@ package com.meli.obtenerdiploma.repository;
 
 import com.meli.obtenerdiploma.model.StudentDTO;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
 import java.io.FileNotFoundException;
@@ -19,6 +20,7 @@ class StudentRepositoryTest {
         studentRepository = new StudentRepository();
     }
 
+    @DisplayName("Test 01 : Find all students ok")
     @Test
     void findAllTest() throws Exception {
         // Act
@@ -28,6 +30,7 @@ class StudentRepositoryTest {
         assertFalse(actualStudents.isEmpty());
 
     }
+    @DisplayName("Test 02 : Find all students File not found")
     @Test
     void findAllFileNotFoundTest() {
         studentRepository.setFilePath("./invalid/path/to/users.json");

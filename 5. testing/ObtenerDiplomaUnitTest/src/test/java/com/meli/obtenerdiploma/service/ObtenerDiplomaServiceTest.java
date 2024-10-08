@@ -4,6 +4,8 @@ import com.meli.obtenerdiploma.Datos;
 import com.meli.obtenerdiploma.exception.StudentNotFoundException;
 import com.meli.obtenerdiploma.model.StudentDTO;
 import com.meli.obtenerdiploma.repository.StudentDAO;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
@@ -23,30 +25,40 @@ class ObtenerDiplomaServiceTest {
     @InjectMocks
     ObtenerDiplomaService obtenerDiplomaService;
 
-    @Test
-    void analyzeScoresNullIdTest() {
-        when(studentDAO.findById(anyLong())).thenThrow(StudentNotFoundException.class);
+    @Nested
+    class AnalyzeScore{
+        @DisplayName("Test 01 : Analyze Score ok")
+        @Test
+        void analyzeScoresOkTest() {
 
-        assertThrows(StudentNotFoundException.class, () -> obtenerDiplomaService.analyzeScores(anyLong()));
+            when(studentDAO.findById(Datos.STUDENT.getId())).thenReturn(Datos.STUDENT);
+            StudentDTO studentFound = obtenerDiplomaService.analyzeScores(Datos.STUDENT.getId());
 
+            assertEquals(8.0, studentFound.getAverageScore());
+            assertEquals(studentFound.getMessage(),"El alumno Leandro ha obtenido un promedio de 8. Puedes mejorar.");
+        }
+
+        @DisplayName("Test 02 : Analyze Score Null id")
+        @Test
+        void analyzeScoresNullIdTest() {
+            when(studentDAO.findById(anyLong())).thenThrow(StudentNotFoundException.class);
+
+            assertThrows(StudentNotFoundException.class, () -> obtenerDiplomaService.analyzeScores(anyLong()));
+
+        }
+
+        @DisplayName("Test 03 : Analyze Score Perfect score")
+        @Test
+        void analyzeScoresPerfectScoreTest() {
+
+            when(studentDAO.findById(Datos.STUDENT_PERFECT.getId())).thenReturn(Datos.STUDENT_PERFECT);
+            StudentDTO studentFound = obtenerDiplomaService.analyzeScores(Datos.STUDENT_PERFECT.getId());
+
+            assertEquals(10.0, studentFound.getAverageScore());
+            assertEquals(studentFound.getMessage(),"El alumno Michael ha obtenido un promedio de 10. Felicitaciones!");
+        }
     }
 
-    @Test
-    void analyzeScoresOkTest() {
 
-        when(studentDAO.findById(Datos.STUDENT.getId())).thenReturn(Datos.STUDENT);
-        StudentDTO studentFound = obtenerDiplomaService.analyzeScores(Datos.STUDENT.getId());
 
-        assertEquals(8.0, studentFound.getAverageScore());
-        assertEquals(studentFound.getMessage(),"El alumno Leandro ha obtenido un promedio de 8. Puedes mejorar.");
-    }
-    @Test
-    void analyzeScoresPerfectScoreTest() {
-
-        when(studentDAO.findById(Datos.STUDENT_PERFECT.getId())).thenReturn(Datos.STUDENT_PERFECT);
-        StudentDTO studentFound = obtenerDiplomaService.analyzeScores(Datos.STUDENT_PERFECT.getId());
-
-        assertEquals(10.0, studentFound.getAverageScore());
-        assertEquals(studentFound.getMessage(),"El alumno Michael ha obtenido un promedio de 10. Felicitaciones!");
-    }
 }
