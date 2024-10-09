@@ -3,6 +3,7 @@ package modelo;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 import java.util.stream.Collectors;
 
 public class Carrera {
@@ -11,20 +12,24 @@ public class Carrera {
     private String nombre;
     private int cantidadVehiculosPermitidos;
     private List<Vehiculo> listaVehiculos;
+    private List<Socorrista> listaSocorrista;
 
-    public Carrera(double distancia, long premioEnDolares, String nombre, int cantidadVehiculosPermitidos, List<Vehiculo> listaVehiculos) {
+    public Carrera(double distancia, long premioEnDolares, String nombre, int cantidadVehiculosPermitidos, List<Socorrista> listaSocorrista) {
         this.distancia = distancia;
         this.premioEnDolares = premioEnDolares;
         this.nombre = nombre;
         this.cantidadVehiculosPermitidos = cantidadVehiculosPermitidos;
-        this.listaVehiculos = listaVehiculos;
+        this.listaVehiculos = new ArrayList<>();
+        this.listaSocorrista = listaSocorrista;
     }
 
     public void darDeAltaAuto(double velocidad, int aceleracion, int anguloDeGiro, String patente){
+        if (listaVehiculos.size() >= cantidadVehiculosPermitidos) throw new RuntimeException("Cantidad maxima de vehiculos permitida para esta carrera");
         listaVehiculos.add(new Auto(velocidad, aceleracion, anguloDeGiro, patente));
     }
 
     public void darDeAltaMoto(double velocidad, int aceleracion, int anguloDeGiro, String patente){
+        if (listaVehiculos.size() >= cantidadVehiculosPermitidos) throw new RuntimeException("Cantidad maxima de vehiculos permitida para esta carrera");
         listaVehiculos.add(new Moto(velocidad, aceleracion, anguloDeGiro, patente));
     }
 
@@ -36,19 +41,67 @@ public class Carrera {
         this.listaVehiculos = listaVehiculos.stream().filter(l -> !l.getPatente().equals(unaPatente)).collect(Collectors.toList());
     }
 
-    public Vehiculo obtenerAutoGanador(){
+    public Vehiculo obtenerGanador(){
         List<Auto> listaAutos = listaVehiculos.stream()
                 .filter(a -> a instanceof Auto)
                 .map(a -> (Auto) a)
                 .toList();
-        Map<Auto, Double> promedioVelocidad = listaAutos.stream()
+        List<Moto> listaMotos = listaVehiculos.stream()
+                .filter(a -> a instanceof Moto)
+                .map(a -> (Moto) a)
+                .toList();
+
+        Map<? extends Auto, Double> promedioVelocidadAutos = listaAutos.stream()
                 .collect(Collectors.toMap(
                         (a) -> a,
-                        (b) -> (b.getVelocidad() * (1/2 * b.getAceleracion())) / (b.getAnguloDeGiro() * ((b.getPeso() - b.getRuedas()) * 100))
+                        (b) -> (b.getVelocidad() * (b.getAceleracion()/2)) / (b.getAnguloDeGiro() * (b.getPeso() - b.getRuedas() * 100))
                 ));
-        Auto ganador = promedioVelocidad.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        Map<? extends Moto, Double> promedioVelocidadMotos = listaMotos.stream()
+                .collect(Collectors.toMap(
+                        (a) -> a,
+                        (b) -> (b.getVelocidad() * (b.getAceleracion()/2)) / (b.getAnguloDeGiro() * (b.getPeso() - b.getRuedas() * 100))
+                ));
 
-        return ganador;
+        Auto ganadorauxAuto = promedioVelocidadAutos.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+        Moto ganadorauxMoto = promedioVelocidadMotos.entrySet().stream().max(Map.Entry.comparingByValue()).get().getKey();
+
+        Double velocidadAuto = Optional.ofNullable(promedioVelocidadAutos.get(ganadorauxAuto)).orElse(0.0);
+        Double velocidadMoto = Optional.ofNullable(promedioVelocidadMotos.get(ganadorauxMoto)).orElse(0.0);
+
+        return velocidadAuto > velocidadMoto ? ganadorauxAuto : ganadorauxMoto;
+    }
+
+    // Socorristas
+    public void socorrerAuto(String patente){
+        SocorristaAuto socorristaAuto = listaSocorrista.stream()
+                .filter(l -> l instanceof SocorristaAuto)
+                .findAny()
+                .map(l -> (SocorristaAuto) l)
+                .orElseThrow(() -> new RuntimeException("No hay vehiculo socorrista para autos"));
+
+        Auto auto = listaVehiculos.stream()
+                .filter(l -> l instanceof Auto && l.getPatente().equals(patente))
+                .findFirst()
+                .map(l -> (Auto) l)
+                .orElseThrow(() -> new RuntimeException("No hay autos con esa patente"));
+
+        socorristaAuto.socorrer(auto);
+    }
+
+    public void socorrerMoto(String patente){
+        SocorristaMoto socorristaMoto = listaSocorrista.stream()
+                .filter(l -> l instanceof SocorristaMoto)
+                .findAny()
+                .map(l -> (SocorristaMoto) l)
+                .orElseThrow(() -> new RuntimeException("No hay vehiculo socorrista para motos"));
+
+        Moto moto = listaVehiculos.stream()
+                .filter(l -> l instanceof Moto && l.getPatente().equals(patente))
+                .findFirst()
+                .map(l -> (Moto) l)
+                .orElseThrow(() -> new RuntimeException("No hay motos con esa patente"));
+
+        socorristaMoto.socorrer(moto);
     }
 
 
