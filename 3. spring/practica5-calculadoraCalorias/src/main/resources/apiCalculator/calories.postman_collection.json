@@ -1,0 +1,112 @@
+{
+	"info": {
+		"_postman_id": "0ed73e55-adf7-4a64-9d7d-d7408a8d2d24",
+		"name": "calories",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409177"
+	},
+	"item": [
+		{
+			"name": "getAllCalories",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/get/Ensalada/800",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"get",
+						"Ensalada",
+						"800"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIngredientsList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/get/Ensalada",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"get",
+						"Ensalada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getIngredientWithCalories",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/api/get/max/Ensalada",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"get",
+						"max",
+						"Ensalada"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getDishesByBody",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"name\": \"Tortilla de Patatas\",\n        \"weight\": 300,\n        \"ingredients\": [\n            {\n                \"name\": \"Papas cocidas\",\n                \"calories\": 86\n            },\n            {\n                \"name\": \"Huevos\",\n                \"calories\": 162\n            },\n            {\n                \"name\": \"Cebolla\",\n                \"calories\": 47\n            }\n        ]\n    },\n    {\n        \"name\": \"Salteado de Verduras\",\n        \"weight\": 250,\n        \"ingredients\": [\n            {\n                \"name\": \"Brócoli\",\n                \"calories\": 31\n            },\n            {\n                \"name\": \"Berenjena\",\n                \"calories\": 29\n            },\n            {\n                \"name\": \"Pimiento\",\n                \"calories\": 22\n            },\n            {\n                \"name\": \"Zanahoria\",\n                \"calories\": 42\n            }\n        ]\n    }\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/api/get/dishes",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"api",
+						"get",
+						"dishes"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

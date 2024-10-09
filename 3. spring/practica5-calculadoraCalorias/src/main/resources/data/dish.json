@@ -1,0 +1,97 @@
+[
+    {
+      "name": "Ensalada",
+      "weight": 200,
+      "ingredients": [
+        { "name": "Espinaca", "calories": 32 },
+        { "name": "Nueces", "calories": 660 },
+        { "name": "Cebolla", "calories": 47 },
+        { "name": "Pimiento", "calories": 22 }
+      ]
+    },
+    {
+      "name": "Sopa de Acelgas",
+      "weight": 250,
+      "ingredients": [
+        { "name": "Acelgas", "calories": 33 },
+        { "name": "Cebolla", "calories": 47 },
+        { "name": "Ajos", "calories": 169 },
+        { "name": "Calabacín", "calories": 31 }
+      ]
+    },
+    {
+      "name": "Tortilla de Patatas",
+      "weight": 300,
+      "ingredients": [
+        { "name": "Papas cocidas", "calories": 86 },
+        { "name": "Huevos", "calories": 162 },
+        { "name": "Cebolla", "calories": 47 }
+      ]
+    },
+    {
+      "name": "Salteado de Verduras",
+      "weight": 250,
+      "ingredients": [
+        { "name": "Brócoli", "calories": 31 },
+        { "name": "Berenjena", "calories": 29 },
+        { "name": "Pimiento", "calories": 22 },
+        { "name": "Zanahoria", "calories": 42 }
+      ]
+    },
+    {
+      "name": "Pollo al Horno con Limón",
+      "weight": 350,
+      "ingredients": [
+        { "name": "Pollo", "calories": 134 },
+        { "name": "Limón", "calories": 39 },
+        { "name": "Ajos", "calories": 169 }
+      ]
+    },
+    {
+      "name": "Pasta al Pesto",
+      "weight": 400,
+      "ingredients": [
+        { "name": "Pasta de sémola", "calories": 361 },
+        { "name": "Albahaca", "calories": 23 },
+        { "name": "Ajos", "calories": 169 }
+      ]
+    },
+    {
+      "name": "Guiso de Lentejas",
+      "weight": 300,
+      "ingredients": [
+        { "name": "Lentejas", "calories": 336 },
+        { "name": "Zanahoria", "calories": 42 },
+        { "name": "Cebolla", "calories": 47 },
+        { "name": "Ajos", "calories": 169 }
+      ]
+    },
+    {
+      "name": "Tarta de Manzana",
+      "weight": 250,
+      "ingredients": [
+        { "name": "Manzana", "calories": 52 },
+        { "name": "Harina de trigo refinada", "calories": 353 },
+        { "name": "Azúcar", "calories": 380 }
+      ]
+    },
+    {
+      "name": "Batido de Frutas",
+      "weight": 300,
+      "ingredients": [
+        { "name": "Fresas", "calories": 36 },
+        { "name": "Banana", "calories": 90 },
+        { "name": "Leche entera", "calories": 68 }
+      ]
+    },
+    {
+      "name": "Taco de Pescado",
+      "weight": 200,
+      "ingredients": [
+        { "name": "Pescado blanco", "calories": 118 },
+        { "name": "Tortilla de maíz", "calories": 218 },
+        { "name": "Cebolla", "calories": 47 },
+        { "name": "Cilantro", "calories": 23 }
+      ]
+    }
+  ]
