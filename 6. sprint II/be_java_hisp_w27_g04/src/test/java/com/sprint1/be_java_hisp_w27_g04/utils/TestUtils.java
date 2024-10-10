@@ -184,16 +184,16 @@ public class TestUtils {
     }
 
     public static PostListDTO getPostListDTOOfLastTwoWeeksOfUserId2(){
-        ProductDTO productDTO1 = new ProductDTO(1, "Silla Gamer", "Gamer", "Razer",
+        ProductDTO productDTO1 = new ProductDTO(2, "Silla Gamer", "Gamer", "Razer",
                 "Rojo", "");
 
-        PostRequestDTO postRequestDTO1 = new PostRequestDTO(2, LocalDate.now().minusDays(2),
+        PostRequestDTO postRequestDTO1 = new PostRequestDTO(2, LocalDate.now(),
                 productDTO1, 10, 10000);
 
         ProductDTO productDTO2 = new ProductDTO(2, "Silla Gamer", "Gamer", "Razer",
                 "Rojo", "");
 
-        PostRequestDTO postRequestDTO2 = new PostRequestDTO(2, LocalDate.now().minusDays(5),
+        PostRequestDTO postRequestDTO2 = new PostRequestDTO(2, LocalDate.now(),
                 productDTO2, 10, 10000);
 
         PostListDTO postListDTO = new PostListDTO(2, List.of(postRequestDTO1, postRequestDTO2));
