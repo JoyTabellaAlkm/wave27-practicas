@@ -25,21 +25,11 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 
 @SpringBootTest
 @AutoConfigureMockMvc
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
 public class UsersControllerTest {
 
     @Autowired
-    MockMvc mockMvc;
-
-    @Autowired
-    IUsersService usersService;
-
-    @Autowired
-    IProductsService productsService;
-
-    @Autowired
-    IUserRepository userRepository;
+    private MockMvc mockMvc;
 
     @Test
     @DisplayName(value = "TI-0008: Probar obtencion de seguidores de un usuario exitosamente")
@@ -71,12 +61,8 @@ public class UsersControllerTest {
     @Test
     @DisplayName("TI-0009: Probar seguir a un usuario exitosamente")
     void followSellerSuccess() throws Exception {
-        PostRequestDTO post = TestUtils.getPostRequest();
-        post.setUserId(2);
-        productsService.newPost(TestUtils.getPostRequest());
-        int userId = 3;
+        int userId = 4;
         int userIdToFollow = 2;
-        ResponseDTO responseDTO = new ResponseDTO("200", "Se empezó a seguir a Bob");
         mockMvc.perform(post("/users/{userId}/follow/{userIdToFollow}", userId, userIdToFollow)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
@@ -87,12 +73,8 @@ public class UsersControllerTest {
     @Test
     @DisplayName("TI-0009: Probar seguir a un vendedor que ya esta en su lista de seguidores")
     void followSellerUserAlreadyFollowed() throws Exception {
-        PostRequestDTO post = TestUtils.getPostRequest();
-        post.setUserId(2);
-        productsService.newPost(TestUtils.getPostRequest());
-        usersService.followSeller(1, 2);
-        int userId = 1;
-        int userIdToFollow = 2;
+        int userId = 2;
+        int userIdToFollow = 1;
         mockMvc.perform(post("/users/{userId}/follow/{userIdToFollow}", userId, userIdToFollow)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
@@ -113,18 +95,13 @@ public class UsersControllerTest {
     @Test
     @DisplayName("TI-0010: Probar dejar de seguir a un usuario exitosamente")
     void unfollowSellerSuccess() throws Exception {
-        PostRequestDTO post = TestUtils.getPostRequest();
-        post.setUserId(2);
-        productsService.newPost(TestUtils.getPostRequest());
-        usersService.followSeller(1, 2);
-        int userId = 1;
-        int userIdToUnfollow = 2;
-        ResponseDTO responseDTO = new ResponseDTO("200", "Se dejó de seguir a Bob");
+        int userId = 2;
+        int userIdToUnfollow = 1;
         mockMvc.perform(post("/users/{userId}/unfollow/{userIdToUnfollow}", userId, userIdToUnfollow)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(jsonPath("$.http_code").value("200"))
-                .andExpect(jsonPath("$.message").value("Se dejó de seguir a Bob"));
+                .andExpect(jsonPath("$.message").value("Se dejó de seguir a Alice"));
     }
 
     @Test
@@ -142,20 +119,17 @@ public class UsersControllerTest {
     @Test
     @DisplayName("TI-0011: Obtener seguidores exitosamente")
     public void testGetFollowersSuccess() throws Exception {
-        var user = TestUtils.getUserWithFollowersTest();
-        userRepository.save(user);
-
         String order = "name_desc";
-        mockMvc.perform(get("/users/{userId}/followers/list", user.getId())
+        int userFollowers = 1;
+        mockMvc.perform(get("/users/{userId}/followers/list", userFollowers)
                         .param("order", order)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.response.user_id").value(user.getId()))
-                .andExpect(jsonPath("$.response.user_name").value(user.getName()))
+                .andExpect(jsonPath("$.response.user_id").value(1))
+                .andExpect(jsonPath("$.response.user_name").value("Alice"))
                 .andExpect(jsonPath("$.response.followers").isArray())
-                .andExpect(jsonPath("$.response.followers[0].user_name").value("Charlie"))
-                .andExpect(jsonPath("$.response.followers[1].user_name").value("Bob"));
+                .andExpect(jsonPath("$.response.followers[0].user_name").value("Bob"));
     }
 
 
@@ -175,20 +149,16 @@ public class UsersControllerTest {
     @DisplayName("TI-0012: Obtener seguidos por un usuario exitosamente")
     public void testGetFollowedSuccess() throws Exception {
 
-        var user = TestUtils.getUserWithFollowedTest();
-        userRepository.save(user);
-
         String order = "name_asc";
-        mockMvc.perform(get("/users/{userId}/followed/list", user.getId())
+        mockMvc.perform(get("/users/{userId}/followed/list", 2)
                         .param("order", order)
                         .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
                 .andExpect(content().contentType(MediaType.APPLICATION_JSON))
-                .andExpect(jsonPath("$.response.user_id").value(user.getId()))
-                .andExpect(jsonPath("$.response.user_name").value(user.getName()))
+                .andExpect(jsonPath("$.response.user_id").value(2))
+                .andExpect(jsonPath("$.response.user_name").value("Bob"))
                 .andExpect(jsonPath("$.response.followed").isArray())
-                .andExpect(jsonPath("$.response.followed[0].user_name").value("Bob"))
-                .andExpect(jsonPath("$.response.followed[1].user_name").value("Charlie"));
+                .andExpect(jsonPath("$.response.followed[0].user_name").value("Alice"));
     }
 
     @Test

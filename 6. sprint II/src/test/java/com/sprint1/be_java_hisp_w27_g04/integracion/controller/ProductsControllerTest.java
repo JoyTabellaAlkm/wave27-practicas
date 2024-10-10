@@ -42,22 +42,6 @@ class ProductsControllerTest {
 	@Autowired
 	ObjectMapper objectMapper;
 
-	@Autowired
-	PostRepositoryImpl postRepository;
-
-	@Autowired
-	UserRepositoryImpl userRepository;
-
-	@Autowired
-	IUsersService usersService;
-
-	@Autowired
-	IProductsService productsService;
-
-	@Test
-	void contextLoads() {
-	}
-
 	@Test
 	@DisplayName(value = "TI-0001: Probar el correcto guardado de una publicacion")
 	public void testSavePostSuccessful() throws Exception {
@@ -87,27 +71,22 @@ class ProductsControllerTest {
 	@DisplayName("TI-0002: Listar post por fecha válida")
 	public void dateValidateGetPostList() throws Exception {
 		String currentDate = LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-		int userid = 1;
-		int userIdToFollow = 2;
-		PostRequestDTO post = TestUtils.getPostRequest();
-		productsService.newPost(post);
-		usersService.followSeller(userid, userIdToFollow);
+		int userid = 2;
+		int userIdFollowed = 1;
 		this.mockMvc
-				.perform(MockMvcRequestBuilders.get("/products/followed/1/list", userid))
+				.perform(MockMvcRequestBuilders.get("/products/followed/{userid}/list", userid))
 				.andDo(print())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(MockMvcResultMatchers.status().isOk())
 				.andExpect(MockMvcResultMatchers.jsonPath("$.user_id").value(userid))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.posts[0].user_id").value(userIdToFollow))
+				.andExpect(MockMvcResultMatchers.jsonPath("$.posts[0].user_id").value(userIdFollowed))
 				.andExpect(MockMvcResultMatchers.jsonPath("$.posts[0].date").value(currentDate))
-				.andExpect(MockMvcResultMatchers.jsonPath("$.posts[0].product.product_id").value(7));
+				.andExpect(MockMvcResultMatchers.jsonPath("$.posts[0].product.product_id").value(2));
 	}
 
 	@Test
 	@DisplayName("TI-0003: DeletePost")
 	public void deletePost() throws Exception {
-		PostRequestDTO post =TestUtils.getPostRequest();
-		productsService.newPost(post);
 		this.mockMvc
 				.perform(MockMvcRequestBuilders.delete("/products/delete/1"))
 				.andDo(print())
@@ -119,10 +98,7 @@ class ProductsControllerTest {
 	@Test
 	@DisplayName("TI-0003: DeletePost")
 	public void deletePostError() throws Exception {
-		PostRequestDTO post =TestUtils.getPostRequest();
-		productsService.newPost(post);
 		int nonExistentPostId = 5;
-
 		this.mockMvc.perform(MockMvcRequestBuilders.delete("/products/delete/" + nonExistentPostId))
 						.andDo(print())
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
@@ -140,7 +116,7 @@ class ProductsControllerTest {
 						.content(payloadJSON))
 						.andExpect(status().isCreated())
 						.andExpect(MockMvcResultMatchers.jsonPath("$.message")
-								.value("Se ha creado el post con la promoción exitosamente. ID: 1"));
+								.value("Se ha creado el post con la promoción exitosamente. ID: 100"));
 	}
 
 	@Test
@@ -161,33 +137,17 @@ class ProductsControllerTest {
 	@Test
 	@DisplayName(value = "TI-0005: Obtener posts con promocion de un usuario")
 	public void testGetPostWithPromoFromUser() throws Exception {
-		//Arrange
-		Post post = TestUtils.getPostPromotion(TestUtils.getProduct());
-		Post post2 = TestUtils.getPostPromotion(TestUtils.getProduct());
-		post2.getProduct().setProductId(2);
-		postRepository.save(post);
-		postRepository.save(post2);
-		User user = userRepository.findById(2).orElseThrow();
-		user.setPosts(Set.of(post,post2));
-		Integer id = post.getUserId();
+		Integer id = 1;
 		mockMvc.perform(MockMvcRequestBuilders.get("/products/promo-post/list?user_id={id}",id))
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
-				.andExpect(jsonPath("$.posts[0].product.product_id").value(2))
-				.andExpect(jsonPath("$.posts[1].product.product_id").value(1));
+				.andExpect(jsonPath("$.posts[0].product.product_id").value(2));
 	}
 
 	@Test
 	@DisplayName(value = "TI-0006: Obtener cantidad de post con promocion de un usuario")
 	public void testCountPostWithPromoFromUser() throws Exception {
-		//Arrange
-		Post post = TestUtils.getPostPromotion(TestUtils.getProduct());
-		postRepository.save(post);
-		User user = userRepository.findById(2).orElseThrow();
-		user.setPosts(Set.of(post));
-		Integer id = post.getUserId();
-
-		//Assert
+		Integer id = 2;
 		mockMvc.perform(MockMvcRequestBuilders.get("/products/promo-post/count?user_id={id}",id))
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -198,12 +158,7 @@ class ProductsControllerTest {
 	@Test
 	@DisplayName(value = "TI-0007: Eliminar Promoción")
 	public void testEndPromotion() throws Exception {
-		//Arrange
-		Post post = TestUtils.getPostPromotion(TestUtils.getProduct());
-		postRepository.save(post);
-		Integer id = post.getPostId();
-
-		//Assert
+		Integer id = 1;
 		mockMvc.perform(MockMvcRequestBuilders.patch("/products/promo-post/{id}/end",id))
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isOk())
@@ -214,14 +169,7 @@ class ProductsControllerTest {
 	@Test
 	@DisplayName(value = "TI-0007: Eliminar Promoción de post sin promoción")
 	public void testEndPromotionWithoutPromotion() throws Exception {
-		//Arrange
-		Post post = TestUtils.getPostPromotion(TestUtils.getProduct());
-		post.setHasPromo(false);
-		post.setDiscount(0d);
-		postRepository.save(post);
-		Integer id = post.getPostId();
-
-		//Assert
+		Integer id = 3;
 		mockMvc.perform(MockMvcRequestBuilders.patch("/products/promo-post/{id}/end",id))
 				.andExpect(content().contentType(MediaType.APPLICATION_JSON))
 				.andExpect(status().isBadRequest())

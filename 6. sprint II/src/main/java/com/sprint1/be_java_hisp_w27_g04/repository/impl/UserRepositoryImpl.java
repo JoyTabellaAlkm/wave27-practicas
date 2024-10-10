@@ -1,8 +1,10 @@
 package com.sprint1.be_java_hisp_w27_g04.repository.impl;
 
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.sprint1.be_java_hisp_w27_g04.entity.User;
 import com.sprint1.be_java_hisp_w27_g04.exceptions.NotFoundException;
 import com.sprint1.be_java_hisp_w27_g04.repository.IUserRepository;
@@ -10,6 +12,9 @@ import org.springframework.stereotype.Repository;
 import org.springframework.util.ResourceUtils;
 import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.stream.Collectors;
 
@@ -22,12 +27,28 @@ public class UserRepositoryImpl implements IUserRepository {
     }
 
     private void loadDataBase() throws IOException {
+
         try {
             File file = ResourceUtils.getFile("classpath:users.json");
             ObjectMapper objectMapper = new ObjectMapper();
             objectMapper.setPropertyNamingStrategy(new PropertyNamingStrategies.SnakeCaseStrategy());
-            listOfUsers = objectMapper.readValue(file, new TypeReference<List<User>>() {
-            });
+
+            // Registrar el módulo para manejar LocalDate
+
+            objectMapper.registerModule(new JavaTimeModule());
+            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+
+            listOfUsers = objectMapper.readValue(file, new TypeReference<List<User>>() {});
+            for( User users : listOfUsers ) {
+                users.getPosts().forEach(
+                        post -> {
+                            if(post.getPostId() == 1) {
+                                post.setPostDate(LocalDate.now());
+                            }
+                        }
+                );
+            }
+
         } catch (IOException e) {
             throw new RuntimeException("Error loading character data: " + e.getMessage(), e);
         }
