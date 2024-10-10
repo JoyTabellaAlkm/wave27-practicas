@@ -251,22 +251,19 @@ public class UserServiceImplTest {
         // Arrange
         Integer id = 2;
         String order = "name_asc";
+        List<UserFollowedResponseDTO> userFollowedResponseDTOS1 = List.of(new UserFollowedResponseDTO(2,"Fernando", List.of(new UserNameResponseDTO(3, "Emilia"), new UserNameResponseDTO(4, "Stephanie"))));
+
+        // Act
 
         when(repository.existId(id)).thenReturn(true);
         when(repository.getUserById(id)).thenReturn(users.get(1));
         when(repository.getUsers()).thenReturn(users);
 
-        // Act
         List<UserFollowedResponseDTO> userFollowedResponseDTOS = userService.findByFollowed(id, order);
-
-        List<String> userNamesAsc3 = userFollowedResponseDTOS.getFirst().getFollowed().stream()
-                .map(UserNameResponseDTO::getUserName)
-                .collect(Collectors.toList());
-
-        List<String> sortedNamesAsc3 = userNamesAsc3.stream().sorted().collect(Collectors.toList());
-
+        System.out.println("Expected: " + userFollowedResponseDTOS);
+        System.out.println("Actual: " + userFollowedResponseDTOS1);
         // Assert
-        assertEquals(sortedNamesAsc3, userNamesAsc3);
+        assertEquals(userFollowedResponseDTOS, userFollowedResponseDTOS1);
     }
 
     @Test
@@ -276,22 +273,19 @@ public class UserServiceImplTest {
         Integer id = 2;
         String order = "name_asc";
 
+        UserFollowerListResponseDTO userFollowerListResponseDTO1 = new UserFollowerListResponseDTO(2, "Fernando", List.of(new UserNameResponseDTO(1, "Delfina"), new UserNameResponseDTO(3, "Emilia")));
+
+        // Act
         when(repository.existId(id)).thenReturn(true);
         when(repository.getUserById(id)).thenReturn(users.get(1));
         when(repository.getUsers()).thenReturn(users);
 
-        // Act
         UserFollowerListResponseDTO userFollowerListResponseDTO = userService.getFollowerList(id, order);
-
-        List<String> userNamesAsc4 = userFollowerListResponseDTO.getFollowers()
-                .stream()
-                .map(UserNameResponseDTO::getUserName)
-                .collect(Collectors.toList());
-
-        List<String> sortedNamesAsc4 = userNamesAsc4.stream().sorted().collect(Collectors.toList());
+        System.out.println("Expected: " + userFollowerListResponseDTO);
+        System.out.println("Actual: " + userFollowerListResponseDTO1);
 
         // Assert
-        assertEquals(sortedNamesAsc4, userNamesAsc4);
+        assertEquals(userFollowerListResponseDTO, userFollowerListResponseDTO1);
     }
 
 
@@ -337,23 +331,20 @@ public class UserServiceImplTest {
         Integer id = 2;
         String order = "name_desc";
 
+        List<UserFollowedResponseDTO> userFollowedResponseDTOS1 = List.of(new UserFollowedResponseDTO(2,"Fernando", List.of(new UserNameResponseDTO(4, "Stephanie"), new UserNameResponseDTO(3, "Emilia"))));
+
         // Act
         when(repository.existId(id)).thenReturn(true);
         when(repository.getUserById(id)).thenReturn(users.get(1));
         when(repository.getUsers()).thenReturn(users);
 
         List<UserFollowedResponseDTO> userFollowedResponseDTOS = userService.findByFollowed(id, order);
+        System.out.println("Expected: " + userFollowedResponseDTOS);
+        System.out.println("Actual: " + userFollowedResponseDTOS1);
 
         // Assert
-        List<String> userNamesDesc3 = userFollowedResponseDTOS.getFirst().getFollowed().stream()
-                .map(UserNameResponseDTO::getUserName)
-                .collect(Collectors.toList());
 
-        List<String> sortedNamesDesc3 = userNamesDesc3.stream()
-                .sorted()
-                .toList().reversed();
-
-        assertEquals(sortedNamesDesc3, userNamesDesc3);
+        assertEquals(userFollowedResponseDTOS, userFollowedResponseDTOS1);
     }
 
     @Test
@@ -363,6 +354,7 @@ public class UserServiceImplTest {
         // Arrange
         Integer id = 2;
         String order = "name_desc";
+        UserFollowerListResponseDTO userFollowerListResponseDTO1 = new UserFollowerListResponseDTO(2, "Fernando", List.of(new UserNameResponseDTO(3, "Emilia"), new UserNameResponseDTO(1, "Delfina")));
 
         // Act
         when(repository.existId(id)).thenReturn(true);
@@ -370,19 +362,12 @@ public class UserServiceImplTest {
         when(repository.getUsers()).thenReturn(users);
 
         UserFollowerListResponseDTO userFollowerListResponseDTO = userService.getFollowerList(id, order);
+        System.out.println("Expected: " + userFollowerListResponseDTO);
+        System.out.println("Actual: " + userFollowerListResponseDTO1);
 
         // Assert
 
-        List<String> userNamesDesc4 = userFollowerListResponseDTO.getFollowers()
-                .stream()
-                .map(UserNameResponseDTO::getUserName)
-                .toList();
-
-        List<String> sortedNamesDesc4 = userNamesDesc4.stream()
-                .sorted()
-                .toList().reversed();
-
-        assertEquals(sortedNamesDesc4, userNamesDesc4);
+        assertEquals(userFollowerListResponseDTO, userFollowerListResponseDTO1);
     }
 
     @Test
@@ -469,7 +454,7 @@ public class UserServiceImplTest {
 
     @Test
     @DisplayName("T-0002 - NotExist")
-    public void checkUserBeforeUnfollowNotExist() {
+    public void checkUserBeforeUnfollowNotExistS1() {
 
         // Arrange
         int userToUnfollow = 10;
@@ -487,6 +472,26 @@ public class UserServiceImplTest {
         Assertions.assertEquals("Invalid User to Unfollow ID: " + userToUnfollow, thrown.getMessage());
         verify(repository, atLeastOnce()).existId(user1.getUserId());
         verify(repository, atLeastOnce()).existId(userToUnfollow);
+    }
+
+    @Test
+    @DisplayName("T-0002 - Not Exist for beeing negative")
+    public void checkUserBeforeUnfollowNotExistS2() {
+
+        // Arrange
+        int userToUnfollow = -1;
+
+        //Act
+        Mockito.when(repository.existId(user1.getUserId())).thenReturn(true);
+
+
+        BadRequestException thrown = Assertions.assertThrows(
+                BadRequestException.class,
+                () -> userService.unfollowASpecificUserById(user1.getUserId(), userToUnfollow));
+
+        //Assert
+        Assertions.assertEquals("Invalid User to Unfollow ID: -1", thrown.getMessage());
+        verify(repository, atLeastOnce()).existId(user1.getUserId());
     }
 
     @Test
