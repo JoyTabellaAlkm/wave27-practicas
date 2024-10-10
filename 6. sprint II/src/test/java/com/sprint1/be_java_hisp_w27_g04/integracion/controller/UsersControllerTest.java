@@ -69,7 +69,6 @@ public class UsersControllerTest {
     }
 
     @Test
-    @Order(1)
     @DisplayName("TI-0009: Probar seguir a un usuario exitosamente")
     void followSellerSuccess() throws Exception {
         PostRequestDTO post = TestUtils.getPostRequest();
@@ -86,7 +85,6 @@ public class UsersControllerTest {
     }
 
     @Test
-    @Order(2)
     @DisplayName("TI-0009: Probar seguir a un vendedor que ya esta en su lista de seguidores")
     void followSellerUserAlreadyFollowed() throws Exception {
         PostRequestDTO post = TestUtils.getPostRequest();
@@ -113,7 +111,6 @@ public class UsersControllerTest {
     }
 
     @Test
-    @Order(3)
     @DisplayName("TI-0010: Probar dejar de seguir a un usuario exitosamente")
     void unfollowSellerSuccess() throws Exception {
         PostRequestDTO post = TestUtils.getPostRequest();
@@ -131,7 +128,6 @@ public class UsersControllerTest {
     }
 
     @Test
-    @Order(4)
     @DisplayName("TI-0010: Probar dejar de seguir a un vendedor no seguido")
     void unfollowSellerUserNotFollowed() throws Exception {
         int userId = 1;
