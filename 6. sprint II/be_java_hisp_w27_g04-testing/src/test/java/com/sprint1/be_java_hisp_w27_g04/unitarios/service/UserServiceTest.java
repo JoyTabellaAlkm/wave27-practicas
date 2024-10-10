@@ -38,7 +38,6 @@ class UserServiceTest {
 
 	@Test
 	@DisplayName("T-0001- Se sigue usuario")
-	@Order(1)
 	void followExistingUser() {
 
 		int userId = 1;
@@ -61,7 +60,6 @@ class UserServiceTest {
 
 	@Test
 	@DisplayName("T-0001-No se puede seguir usuario")
-	@Order(2)
 	void userIsNotFollowedBecauseItDoesNotExist() {
 		//ARRANGE
 		int userId = 1;
@@ -84,7 +82,6 @@ class UserServiceTest {
 
 	@Test
 	@DisplayName("T-0002- Se deja de seguir usuario")
-	@Order(3)
 	void unfollowExistingUser() {
 		//ARRANGE
 		int userId = 1;
@@ -112,7 +109,6 @@ class UserServiceTest {
 
 	@Test
 	@DisplayName("T-0002- No se deja de seguir usuario")
-	@Order(4)
 	void userIsNotUnFollowedBecauseItDoesNotExist() {
 		//ARRANGE
 		int userId = 1;
