@@ -100,13 +100,9 @@ class ProductServiceTest {
 		User user1 = new User(1,"Carlos", Set.of(2), Set.of(2), Set.of());
 		User user2 = TestUtils.getUserWithPosts();
 
-			//Obtengo los post mockeados y los ordeno según corresponde
+			//Obtengo los post mockeados
 		List<Post> orderedPosts = user2.getPosts().stream().toList();
-		orderedPosts = orderedPosts.stream().sorted(Comparator.comparing(Post::getPostDate)).toList();
-
 		List<PostRequestDTO> orderedPostsDTO = TestUtils.getPostListDTOOfLastTwoWeeksOfUserId2().getPosts();
-		orderedPostsDTO = orderedPostsDTO.stream()
-				.sorted(Comparator.comparing(PostRequestDTO::getDate)).toList();
 
 		//Act
 		Mockito.when(userRepository.findById(1)).thenReturn(Optional.of(user1));
@@ -134,11 +130,7 @@ class ProductServiceTest {
 
 		//Obtengo los post mockeados y los ordeno según corresponde
 		List<Post> orderedPosts = user2.getPosts().stream().toList();
-		orderedPosts = orderedPosts.stream().sorted(Comparator.comparing(Post::getPostDate).reversed()).toList();
-
 		List<PostRequestDTO> orderedPostsDTO = TestUtils.getPostListDTOOfLastTwoWeeksOfUserId2().getPosts();
-		orderedPostsDTO = orderedPostsDTO.stream()
-				.sorted(Comparator.comparing(PostRequestDTO::getDate).reversed()).toList();
 
 		//Act
 		Mockito.when(userRepository.findById(1)).thenReturn(Optional.of(user1));
