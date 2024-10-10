@@ -11,6 +11,8 @@ public interface IVehicleService {
 
     VehicleResponseDTO addVehicles(VehicleDto vehicleDto);
 
+    // Corrección buen nombre para el service
+
     List<VehicleDto> searchVehicleByColorAndYear(String color, int year);
 
     List<VehicleDto> searchByBrandAndYear(String brand, int starYear, int endYear);

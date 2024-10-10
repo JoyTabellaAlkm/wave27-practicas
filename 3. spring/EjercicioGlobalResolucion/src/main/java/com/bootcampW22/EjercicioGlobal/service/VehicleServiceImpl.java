@@ -29,7 +29,9 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public List<VehicleDto> searchAllVehicles() {
+
         List<VehicleDto> vehicleList = mapperUtils.mapperToDtoList(vehicleRepository.findAll());
+
         if(vehicleList.isEmpty()){
             throw new NotFoundException();
         }
@@ -38,15 +40,18 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponseDTO addVehicles(VehicleDto vehicleDto) {
+
         if (vehicleDto.getId() == null || !isVehicleOk(vehicleDto)) {
             throw new BadRequestException();
         }
+
         if(vehicleRepository.thereIsAVehicleWithId(vehicleDto.getId())){
             throw new ConflictException();
         }
+
         Vehicle vehicleAdded = mapperUtils.mapperToEntity(vehicleDto);
-        boolean vehicleAddedOk = vehicleRepository.addVehicles(vehicleAdded);
-        if (!vehicleAddedOk) {
+
+        if (!vehicleRepository.addVehicles(vehicleAdded)) {
             throw new ConflictException();
         }
         return new VehicleResponseDTO("Vehicle whith id: " + vehicleAdded.getId() + " was added");
@@ -54,20 +59,25 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public List<VehicleDto> searchVehicleByColorAndYear(String color, int year) {
+
         if (color == null || year < 0) {
             throw new BadRequestException();
         }
-        List<VehicleDto> vehicleDtos = mapperUtils.mapperToDtoList(vehicleRepository.findAll());
-        List<VehicleDto> vehicleByColorAndYear = vehicleDtos.stream().filter(vehicleDto -> vehicleDto.getColor().equals(color) && vehicleDto.getYear() == year).toList();
-        if(vehicleByColorAndYear.isEmpty()){
+        // Corrección de code review el nombre del metodo mapperToDtoList de mi clase mapperUtils
+
+        List<VehicleDto> vehicleDtos = mapperUtils.mapperToDtoList(vehicleRepository.findAll()).stream().filter(vehicleDto -> vehicleDto.getColor().equals(color) && vehicleDto.getYear() == year).toList();
+
+        if(vehicleDtos.isEmpty()){
             throw new NotFoundException();
         }
-        return vehicleByColorAndYear;
+        return vehicleDtos;
     }
 
     @Override
     public List<VehicleDto> searchByBrandAndYear(String brand, int starYear, int endYear) {
+
         List<VehicleDto> vehicleDtos = mapperUtils.mapperToDtoList(vehicleRepository.findAll());
+
         List<VehicleDto> vehicleByBrandAndYear = vehicleDtos.stream().filter(v -> v.getBrand().equals(brand) && (v.getYear() >= starYear && v.getYear() <= endYear)).toList();
 
         if(vehicleByBrandAndYear.isEmpty()){
@@ -78,19 +88,21 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponseDTO averageSpeedByBrand(String brand) {
+
         if (brand == null || brand.isEmpty()) {
             throw new BadRequestException();
         }
 
         List<VehicleDto> vehicleDtos = mapperUtils.mapperToDtoList(vehicleRepository.findAll());
 
-        double promedio = vehicleDtos.stream().filter(v -> v.getBrand().equals(brand))
-                .mapToDouble(v -> Double.parseDouble(v.getMax_speed())).average().orElseThrow(NotFoundException::new);
-        return new VehicleResponseDTO("La marca: " + brand + "tiene un promedio de velocidad igual a: "+ promedio );
+        double average = vehicleDtos.stream().filter(v -> v.getBrand().equals(brand)).mapToDouble(v -> Double.parseDouble(v.getMax_speed())).average().orElseThrow(NotFoundException::new);
+
+        return new VehicleResponseDTO("La marca: " + brand + "tiene un promedio de velocidad igual a: "+ average );
     }
 
     @Override
     public VehicleResponseDTO addListVehicles(List<VehicleDto> vehicleDtos) {
+
         if (vehicleDtos.isEmpty()) {
             throw new CreatedException();
         }
@@ -110,14 +122,19 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponseDTO updateSpeed(Long id, Double updateSpeed) {
+
         Vehicle vehicle = vehicleRepository.findById(id);
+
         if (vehicle == null) {
             throw new NotFoundException();
         }
+
         if (updateSpeed < 1 || updateSpeed > 300) {
             throw new BadRequestException();
         }
+
         vehicle.setMax_speed(updateSpeed.toString());
+
         if (vehicleRepository.editVehicle(vehicle)) {
             throw new ConflictException();
         }
@@ -149,11 +166,13 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public List<VehicleDto> searchByTransmissionType(String type) {
+
         if (type == null || type.isEmpty()) {
             throw new BadRequestException();
         }
-        List<Vehicle> vehiclesByTransmissionType = vehicleRepository.findAll().stream()
-                .filter(v -> v.getTransmission().equals(type)).toList();
+
+        List<Vehicle> vehiclesByTransmissionType = vehicleRepository.findAll().stream().filter(v -> v.getTransmission().equals(type)).toList();
+
         if(vehiclesByTransmissionType.isEmpty()){
             throw new NotFoundException();
         }
@@ -162,11 +181,18 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponseDTO updateFuelById(Long id, String updateFuel) {
+
         if(id == null || updateFuel == null || updateFuel.isEmpty()) {
             throw new BadRequestException();
         }
+
         Vehicle vehicle = vehicleRepository.findById(id);
+
+        if (vehicle == null) {
+            throw new NotFoundException();
+        }
         vehicle.setFuel_type(updateFuel);
+
         if (vehicleRepository.editVehicle(vehicle)) {
             throw new ConflictException();
         }
@@ -175,21 +201,28 @@ public class VehicleServiceImpl implements IVehicleService {
 
     @Override
     public VehicleResponseDTO averageCapacityByBrand(String brand) {
+
         if (brand == null || brand.isEmpty()) {
             throw new BadRequestException();
         }
+
         List<VehicleDto> vehicleDtos = mapperUtils.mapperToDtoList(vehicleRepository.findAll());
+
         double promedio = vehicleDtos.stream().filter(v -> v.getBrand().equals(brand))
                 .mapToInt(VehicleDto::getPassengers).average().orElseThrow(NotFoundException::new);
+
         return new VehicleResponseDTO("La marca: " + brand + "tiene un promedio de capacidad de personas igual a: " + promedio);
     }
 
     @Override
     public List<VehicleDto> getByRangeWeight(Double weightMin, Double weightMax) {
+
         if (weightMin == null || weightMax == null) {
             throw new BadRequestException();
         }
+
         List<Vehicle> vehicleList = vehicleRepository.findAll().stream().filter(vehicle -> vehicle.getWeight() > weightMin && vehicle.getWeight() < weightMax).toList();
+
         if (vehicleList.isEmpty()) {
             throw new NotFoundException();
         }
