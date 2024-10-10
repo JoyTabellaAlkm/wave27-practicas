@@ -31,7 +31,6 @@ class ProductControllerTests {
 
 	@Test
 	@DisplayName("Ordenamiento fecha válido")
-	@Order(1)
 	public void getPostListAsc() throws Exception {
 
 		PostListDTO postListDTO = TestUtils.getPostListDTOOfLastTwoWeeksOfUserId2();
@@ -47,7 +46,6 @@ class ProductControllerTests {
 
 	@Test
 	@DisplayName("Ordenamiento fecha inválido")
-	@Order(3)
 	public void getPostListWrongParam() throws Exception {
 
 		PostListDTO postListDTO = TestUtils.getPostListDTOOfLastTwoWeeksOfUserId2();
