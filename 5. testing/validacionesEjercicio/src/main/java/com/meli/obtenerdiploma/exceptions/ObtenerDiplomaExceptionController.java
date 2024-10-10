@@ -21,7 +21,6 @@ public class ObtenerDiplomaExceptionController extends RuntimeException{
         return new ResponseEntity<>(dto, HttpStatus.BAD_REQUEST);
     }
 
-    @ExceptionHandler(HttpMessageNotReadableException.class)
     protected ResponseEntity<?> httpMessageNotReadableExceptionHandler(HttpMessageNotReadableException ex)  {
         return new ResponseEntity<>(ex.getMessage(), HttpStatus.BAD_REQUEST);
     }
