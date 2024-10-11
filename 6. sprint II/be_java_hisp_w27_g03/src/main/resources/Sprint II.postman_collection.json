@@ -1,0 +1,679 @@
+{
+	"info": {
+		"_postman_id": "41d5e452-a604-42f1-86e6-8fcdbf7882e1",
+		"name": "Sprint II",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454",
+		"_collection_link": "https://equipo-dinamita-1456.postman.co/workspace/Equipo-dinamita-Workspace~672197d5-2784-4b1f-8320-b9012ee70857/collection/38182952-41d5e452-a604-42f1-86e6-8fcdbf7882e1?action=share&source=collection_link&creator=38409454"
+	},
+	"item": [
+		{
+			"name": "US0001",
+			"item": [
+				{
+					"name": "US0001 / followSeller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/3/follow/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0001 / followSeller Negative id",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/-3/follow/-5",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"-3",
+								"follow",
+								"-5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0001 / followSeller Follow myself",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/1/follow/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0001 / followSeller Follow not seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/3/follow/5",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0001 / followSeller Follow doesn't exists",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/3/follow/55",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"55"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0001 / followSeller PathVariable not an int",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/STRING/follow/3",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"STRING",
+								"follow",
+								"3"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0002",
+			"item": [
+				{
+					"name": "US0002 / countFollowers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/1/followers/count",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0002 / countFollowers not seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/5/followers/count",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0003",
+			"item": [
+				{
+					"name": "US0003 / listFollowers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/1/followers/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0003 / listFollowers Not a seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/5/followers/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0004",
+			"item": [
+				{
+					"name": "US0004 / ListFollowedSeller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/100/followed/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"100",
+								"followed",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0004 / ListFollowedSeller User doesn't exists",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/199/followed/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"199",
+								"followed",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0005",
+			"item": [
+				{
+					"name": "US0005 / createPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"09-10-2024\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Mesedora\",\n        \"type\": \"Muebles\",\n        \"brand\": \"Sillas jairo\",\n        \"color\": \"Blanco\",\n        \"notes\": \"Realizada con madera de roble\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/products/post",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0005 / createPost ValidationException",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": -3,\n    \"date\": \"29-10-2024\",\n    \"product\": {\n        \"product_id\": null,\n        \"product_name\": \"Mesedora\",\n        \"type\": \"Muebles bonitos y baratos\",\n        \"brand\": \"Sillas jairo!\",\n        \"color\": \"Blanc@\",\n        \"notes\": \"Realizada con madera de roble!\"\n    },\n    \"category\": null,\n    \"price\": 99999999999999\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/products/post",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0006",
+			"item": [
+				{
+					"name": "US0006 / PostsByFollowedUsersLastTwoWeeks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/products/followed/100/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"100",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0006 / PostsByFollowedUsersLastTwoWeeks User doesn't follow any seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/products/followed/5/list",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"5",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0007",
+			"item": [
+				{
+					"name": "US0007 / unfollow",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/3/unfollow/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"unfollow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0007 / unfollow User doesn't follow the seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/3/unfollow/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"unfollow",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0008",
+			"item": [
+				{
+					"name": "US0008 / listFollowersNameAscDesc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/1/followers/list?order=name_asc",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								},
+								{
+									"key": "order",
+									"value": "name_desc",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0008 / listFollowedNameAscDesc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/100/followed/list?order=name_asc",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"100",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								},
+								{
+									"key": "order",
+									"value": "name_desc",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "name",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0009",
+			"item": [
+				{
+					"name": "US0009 / PostsByFollowedUsersLastTwoWeeks With Order",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/products/followed/100/list?order=date_asc",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"100",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								},
+								{
+									"key": "order",
+									"value": "date_desc",
+									"disabled": true
+								},
+								{
+									"key": "order",
+									"value": "prueba",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0010",
+			"item": [
+				{
+					"name": "US0010 / publicPromoPost",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"08-08-2024\",\n    \"product\": {\n        \"product_id\": 3,\n        \"product_name\": \"Silla gamer\",\n        \"type\": \"Muebles\",\n        \"brand\": \"Sillas jairo\",\n        \"color\": \"Blanco\",\n        \"notes\": \"Con lucesitas\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/products/promo-post",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "US0010 / publicPromoPost ValidationException",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": -10,\n    \"date\": \"22-08-2026\",\n    \"product\": {\n        \"product_id\": 0,\n        \"product_name\": \"Silla gamer!\",\n        \"type\": \"Muebles bonitos y baratos\",\n        \"brand\": \"Sillas jair@\",\n        \"color\": \"Blanc@\",\n        \"notes\": \"Con lucesitas abcdefghijklmnopqrstuvwxyz loremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsumloremipsum\"\n    },\n    \"category\": null,\n    \"price\": -1000,\n    \"has_promo\": null,\n    \"discount\": 2\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/products/promo-post",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0011",
+			"item": [
+				{
+					"name": "US0011 / countPromoPostUser",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/products/promo-post/count?userId=1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								},
+								{
+									"key": "userId",
+									"value": "4",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0012",
+			"item": [
+				{
+					"name": "BN US0012 / listMostActiveSellers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/list/most_active_sellers",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"list",
+								"most_active_sellers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0013",
+			"item": [
+				{
+					"name": "BN US0013 / inactiveSellers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/users/list/inactive_sellers",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"users",
+								"list",
+								"inactive_sellers"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
