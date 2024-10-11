@@ -116,7 +116,7 @@ class ProductsControllerTest {
 						.content(payloadJSON))
 						.andExpect(status().isCreated())
 						.andExpect(MockMvcResultMatchers.jsonPath("$.message")
-								.value("Se ha creado el post con la promoción exitosamente. ID: 100"));
+								.value("Se ha creado el post con la promoción exitosamente. ID: 4"));
 	}
 
 	@Test
