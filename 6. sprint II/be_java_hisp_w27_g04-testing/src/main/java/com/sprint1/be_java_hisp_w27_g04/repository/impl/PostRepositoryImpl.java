@@ -1,19 +1,27 @@
 package com.sprint1.be_java_hisp_w27_g04.repository.impl;
 
+import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.DeserializationFeature;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategies;
+import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import com.sprint1.be_java_hisp_w27_g04.entity.Post;
 import com.sprint1.be_java_hisp_w27_g04.entity.User;
 import com.sprint1.be_java_hisp_w27_g04.exceptions.NotFoundException;
 import com.sprint1.be_java_hisp_w27_g04.repository.IPostRepository;
 import org.springframework.stereotype.Repository;
+import org.springframework.util.ResourceUtils;
 
+import java.io.File;
 import java.io.IOException;
+import java.time.LocalDate;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Optional;
 
 @Repository
 public class PostRepositoryImpl implements IPostRepository {
-    List<Post> postList;
+    List<Post> postList = new LinkedList<>();
     private Integer actualId = 1;
 
     public PostRepositoryImpl() throws IOException {

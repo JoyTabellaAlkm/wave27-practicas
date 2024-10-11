@@ -2,6 +2,7 @@ package com.sprint1.be_java_hisp_w27_g04.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import com.sprint1.be_java_hisp_w27_g04.dto.request.ProductDTO;
 import lombok.AllArgsConstructor;
 import lombok.Data;
