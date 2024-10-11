@@ -1,5 +1,7 @@
 # Social Meli
 
+Enlace repositorio de equipo: https://github.com/SebastianValleRang/be_java_hisp_w27_g03
+
 ---
 
 
