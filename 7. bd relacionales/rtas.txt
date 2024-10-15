@@ -1,0 +1,9 @@
+En mi caso agregué una columna ID en todas las tablas así que esa es la clave primaria, sin embargo:
+
+a. En clientes el din podría cumplir la función de clave primaria porque es único por persona.
+
+b. El identificador de plan podría ser la clave primaria ( en mi caso simplemente puse id por unicidad y congruencia )
+
+c. Hay varias maneras de resolver esta ultima parte. Yo hice una tabla intermedia entendiendo que quizás un cliente puede tener más de un plan contratado en más de un domicilio. 
+
+Así que esa tabla intermedia tiene las FK de idCliente y idPlan. La relación es de muchos a muchos.
