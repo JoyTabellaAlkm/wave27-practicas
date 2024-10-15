@@ -1,0 +1,2421 @@
+{
+	"info": {
+		"_postman_id": "66332073-042a-4084-8174-12f49aa51c0c",
+		"name": "Sprint 2",
+		"description": "This API is divided by user stories, each user story has a succesfull request, and several failed ones so that you can try the exceptions.\n\nIn the folder \"Test Our API\" you have the path to sucessfully create all you need to then test the API.  \n  \nIt also involves the endpoint to test validations.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "Test Our API",
+			"item": [
+				{
+					"name": "1. Post Product for User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"25-09-2024\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.1 Post Product for User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 2,\n    \"date\": \"29-09-2024\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "1.2 Post Product for User 6",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 6,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "2. Post promo product for User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-09-2024\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3. User 3 follows User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.1 User 3 follows User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/3/follow/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.2 User 4 follows User 2",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/4/follow/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"4",
+								"follow",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "3.3 User 5 follows User 1",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/users/5/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0001",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users//follow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/Hola/follow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"Hola",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/4/follow/0",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"4",
+										"follow",
+										"0"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/4/follow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"4",
+										"follow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success follow seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/6/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"6",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception follow non-seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/follow/4",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception seller not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/follow/99",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"99"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception follow himself",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception already following",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/follow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"follow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0002",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users//followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/asd/followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"asd",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/0/followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"0",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/1/followers/count",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"followers",
+										"count"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success count followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followers/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/followers/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not a seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/4/followers/count",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"4",
+								"followers",
+								"count"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0003",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users//followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/-/followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"-",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/-2/followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"-2",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/1/followers/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"followers",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success list followers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followers/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success empty list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/6/followers/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"6",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/followers/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not a seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/4/followers/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"4",
+								"followers",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0004",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users//followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/sd/followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"sd",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/-4/followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"-4",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/3/followed/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"3",
+										"followed",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success list followed",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/followed/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"followed",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success empty list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followed/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/followed/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"followed",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0005",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Body not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": ,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Empty field, Wrong value, Wrong number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": 50.02,\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": -1,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success create post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception empty product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception empty field",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": \"\",\n    \"price\": 1500.50\n}\n\n\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 99,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0006",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed//list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/sd/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"sd",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/-2/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"-2",
+										"list"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/3/list",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"3",
+										"list"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success list posts from followed last 2 weeks",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/followed/3/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"3",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success list empty",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/followed/2/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"2",
+								"list"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/followed/99/list",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"99",
+								"list"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0007",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users//unfollow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"",
+										"unfollow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": ,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/asd/unfollow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"asd",
+										"unfollow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": ,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/4/unfollow/-2",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"4",
+										"unfollow",
+										"-2"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": ,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50\n}\n\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/users/4/unfollow/1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"4",
+										"unfollow",
+										"1"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success unfollow seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/5/unfollow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"unfollow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception not following that seller",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/5/unfollow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"5",
+								"unfollow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/unfollow/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"unfollow",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception seller not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/unfollow/99",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"unfollow",
+								"99"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0008",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/ /followers/list?order=name_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										" ",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/dfd/followers/list?order=name_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"dfd",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/0/followers/list?order=dg",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"0",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "dg"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/users/1/followers/list?order=name_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"users",
+										"1",
+										"followers",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "name_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success list followers asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followers/list?order=name_asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success list followers desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followers/list?order=name_desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followers",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success list followed asc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/followed/list?order=name_asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success list followed desc",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/3/followed/list?order=name_desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"3",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/99/followed/list?order=name_desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"99",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "name_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception order incorrect",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/1/followed/list?order=cualquier_verdura",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"1",
+								"followed",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "cualquier_verdura"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0009",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed//list?order=date_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/dfd/list?order=date_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"dfd",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/-3/list?order=date_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"-3",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/followed/3/list?order=date_asc",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"followed",
+										"3",
+										"list"
+									],
+									"query": [
+										{
+											"key": "order",
+											"value": "date_asc"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success list followed posts by date asc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/followed/3/list?order=date_asc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"3",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Success list followed posts by date desc",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/followed/3/list?order=date_desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"3",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/followed/99/list?order=date_desc",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"99",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "date_desc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception order incorrect",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/followed/3/list?order=cualquier_verdura_v2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"followed",
+								"3",
+								"list"
+							],
+							"query": [
+								{
+									"key": "order",
+									"value": "cualquier_verdura_v2"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0010",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Body not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"01-04-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Wrong value, wrong number",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"user_id\": 1,\n    \"date\": \"01-04-2023\",\n    \"product\": {\n        \"product_id\": -11,\n        \"product_name\": \"HO!!LA\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"notas\"\n    },\n    \"category\": 100,\n    \"price\": 299,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{host}}/products/promo-post",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post"
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success create promo post",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"01-04-2023\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception empty field",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 99,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception empty product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0.25\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception discount 0",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_id\": 1,\n    \"date\": \"29-04-2021\",\n    \"product\": {\n        \"product_id\": 1,\n        \"product_name\": \"Silla Gamer\",\n        \"type\": \"Gamer\",\n        \"brand\": \"Racer\",\n        \"color\": \"Red Black\",\n        \"notes\": \"Special Edition\"\n    },\n    \"category\": 100,\n    \"price\": 1500.50,\n    \"has_promo\": true,\n    \"discount\": 0\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/products/promo-post",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "US0011",
+			"item": [
+				{
+					"name": "Validations",
+					"item": [
+						{
+							"name": "Wrong value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/count?userId=sd",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "sd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Empty value",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/count?userId=sd",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "sd"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Zero or negative number",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/count?userId=-1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "-1"
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Method not valid",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{host}}/products/promo-post/count?userId=1",
+									"host": [
+										"{{host}}"
+									],
+									"path": [
+										"products",
+										"promo-post",
+										"count"
+									],
+									"query": [
+										{
+											"key": "userId",
+											"value": "1"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Success count seller promotions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/promo-post/count?userId=1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not a seller",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/promo-post/count?userId=3",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "3"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Exception user not found",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/products/promo-post/count?userId=99",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"products",
+								"promo-post",
+								"count"
+							],
+							"query": [
+								{
+									"key": "userId",
+									"value": "99"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "BONUS",
+			"item": [
+				{
+					"name": "Success list top 10 sellers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/users/top-10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"users",
+								"top-10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "host",
+			"value": "localhost:8080"
+		}
+	]
+}
