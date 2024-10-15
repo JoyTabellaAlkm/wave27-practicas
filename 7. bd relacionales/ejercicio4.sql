@@ -35,3 +35,61 @@ INSERT INTO planes (id, velocidad_ofrecida, precio, descuento) VALUES
 (3, 100, 1300.00, 20),
 (4, 200, 2000.00, 25),
 (5, 500, 3500.00, 30);
+
+CREATE TABLE clientes_planes (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    idClientes INT NOT NULL,
+    idPlanes INT NOT NULL,
+    FOREIGN KEY (idClientes) REFERENCES clientes(id),
+    FOREIGN KEY (idPlanes) REFERENCES planes(id)
+);
+
+INSERT INTO clientes_planes (idClientes, idPlanes) VALUES
+(1, 2),
+(1, 3),
+(2, 1),
+(3, 4),
+(5, 5),
+(4, 2);
+
+### 1. Obtener todos los clientes y sus datos
+SELECT * FROM clientes;
+
+### 2. Obtener todos los planes disponibles y sus precios
+SELECT * FROM planes;
+
+### 3. Obtener todos los clientes que tienen un plan específico (por ejemplo, el plan con ID 2)
+SELECT c.*
+FROM clientes c
+JOIN clientes_planes cp ON c.id = cp.idClientes
+WHERE cp.idPlanes = 2;
+
+### 4. Obtener los planes asignados a un cliente específico (por ejemplo, el cliente con ID 1)
+SELECT p.*
+FROM planes p
+JOIN clientes_planes cp ON p.id = cp.idPlanes
+WHERE cp.idClientes = 1;
+
+### 5. Agregar un nuevo cliente
+INSERT INTO clientes (id, dni, nombre, apellido, fecha_nacimiento, provincia, ciudad) VALUES
+(11, '11223344', 'Felipe', 'Díaz', '1995-02-14', 'Buenos Aires', 'La Plata');
+
+### 6. Modificar la velocidad de un plan (por ejemplo, cambiar la velocidad del plan con ID 1 a 30 megas)
+UPDATE planes
+SET velocidad_ofrecida = 30
+WHERE id = 1;
+
+### 7. Contar cuántos clientes hay en total
+SELECT COUNT(*) AS total_clientes FROM clientes;
+
+### 8. Obtener el promedio de precios de los planes
+SELECT AVG(precio) AS promedio_precio FROM planes;
+
+### 9. Eliminar un cliente específico (por ejemplo, el cliente con ID 10)
+DELETE FROM clientes WHERE id = 10;
+
+### 10. Obtener una lista de clientes y sus respectivos planes, incluyendo el nombre del cliente y la velocidad del plan
+SELECT c.nombre, c.apellido, p.velocidad_ofrecida
+FROM clientes c
+JOIN clientes_planes cp ON c.id = cp.idClientes
+JOIN planes p ON cp.idPlanes = p.id;
