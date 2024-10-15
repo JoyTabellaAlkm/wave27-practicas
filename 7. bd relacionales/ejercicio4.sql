@@ -13,8 +13,7 @@ CREATE TABLE clientes (
 CREATE TABLE planes (
     id INT PRIMARY KEY,
     velocidad_ofrecida INT NOT NULL,
-    precio DECIMAL(10, 2) NOT NULL,
-    descuento INT NOT NULL
+    precio_base DECIMAL(10, 2) NOT NULL
 );
 
 INSERT INTO clientes (id, dni, nombre, apellido, fecha_nacimiento, provincia, ciudad) VALUES
@@ -30,27 +29,33 @@ INSERT INTO clientes (id, dni, nombre, apellido, fecha_nacimiento, provincia, ci
 (10, '01234567', 'Pablo', 'Cruz', '1983-09-29', 'Chaco', 'Resistencia');
 
 INSERT INTO planes (id, velocidad_ofrecida, precio, descuento) VALUES
-(1, 20, 500.00, 10),
-(2, 50, 800.00, 15),
-(3, 100, 1300.00, 20),
-(4, 200, 2000.00, 25),
-(5, 500, 3500.00, 30);
+(1, 20, 500.00),
+(2, 50, 800.00),
+(3, 100, 1300.00),
+(4, 200, 2000.00),
+(5, 500, 3500.00);
 
 CREATE TABLE clientes_planes (
     id INT PRIMARY KEY AUTO_INCREMENT,
     idClientes INT NOT NULL,
     idPlanes INT NOT NULL,
     FOREIGN KEY (idClientes) REFERENCES clientes(id),
-    FOREIGN KEY (idPlanes) REFERENCES planes(id)
+    FOREIGN KEY (idPlanes) REFERENCES planes(id),
+    precio_total DECIMAL(10, 2) NOT NULL,
+    descuento INT NOT NULL
 );
 
-INSERT INTO clientes_planes (idClientes, idPlanes) VALUES
-(1, 2),
-(1, 3),
-(2, 1),
-(3, 4),
-(5, 5),
-(4, 2);
+INSERT INTO clientes_planes (idClientes, idPlanes, precio_total, descuento) VALUES
+(1, 1, 100.00, 10),
+(1, 2, 200.00, 15),
+(2, 1, 150.00, 5),
+(3, 3, 300.00, 20),
+(2, 2, 250.00, 25),
+(4, 4, 180.00, 0),
+(3, 1, 120.00, 10),
+(1, 3, 220.00, 18),
+(5, 2, 260.00, 12),
+(6, 4, 300.00, 0);
 
 ### 1. Obtener todos los clientes y sus datos
 SELECT * FROM clientes;
