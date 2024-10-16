@@ -20,9 +20,9 @@ sus novedades.
 - Las ramas de características deben basarse en la rama develop y seguir la estructura us/`{número-user-story}`-  
   `{breve-descripción}`. Por ejemplo: `us/1-follow-user`.
 - Contenido de la carpeta resources:
-  - [Postman](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/API-Documentation.Postman.json)
-  - [Requerimientos](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/requerimientos.pdf)
-  - [UML - Diagrama de Clases](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/diagrama.png)
+  - [Postman](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/API-Documentation.Postman.json)
+  - [Requerimientos](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/requerimientos.pdf)
+  - [UML - Diagrama de Clases](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/diagrama.png)
 
 ### Aclaracion de equipo:
 
