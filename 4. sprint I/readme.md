@@ -17,9 +17,9 @@ Mercado Libre planea lanzar "SocialMeli" el próximo año, una herramienta que m
 - Cuando se debe responder alguna lista y la misma esta vacia, decidimos no devolver un mensaje de error.
 - Las ramas de características deben basarse en la rama develop y seguir la estructura us/`{número-user-story}`-`{breve-descripción}`. Por ejemplo: `us/1-follow-user`.
 - Contenido de la carpeta resources:
-  - [Postman](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/API-Documentation.Postman.json)
-  - [Requerimientos](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/requerimientos.pdf)
-  - [UML - Diagrama de Clases](https://github.com/LicFuraca/be_java_hisp_w27_g02/blob/main/socialMeli2/src/main/resources/diagrama.png)
+  - [Postman](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/API-Documentation.Postman.json)
+  - [Requerimientos](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/requerimientos.pdf)
+  - [UML - Diagrama de Clases](https://github.com/JoyTabellaAlkm/wave27-practicas/tree/cisternas_celeste/4.%20sprint%20I/ejercicio_socialMeli2/src/main/resources/diagrama.png)
 
 ### Aclaracion de equipo: 
 Todos los PR (Pull Requests) fueron revisados en vivo por el equipo, y las correcciones se realizaron en el momento. Esto asegura que cada detalle fue discutido y abordado de manera colaborativa.
