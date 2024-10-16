@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d75b3f77-2b5a-4820-8c7f-fa11d911ca9a" name="Default Changelist" comment="Testing_1 - ObtenerDiploma + CRUD Alumnos">
-      <change afterPath="$PROJECT_DIR$/../ejercicio_obtenerDiplomaIntegracion/src/test/java/com/meli/obtenerdiploma/controller/integration/StudentControllerIntegrationTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma/unit/StudentDAOTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/meli/obtenerdiploma/unit/StudentRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/application-test.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/users.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" afterPath="$PROJECT_DIR$/../readme.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -100,7 +93,7 @@
     "JUnit.StudentRepositoryTest.testGetAllOk.executor": "Run",
     "git-widget-placeholder": "cisternas__celeste",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/ccisternas/Documents/GitHub/wave27-practicas/5. testing/ejercicio_obtenerDiplomaUnits/src/test/resources",
+    "last_opened_file_path": "/Users/ccisternas/Documents/GitHub/wave27-practicas/5. testing/ejercicio_obtenerDiplomaUnits",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -224,6 +217,8 @@
       <workItem from="1728256527089" duration="6548000" />
       <workItem from="1728271916538" duration="586000" />
       <workItem from="1728272505698" duration="1407000" />
+      <workItem from="1728322912558" duration="109000" />
+      <workItem from="1728323531593" duration="68000" />
     </task>
     <task id="LOCAL-00001" summary="Spring 2 - Practica TT - Obetener Diploma">
       <created>1619721212242</created>
