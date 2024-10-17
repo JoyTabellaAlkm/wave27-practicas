@@ -1,0 +1,154 @@
+# Welcome to the Dev Tools Console!
+#
+# You can use Console to explore the Elasticsearch API. See the Elasticsearch API reference to learn more:
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html
+#
+# Here are a few examples to get you started.
+# Se crea el indice "zapatillas"
+PUT /zapatillas
+#Guardar una zapatilla
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Air force one",
+  "descripcion": "Las mejores zapatillas. Negras"
+}
+#
+POST /zapatillas/_bulk
+{"index": {}}
+{"marca": "Nike", "modelo": "Air Max", "descripcion": "Comodidad y estilo", "talle": 42, "stock": 50}
+{"index": {}}
+{"marca": "Adidas", "modelo": "Yeezy", "descripcion": "Éxito en cada paso", "precio": 300.00, "descuento": 20}
+{"index": {"_id": "3"}}
+{"marca": "Puma", "modelo": "Suede", "descripcion": "Un clásico atemporal", "stock": 30, "precio": 80.99}
+{"index": {"_id": "4"}}
+{"marca": "Reebok", "modelo": "Classic", "descripcion": "Versatilidad y confort", "talle": 43, "stock": 20, "precio": 75.50}
+{"index": {"_id": "5"}}
+{"marca": "New Balance", "modelo": "237", "descripcion": "Estilo retro para todos los días", "descuento": 15}
+{"index": {"_id": "6"}}
+{"marca": "Converse", "modelo": "Chuck Taylor", "descripcion": "Un ícono del calzado", "talle": 44, "stock": 100, "precio": 60.00, "descuento": 10}
+{"index": {"_id": "7"}}
+{"marca": "Vans", "modelo": "Old Skool", "descripcion": "El clásico de skate", "precio": 70.00}
+{"index": {"_id": "8"}}
+{"marca": "Saucony", "modelo": "Jazz Original", "descripcion": "Comodidad para correr", "talle": 41, "stock": 25, "descuento": 5}
+{"index": {"_id": "9"}}
+{"marca": "Hoka", "modelo": "Bondi", "descripcion": "Máxima amortiguación", "precio": 150.00, "talle": 45}
+{"index": {"_id": "10"}}
+{"marca": "Asics", "modelo": "Gel-Kayano", "descripcion": "Estabilidad y soporte", "stock": 15, "precio": 120.00, "talle": 40, "descuento": 25}
+POST /zapatillas/_bulk
+{"index": {"_id": "11"}}
+{"marca": "Under Armour", "modelo": "HOVR", "descripcion": "Tecnología de amortiguación avanzada", "talle": 41, "stock": 15, "precio": 120.00, "descuento": 15}
+{"index": {"_id": "12"}}
+{"marca": "Asics", "modelo": "Gel-Quantum", "descripcion": "Soporte y absorción de impacto", "talle": 44, "stock": 25}
+{"index": {"_id": "13"}}
+{"marca": "Brooks", "modelo": "Ghost", "descripcion": "La elección perfecta para correr", "precio": 130.00, "descuento": 10}
+{"index": {"_id": "14"}}
+{"marca": "Hoka", "modelo": "Clifton", "descripcion": "Calzado ligero, mucha amortiguación", "stock": 30, "precio": 140.00}
+{"index": {"_id": "15"}}
+{"marca": "Puma", "modelo": "Clyde", "descripcion": "Un toque de clase en cada paso", "talle": 42, "descuento": 20}
+{"index": {"_id": "16"}}
+{"marca": "Skechers", "modelo": "Go Walk", "descripcion": "Comodidad para caminar todo el día", "talle": 40, "stock": 50, "precio": 65.00}
+{"index": {"_id": "17"}}
+{"marca": "Fila", "modelo": "Disruptor", "descripcion": "Diseño audaz y original", "stock": 10, "precio": 75.50}
+{"index": {"_id": "18"}}
+{"marca": "Nike", "modelo": "Zoom", "descripcion": "Agilidad y respuesta al instante", "talle": 43, "descuento": 25}
+{"index": {"_id": "19"}}
+{"marca": "Adidas", "modelo": "Stan Smith", "descripcion": "Estilo clásico para el día a día", "stock": 20, "precio": 85.00, "talle": 39}
+{"index": {"_id": "20"}}
+{"marca": "New Balance", "modelo": "Aa574", "descripcion": "Versátil para cualquier ocasión", "talle": 44, "precio": 90.00, "descuento": 10}
+#Delete de una zapatilla
+DELETE /zapatillas/_doc/9
+#Update de una zapa
+POST /zapatillas/_update/Um36m5IBgL1MPU_c0nlL
+{
+  "doc": {
+    "shopping": [
+      {"nombre": "Nuevocentro", "direccion": "Italia 3000", "barrio": "Centro"},
+    {"nombre": "Villa cabrera shopping", "direccion": "Urquiza 3000", "barrio": "Villa cabrera"}
+    ]
+  }
+}
+GET /zapatillas/_search
+{
+  "query": {"term": {
+    "_id": {
+      "value": "Um36m5IBgL1MPU_c0nlL"
+    }
+  }}
+}
+GET /zapatillas/_search
+{
+  "sort": [
+    {
+      "descuento": {
+        "order": "asc"
+      }
+    }
+  ]
+}
+GET /zapatillas/_search
+{
+  "sort": [
+    {
+      "precio": {
+        "order": "asc"
+      }
+    }
+  ]
+}
+GET /zapatillas/_search
+{
+  "query": {"match_phrase": {
+    "modelo": "Air force one"
+    }
+  }}
+}
+GET /zapatillas/_search
+{
+  "query": {"match_phrase": {
+    "shopping.direccion": "Italia 3000"
+    }
+  }}
+}
+#Sorted por talle
+GET /zapatillas/_search
+{
+  "query": {
+    "match_all": {}
+  },
+  "sort": [
+    {
+      "talle": {
+        "order": "desc"
+      }
+    }
+  ]
+}
+#Get fuzzy
+GET /zapatillas/_search
+{
+  "query": {
+    "match": {
+      "modelo": "Air force one"
+    }
+  }
+}
+#conseguir un talle
+GET /zapatillas/_search
+{
+  "query": {
+    "range": {
+      "talle": {
+        "gt": 40,
+        "lte": 41
+      }
+    }
+  }
+}
+GET /zapatillas/_search
+{
+  "query": {"fuzzy": {
+    "modelo": "Air"
+  }}
+  
+}
