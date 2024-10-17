@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "a1d705c5-56a1-4158-bad5-67ac6d0b908a",
+		"name": "NoSQL Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38463793",
+		"_collection_link": "https://sprint-team-4581.postman.co/workspace/Sprint-team-Workspace~7a23e9df-3364-47a7-9e3f-7c1c38e0e4da/collection/38463793-a1d705c5-56a1-4158-bad5-67ac6d0b908a?action=share&source=collection_link&creator=38463793"
+	},
+	"item": [
+		{
+			"name": "1. Crear índice",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\":{\n        \"properties\": {\n            \"nombre\":{ \"type\": \"text\" },\n            \"sexo\":{ \"type\": \"text\" },\n            \"precio\":{ \"type\": \"float\" },\n            \"marca\":{ \"type\": \"text\" },\n            \"tipo\":{ \"type\": \"text\" }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Creación exitosa",
+					"originalRequest": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"mappings\":{\n        \"properties\": {\n            \"nombre\":{ \"type\": \"text\" },\n            \"sexo\":{ \"type\": \"text\" },\n            \"tipo\": { \"type\": \"text\" },\n            \"precio\":{ \"type\": \"integer\" }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"acknowledged\": true,\n    \"shards_acknowledged\": true,\n    \"index\": \"zapatillas\"\n}"
+				}
+			]
+		},
+		{
+			"name": "2. Guardar registros",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"1\" } }\n{ \"nombre\": \"Nike Air Max 270\", \"sexo\": \"Unisex\", \"precio\": 120.00, \"marca\": \"Nike\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"2\" } }\n{ \"nombre\": \"Adidas UltraBoost\", \"sexo\": \"Unisex\", \"precio\": 180.00, \"marca\": \"Adidas\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"3\" } }\n{ \"nombre\": \"Puma RS-X\", \"sexo\": \"Hombres\", \"precio\": 110.00, \"marca\": \"Puma\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"4\" } }\n{ \"nombre\": \"Reebok Classic\", \"sexo\": \"Unisex\", \"precio\": 75.00, \"marca\": \"Reebok\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"5\" } }\n{ \"nombre\": \"New Balance Fresh Foam\", \"sexo\": \"Hombres\", \"precio\": 130.00, \"marca\": \"New Balance\", \"tipo\": \"Basket\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"6\" } }\n{ \"nombre\": \"Asics Gel-Kayano\", \"sexo\": \"Hombres\", \"precio\": 160.00, \"marca\": \"Asics\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"7\" } }\n{ \"nombre\": \"Saucony Kinvara\", \"sexo\": \"Mujeres\", \"precio\": 110.00, \"marca\": \"Saucony\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"8\" } }\n{ \"nombre\": \"Under Armour HOVR\", \"sexo\": \"Hombres\", \"precio\": 150.00, \"marca\": \"Under Armour\", \"tipo\": \"Basket\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"9\" } }\n{ \"nombre\": \"Mizuno Wave Rider\", \"sexo\": \"Hombres\", \"precio\": 140.00, \"marca\": \"Mizuno\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"10\" } }\n{ \"nombre\": \"Brooks Ghost\", \"sexo\": \"Mujeres\", \"precio\": 130.00, \"marca\": \"Brooks\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"11\" } }\n{ \"nombre\": \"Vans Old Skool\", \"sexo\": \"Unisex\", \"precio\": 70.00, \"marca\": \"Vans\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"12\" } }\n{ \"nombre\": \"Converse Chuck Taylor\", \"sexo\": \"Unisex\", \"precio\": 60.00, \"marca\": \"Converse\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"13\" } }\n{ \"nombre\": \"Fila Disruptor\", \"sexo\": \"Unisex\", \"precio\": 80.00, \"marca\": \"Fila\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"14\" } }\n{ \"nombre\": \"Hoka One One Clifton\", \"sexo\": \"Hombres\", \"precio\": 160.00, \"marca\": \"Hoka One One\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"15\" } }\n{ \"nombre\": \"Salomon Speedcross\", \"sexo\": \"Unisex\", \"precio\": 120.00, \"marca\": \"Salomon\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"16\" } }\n{ \"nombre\": \"On Cloudstratus\", \"sexo\": \"Hombres\", \"precio\": 180.00, \"marca\": \"On\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"17\" } }\n{ \"nombre\": \"Merrell Moab\", \"sexo\": \"Unisex\", \"precio\": 100.00, \"marca\": \"Merrell\", \"tipo\": \"Senderismo\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"18\" } }\n{ \"nombre\": \"Timberland 6-Inch Boot\", \"sexo\": \"Unisex\", \"precio\": 200.00, \"marca\": \"Timberland\", \"tipo\": \"Botas\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"19\" } }\n{ \"nombre\": \"Skechers Go Walk\", \"sexo\": \"Mujeres\", \"precio\": 90.00, \"marca\": \"Skechers\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"20\" } }\n{ \"nombre\": \"Nike Zoom Fly\", \"sexo\": \"Hombres\", \"precio\": 150.00, \"marca\": \"Nike\", \"tipo\": \"Running\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Guardado exitoso",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"1\" } }\n{ \"nombre\": \"Nike Air Max 270\", \"sexo\": \"Unisex\", \"precio\": 120.00, \"marca\": \"Nike\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"2\" } }\n{ \"nombre\": \"Adidas UltraBoost\", \"sexo\": \"Unisex\", \"precio\": 180.00, \"marca\": \"Adidas\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"3\" } }\n{ \"nombre\": \"Puma RS-X\", \"sexo\": \"Hombres\", \"precio\": 110.00, \"marca\": \"Puma\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"4\" } }\n{ \"nombre\": \"Reebok Classic\", \"sexo\": \"Unisex\", \"precio\": 75.00, \"marca\": \"Reebok\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"5\" } }\n{ \"nombre\": \"New Balance Fresh Foam\", \"sexo\": \"Hombres\", \"precio\": 130.00, \"marca\": \"New Balance\", \"tipo\": \"Basket\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"6\" } }\n{ \"nombre\": \"Asics Gel-Kayano\", \"sexo\": \"Hombres\", \"precio\": 160.00, \"marca\": \"Asics\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"7\" } }\n{ \"nombre\": \"Saucony Kinvara\", \"sexo\": \"Mujeres\", \"precio\": 110.00, \"marca\": \"Saucony\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"8\" } }\n{ \"nombre\": \"Under Armour HOVR\", \"sexo\": \"Hombres\", \"precio\": 150.00, \"marca\": \"Under Armour\", \"tipo\": \"Basket\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"9\" } }\n{ \"nombre\": \"Mizuno Wave Rider\", \"sexo\": \"Hombres\", \"precio\": 140.00, \"marca\": \"Mizuno\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"10\" } }\n{ \"nombre\": \"Brooks Ghost\", \"sexo\": \"Mujeres\", \"precio\": 130.00, \"marca\": \"Brooks\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"11\" } }\n{ \"nombre\": \"Vans Old Skool\", \"sexo\": \"Unisex\", \"precio\": 70.00, \"marca\": \"Vans\", \"tipo\": \"Fútbol\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"12\" } }\n{ \"nombre\": \"Converse Chuck Taylor\", \"sexo\": \"Unisex\", \"precio\": 60.00, \"marca\": \"Converse\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"13\" } }\n{ \"nombre\": \"Fila Disruptor\", \"sexo\": \"Unisex\", \"precio\": 80.00, \"marca\": \"Fila\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"14\" } }\n{ \"nombre\": \"Hoka One One Clifton\", \"sexo\": \"Hombres\", \"precio\": 160.00, \"marca\": \"Hoka One One\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"15\" } }\n{ \"nombre\": \"Salomon Speedcross\", \"sexo\": \"Unisex\", \"precio\": 120.00, \"marca\": \"Salomon\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"16\" } }\n{ \"nombre\": \"On Cloudstratus\", \"sexo\": \"Hombres\", \"precio\": 180.00, \"marca\": \"On\", \"tipo\": \"Running\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"17\" } }\n{ \"nombre\": \"Merrell Moab\", \"sexo\": \"Unisex\", \"precio\": 100.00, \"marca\": \"Merrell\", \"tipo\": \"Senderismo\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"18\" } }\n{ \"nombre\": \"Timberland 6-Inch Boot\", \"sexo\": \"Unisex\", \"precio\": 200.00, \"marca\": \"Timberland\", \"tipo\": \"Botas\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"19\" } }\n{ \"nombre\": \"Skechers Go Walk\", \"sexo\": \"Mujeres\", \"precio\": 90.00, \"marca\": \"Skechers\", \"tipo\": \"Sportwears\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"20\" } }\n{ \"nombre\": \"Nike Zoom Fly\", \"sexo\": \"Hombres\", \"precio\": 150.00, \"marca\": \"Nike\", \"tipo\": \"Running\" }\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_bulk",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_bulk"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"errors\": false,\n    \"took\": 0,\n    \"items\": [\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"1\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 21,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"2\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 22,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"3\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 23,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"4\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 24,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"5\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 25,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"6\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 26,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"7\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 27,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"8\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 28,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"9\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 29,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"10\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 30,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"11\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 31,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"12\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 32,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"13\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 33,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"14\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 34,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"15\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 35,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"16\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 36,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"17\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 37,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"18\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 38,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"19\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 39,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        },\n        {\n            \"index\": {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"20\",\n                \"_version\": 2,\n                \"result\": \"updated\",\n                \"_shards\": {\n                    \"total\": 2,\n                    \"successful\": 1,\n                    \"failed\": 0\n                },\n                \"_seq_no\": 40,\n                \"_primary_term\": 1,\n                \"status\": 200\n            }\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "3. Consultar los registros",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":{\n        \"match\":{\n            \"sexo\":\"Mujer\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Consulta zapatillas de mujer",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\":{\n        \"match\":{\n            \"sexo\":\"Mujeres\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"took\": 1,\n    \"timed_out\": false,\n    \"_shards\": {\n        \"total\": 1,\n        \"successful\": 1,\n        \"skipped\": 0,\n        \"failed\": 0\n    },\n    \"hits\": {\n        \"total\": {\n            \"value\": 4,\n            \"relation\": \"eq\"\n        },\n        \"max_score\": 0.6329006,\n        \"hits\": [\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"09Xqm5IBPRAsgtw_XV7E\",\n                \"_score\": 0.6329006,\n                \"_source\": {\n                    \"nombre\": \"Tenis de Running Pureboost 5\",\n                    \"sexo\": \"Mujer\",\n                    \"tipo\": \"Running\",\n                    \"precio\": 799950\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"1NXqm5IBPRAsgtw_y17J\",\n                \"_score\": 0.6329006,\n                \"_source\": {\n                    \"nombre\": \"Guayos F50 League Mid-Cut Terreno Firme/Multisuperficie\",\n                    \"sexo\": \"Mujer\",\n                    \"tipo\": \"Fútbol\",\n                    \"precio\": 499950\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"1tXrm5IBPRAsgtw_z15r\",\n                \"_score\": 0.6329006,\n                \"_source\": {\n                    \"nombre\": \"Tenis Everyset Trainer\",\n                    \"sexo\": \"Mujer\",\n                    \"tipo\": \"Training\",\n                    \"precio\": 499.95\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"2NXtm5IBPRAsgtw_G14M\",\n                \"_score\": 0.6329006,\n                \"_source\": {\n                    \"nombre\": \"Tenis Ultraboost 5\",\n                    \"sexo\": \"Mujer\",\n                    \"tipo\": \"Running\",\n                    \"precio\": 949950\n                }\n            }\n        ]\n    }\n}"
+				},
+				{
+					"name": "Consulta zapatillas con precio mayor a 100",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"range\" : {\n            \"precio\" : {\n                \"gt\" : 100\n            }\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_search"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json",
+							"description": "",
+							"type": "text"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"took\": 0,\n    \"timed_out\": false,\n    \"_shards\": {\n        \"total\": 1,\n        \"successful\": 1,\n        \"skipped\": 0,\n        \"failed\": 0\n    },\n    \"hits\": {\n        \"total\": {\n            \"value\": 14,\n            \"relation\": \"eq\"\n        },\n        \"max_score\": 1.0,\n        \"hits\": [\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"1\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Nike Air Max 270\",\n                    \"sexo\": \"Unisex\",\n                    \"precio\": 120.00,\n                    \"marca\": \"Nike\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"2\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Adidas UltraBoost\",\n                    \"sexo\": \"Unisex\",\n                    \"precio\": 180.00,\n                    \"marca\": \"Adidas\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"3\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Puma RS-X\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 110.00,\n                    \"marca\": \"Puma\",\n                    \"tipo\": \"Fútbol\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"5\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"New Balance Fresh Foam\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 130.00,\n                    \"marca\": \"New Balance\",\n                    \"tipo\": \"Basket\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"6\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Asics Gel-Kayano\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 160.00,\n                    \"marca\": \"Asics\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"7\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Saucony Kinvara\",\n                    \"sexo\": \"Mujeres\",\n                    \"precio\": 110.00,\n                    \"marca\": \"Saucony\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"8\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Under Armour HOVR\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 150.00,\n                    \"marca\": \"Under Armour\",\n                    \"tipo\": \"Basket\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"9\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Mizuno Wave Rider\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 140.00,\n                    \"marca\": \"Mizuno\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"10\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Brooks Ghost\",\n                    \"sexo\": \"Mujeres\",\n                    \"precio\": 130.00,\n                    \"marca\": \"Brooks\",\n                    \"tipo\": \"Running\"\n                }\n            },\n            {\n                \"_index\": \"zapatillas\",\n                \"_id\": \"14\",\n                \"_score\": 1.0,\n                \"_source\": {\n                    \"nombre\": \"Hoka One One Clifton\",\n                    \"sexo\": \"Hombres\",\n                    \"precio\": 160.00,\n                    \"marca\": \"Hoka One One\",\n                    \"tipo\": \"Running\"\n                }\n            }\n        ]\n    }\n}"
+				}
+			]
+		}
+	]
+}
