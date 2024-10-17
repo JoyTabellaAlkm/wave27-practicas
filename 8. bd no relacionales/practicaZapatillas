@@ -1,12 +1,27 @@
-# Create an index
+# Welcome to the Dev Tools Console!
+#
+# You can use Console to explore the Elasticsearch API. See the Elasticsearch API reference to learn more:
+# https://www.elastic.co/guide/en/elasticsearch/reference/current/rest-apis.html
+#
+# Here are a few examples to get you started.
+
+
+# Se crea el indice "zapatillas"
 PUT /zapatillas
 
+#Guardar una zapatilla
+POST /zapatillas/_doc
+{
+  "marca": "Nike",
+  "modelo": "Air force one",
+  "descripcion": "Las mejores zapatillas. Negras"
+}
 
-# Añadir documentos a "prueba" en forma de bulk
+#
 POST /zapatillas/_bulk
-{"index": {"_id": "1"}}
+{"index": {}}
 {"marca": "Nike", "modelo": "Air Max", "descripcion": "Comodidad y estilo", "talle": 42, "stock": 50}
-{"index": {"_id": "2"}}
+{"index": {}}
 {"marca": "Adidas", "modelo": "Yeezy", "descripcion": "Éxito en cada paso", "precio": 300.00, "descuento": 20}
 {"index": {"_id": "3"}}
 {"marca": "Puma", "modelo": "Suede", "descripcion": "Un clásico atemporal", "stock": 30, "precio": 80.99}
@@ -47,59 +62,74 @@ POST /zapatillas/_bulk
 {"index": {"_id": "20"}}
 {"marca": "New Balance", "modelo": "Aa574", "descripcion": "Versátil para cualquier ocasión", "talle": 44, "precio": 90.00, "descuento": 10}
 
-# Busqueda por ID
-GET /zapatillas/_search
-{"query": {"term": {
-  "_id": 1
-}}}
+#Delete de una zapatilla
+DELETE /zapatillas/_doc/9
 
-#Busqueda por marca "Nike"
-GET /zapatillas/_search
+#Update de una zapa
+POST /zapatillas/_update/Um36m5IBgL1MPU_c0nlL
 {
-  "query": {
-    "match": {
-      "marca": "Nike"
-    }
+  "doc": {
+    "shopping": [
+      {"nombre": "Nuevocentro", "direccion": "Italia 3000", "barrio": "Centro"},
+    {"nombre": "Villa cabrera shopping", "direccion": "Urquiza 3000", "barrio": "Villa cabrera"}
+    ]
   }
 }
 
-#Precio mayor a 10000
+
+
 GET /zapatillas/_search
 {
-  "query": {
-    "range": {
-      "precio": {
-        "gt": 10000
+  "query": {"term": {
+    "_id": {
+      "value": "Um36m5IBgL1MPU_c0nlL"
+    }
+  }}
+}
+
+
+GET /zapatillas/_search
+{
+  "sort": [
+    {
+      "descuento": {
+        "order": "asc"
       }
     }
-  }
+  ]
 }
 
-#Talle especifico
 GET /zapatillas/_search
 {
-  "query": {
-    "term": {
-      "talle": 44
+  "sort": [
+    {
+      "precio": {
+        "order": "asc"
+      }
     }
-  }
+  ]
 }
 
-#Nike y stock mayor a 20
+
 GET /zapatillas/_search
 {
-  "query": {
-    "bool": {
-      "must": [
-        { "match": { "marca": "Nike" }},
-        { "range": { "stock": { "gt": 20 }}}
-      ]
+  "query": {"match_phrase": {
+    "modelo": "Air force one"
     }
-  }
+  }}
+}
+
+GET /zapatillas/_search
+{
+  "query": {"match_phrase": {
+    "shopping.direccion": "Italia 3000"
+    }
+  }}
 }
 
 
-#Lista ordenada precio asc
+
+#Sorted por talle
 GET /zapatillas/_search
 {
   "query": {
@@ -107,20 +137,43 @@ GET /zapatillas/_search
   },
   "sort": [
     {
-      "precio": {
+      "talle": {
         "order": "desc"
       }
     }
   ]
 }
 
-#Ejemplo de update de un documento
-POST /zapatillas/_update/1
+#Get fuzzy
+GET /zapatillas/_search
 {
-  "doc": {
-    "precio": 50000.00,
-    "stock": 45
+  "query": {
+    "match": {
+      "modelo": "Air force one"
+    }
   }
 }
+
+#conseguir un talle
+GET /zapatillas/_search
+{
+  "query": {
+    "range": {
+      "talle": {
+        "gt": 40,
+        "lte": 41
+      }
+    }
+  }
+}
+
+GET /zapatillas/_search
+{
+  "query": {"fuzzy": {
+    "modelo": "Air"
+  }}
+  
+}
+
 
 
