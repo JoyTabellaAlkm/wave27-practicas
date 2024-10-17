@@ -1,0 +1,213 @@
+{
+	"info": {
+		"_postman_id": "a2770afe-a6e5-4410-b831-c74949514052",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "create index",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"nombre\": {\n                \"type\": \"text\"\n            },\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"talla\": {\n                \"type\": \"short\"\n            },\n            \"precio\": {\n                \"type\": \"double\"\n            },\n            \"material\": {\n                \"type\": \"text\"\n            },\n            \"color\": {\n                \"type\": \"text\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas_deportivas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas_deportivas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete index",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete doc",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/XUj5m5IBrYybCAU0kCxc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"XUj5m5IBrYybCAU0kCxc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add docs",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_id\": \"1\" } }\n{ \"nombre\": \"Nike Air Max 270\", \"marca\": \"Nike\", \"talla\": 42, \"precio\": 120.00, \"material\": \"Sintético\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"2\" } }\n{ \"nombre\": \"Adidas Ultraboost\", \"marca\": \"Adidas\", \"talla\": 41, \"precio\": 180.00, \"material\": \"Textil\", \"color\": \"Blanco\" }\n{ \"index\": { \"_id\": \"3\" } }\n{ \"nombre\": \"Puma RS-X\", \"marca\": \"Puma\", \"talla\": 43, \"precio\": 110.00, \"material\": \"Sintético\", \"color\": \"Azul\" }\n{ \"index\": { \"_id\": \"4\" } }\n{ \"nombre\": \"Reebok Classic\", \"marca\": \"Reebok\", \"talla\": 40, \"precio\": 75.00, \"material\": \"Cuero\", \"color\": \"Blanco\" }\n{ \"index\": { \"_id\": \"5\" } }\n{ \"nombre\": \"New Balance 990v5\", \"marca\": \"New Balance\", \"talla\": 44, \"precio\": 175.00, \"material\": \"Textil\", \"color\": \"Gris\" }\n{ \"index\": { \"_id\": \"6\" } }\n{ \"nombre\": \"Converse Chuck Taylor\", \"marca\": \"Converse\", \"talla\": 39, \"precio\": 55.00, \"material\": \"Lona\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"7\" } }\n{ \"nombre\": \"Asics Gel-Kayano\", \"marca\": \"Asics\", \"talla\": 40, \"precio\": 160.00, \"material\": \"Sintético\", \"color\": \"Rojo\" }\n{ \"index\": { \"_id\": \"8\" } }\n{ \"nombre\": \"Hoka One One Bondi\", \"marca\": \"Hoka\", \"talla\": 41, \"precio\": 160.00, \"material\": \"Textil\", \"color\": \"Azul\" }\n{ \"index\": { \"_id\": \"9\" } }\n{ \"nombre\": \"Saucony Triumph\", \"marca\": \"Saucony\", \"talla\": 42, \"precio\": 140.00, \"material\": \"Textil\", \"color\": \"Verde\" }\n{ \"index\": { \"_id\": \"10\" } }\n{ \"nombre\": \"Vans Old Skool\", \"marca\": \"Vans\", \"talla\": 43, \"precio\": 65.00, \"material\": \"Lona\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"11\" } }\n{ \"nombre\": \"Brooks Ghost\", \"marca\": \"Brooks\", \"talla\": 44, \"precio\": 130.00, \"material\": \"Sintético\", \"color\": \"Gris\" }\n{ \"index\": { \"_id\": \"12\" } }\n{ \"nombre\": \"Under Armour HOVR\", \"marca\": \"Under Armour\", \"talla\": 39, \"precio\": 110.00, \"material\": \"Sintético\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"13\" } }\n{ \"nombre\": \"Nike React Infinity Run\", \"marca\": \"Nike\", \"talla\": 40, \"precio\": 160.00, \"material\": \"Textil\", \"color\": \"Blanco\" }\n{ \"index\": { \"_id\": \"14\" } }\n{ \"nombre\": \"Adidas NMD R1\", \"marca\": \"Adidas\", \"talla\": 42, \"precio\": 140.00, \"material\": \"Sintético\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"15\" } }\n{ \"nombre\": \"Puma Clyde\", \"marca\": \"Puma\", \"talla\": 43, \"precio\": 80.00, \"material\": \"Cuero\", \"color\": \"Blanco\" }\n{ \"index\": { \"_id\": \"16\" } }\n{ \"nombre\": \"New Balance Fresh Foam\", \"marca\": \"New Balance\", \"talla\": 44, \"precio\": 130.00, \"material\": \"Textil\", \"color\": \"Gris\" }\n{ \"index\": { \"_id\": \"17\" } }\n{ \"nombre\": \"Converse All Star\", \"marca\": \"Converse\", \"talla\": 40, \"precio\": 50.00, \"material\": \"Lona\", \"color\": \"Rojo\" }\n{ \"index\": { \"_id\": \"18\" } }\n{ \"nombre\": \"Asics Gel-Nimbus\", \"marca\": \"Asics\", \"talla\": 41, \"precio\": 160.00, \"material\": \"Sintético\", \"color\": \"Azul\" }\n{ \"index\": { \"_id\": \"19\" } }\n{ \"nombre\": \"Hoka One One Clifton\", \"marca\": \"Hoka\", \"talla\": 39, \"precio\": 140.00, \"material\": \"Textil\", \"color\": \"Negro\" }\n{ \"index\": { \"_id\": \"20\" } }\n{ \"nombre\": \"Saucony Guide\", \"marca\": \"Saucony\", \"talla\": 42, \"precio\": 120.00, \"material\": \"Textil\", \"color\": \"Verde\" }\n{ \"index\": { \"_id\": \"21\" } }\n{ \"nombre\": \"Vans Sk8-Hi\", \"marca\": \"Vans\", \"talla\": 43, \"precio\": 75.00, \"material\": \"Lona\", \"color\": \"Negro\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas_deportivas/_bulk",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas_deportivas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update docs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Nike\",\n    \"marca\": \"Naik\",\n    \"talla\": 43,\n    \"valor\": 333.34,\n    \"color\": \"azul\",\n    \"material\": \"cuero\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/UEjjm5IBrYybCAU0Ziwr",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"UEjjm5IBrYybCAU0Ziwr"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match_all\": {}\n    },\n    \"from\": 0,\n    \"size\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas_deportivas/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas_deportivas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read Copy",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"_id\": 1\n        }\n    },\n    \"from\": 0,\n    \"size\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
