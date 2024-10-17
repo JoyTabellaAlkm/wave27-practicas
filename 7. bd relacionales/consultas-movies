@@ -1,0 +1,66 @@
+-- Selecciona todas las columnas de la tabla 'movies'
+SELECT * 
+FROM movies;
+
+-- Selecciona el nombre, apellido y rating de los actores
+SELECT first_name, last_name, rating 
+FROM actors;
+
+-- Selecciona los títulos de las series con un alias 'titulo'
+SELECT title AS titulo 
+FROM series;
+
+-- Selecciona el nombre, apellido de los actores cuya calificación es mayor a 7.5
+SELECT first_name, last_name 
+FROM actors 
+WHERE rating > 7.5;
+
+-- Selecciona el título, calificación y premios de las películas que tienen más de 2 premios y una calificación mayor a 7.5
+SELECT title, rating, awards 
+FROM movies 
+WHERE awards > 2 
+  AND rating > 7.5;
+
+-- Selecciona el título y la calificación de las películas, ordenadas por calificación de menor a mayor
+SELECT title, rating 
+FROM movies 
+ORDER BY rating ASC;
+
+-- Selecciona los primeros 3 títulos de películas
+SELECT title 
+FROM movies 
+LIMIT 3;
+
+-- Selecciona los primeros 5 títulos y calificaciones de películas, ordenadas de mayor a menor calificación
+SELECT title, rating 
+FROM movies 
+ORDER BY rating DESC 
+LIMIT 5;
+
+-- Selecciona todas las columnas de los primeros 10 actores
+SELECT * 
+FROM actors 
+LIMIT 10;
+
+-- Selecciona el título y la calificación de la película que se llama 'Toy Story'
+SELECT title, rating 
+FROM movies 
+WHERE title = 'Toy Story';
+
+-- Selecciona el nombre, apellido y calificación de los actores cuyo nombre empieza con 'Sam'
+SELECT first_name, last_name, rating 
+FROM actors 
+WHERE first_name LIKE 'Sam%';
+
+-- Selecciona el título y la fecha de estreno de las películas que fueron estrenadas entre el 1 de enero de 2004 y el 31 de diciembre de 2008
+SELECT title, release_date 
+FROM movies 
+WHERE release_date BETWEEN '2004-01-01' AND '2008-12-31';
+
+-- Selecciona el título, fecha de estreno y calificación de las películas que tienen más de 1 premio y una calificación mayor a 3, estrenadas entre 1998 y 2009, ordenadas por calificación
+SELECT title, release_date, rating 
+FROM movies 
+WHERE rating > 3 
+  AND awards > 1 
+  AND release_date BETWEEN '1998-01-01' AND '2009-12-31'
+ORDER BY rating;
