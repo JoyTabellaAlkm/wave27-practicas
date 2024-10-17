@@ -1,0 +1,189 @@
+{
+	"info": {
+		"_postman_id": "81dd29d4-bca3-418c-9d3f-bf116b5ce11e",
+		"name": "ZapatillasDeportivasDB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "Creación del Index",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"mappings\": {\n    \"properties\": {\n      \"nombre\": { \"type\": \"text\" },\n      \"marca\": { \"type\": \"keyword\" },\n      \"modelo\": { \"type\": \"text\" },\n      \"precio\": { \"type\": \"float\" },\n      \"talla_disponible\": { \"type\": \"integer\" },\n      \"color\": { \"type\": \"keyword\" },\n      \"en_stock\": { \"type\": \"boolean\" },\n      \"fecha_lanzamiento\": { \"type\": \"date\" }\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar 20 registros",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": {} }\n{ \"nombre\": \"Air Max 2024\", \"marca\": \"Nike\", \"modelo\": \"2024\", \"precio\": 145.99, \"talla_disponible\": [37, 38, 39], \"color\": \"Negro\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-01-15\" }\n{ \"index\": {} }\n{ \"nombre\": \"Ultra Boost 22\", \"marca\": \"Adidas\", \"modelo\": \"2024\", \"precio\": 180.00, \"talla_disponible\": [40, 41, 42], \"color\": \"Blanco\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-02-20\" }\n{ \"index\": {} }\n{ \"nombre\": \"Gel-Kayano 30\", \"marca\": \"ASICS\", \"modelo\": \"2024\", \"precio\": 160.00, \"talla_disponible\": [43, 44], \"color\": \"Azul\", \"en_stock\": false, \"fecha_lanzamiento\": \"2024-03-10\" }\n{ \"index\": {} }\n{ \"nombre\": \"Fresh Foam 1080\", \"marca\": \"New Balance\", \"modelo\": \"2024\", \"precio\": 150.50, \"talla_disponible\": [38, 39, 40], \"color\": \"Gris\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-04-05\" }\n{ \"index\": {} }\n{ \"nombre\": \"Cloudstratus\", \"marca\": \"On\", \"modelo\": \"2024\", \"precio\": 190.00, \"talla_disponible\": [41, 42], \"color\": \"Rosa\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-05-15\" }\n{ \"index\": {} }\n{ \"nombre\": \"Hoka One One Bondi\", \"marca\": \"Hoka\", \"modelo\": \"2024\", \"precio\": 165.00, \"talla_disponible\": [40, 41], \"color\": \"Negro\", \"en_stock\": false, \"fecha_lanzamiento\": \"2024-06-20\" }\n{ \"index\": {} }\n{ \"nombre\": \"Wave Rider 26\", \"marca\": \"Mizuno\", \"modelo\": \"2024\", \"precio\": 140.00, \"talla_disponible\": [39, 40, 42], \"color\": \"Verde\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-07-01\" }\n{ \"index\": {} }\n{ \"nombre\": \"Speedgoat 4\", \"marca\": \"Hoka\", \"modelo\": \"2024\", \"precio\": 155.00, \"talla_disponible\": [44, 45], \"color\": \"Azul\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-08-05\" }\n{ \"index\": {} }\n{ \"nombre\": \"Wave Inspire\", \"marca\": \"Mizuno\", \"modelo\": \"2024\", \"precio\": 130.00, \"talla_disponible\": [38, 39, 40], \"color\": \"Amarillo\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-09-12\" }\n{ \"index\": {} }\n{ \"nombre\": \"Ride 15\", \"marca\": \"Saucony\", \"modelo\": \"2024\", \"precio\": 135.00, \"talla_disponible\": [41, 42], \"color\": \"Gris\", \"en_stock\": false, \"fecha_lanzamiento\": \"2024-10-01\" }\n{ \"index\": {} }\n{ \"nombre\": \"Zoom Fly\", \"marca\": \"Nike\", \"modelo\": \"2024\", \"precio\": 160.00, \"talla_disponible\": [43, 44], \"color\": \"Naranja\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-10-15\" }\n{ \"index\": {} }\n{ \"nombre\": \"React Infinity\", \"marca\": \"Nike\", \"modelo\": \"2024\", \"precio\": 130.00, \"talla_disponible\": [38, 39, 40], \"color\": \"Verde\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-09-20\" }\n{ \"index\": {} }\n{ \"nombre\": \"Metcon 7\", \"marca\": \"Nike\", \"modelo\": \"2024\", \"precio\": 150.00, \"talla_disponible\": [40, 41], \"color\": \"Negro\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-06-15\" }\n{ \"index\": {} }\n{ \"nombre\": \"Dynaflite\", \"marca\": \"Brooks\", \"modelo\": \"2024\", \"precio\": 145.00, \"talla_disponible\": [42, 43], \"color\": \"Rojo\", \"en_stock\": false, \"fecha_lanzamiento\": \"2024-05-10\" }\n{ \"index\": {} }\n{ \"nombre\": \"Tornado\", \"marca\": \"Salomon\", \"modelo\": \"2024\", \"precio\": 135.00, \"talla_disponible\": [39, 40], \"color\": \"Gris\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-07-25\" }\n{ \"index\": {} }\n{ \"nombre\": \"Cumulus 24\", \"marca\": \"ASICS\", \"modelo\": \"2024\", \"precio\": 120.00, \"talla_disponible\": [38, 39, 40], \"color\": \"Azul\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-08-10\" }\n{ \"index\": {} }\n{ \"nombre\": \"Freak 4\", \"marca\": \"Under Armour\", \"modelo\": \"2024\", \"precio\": 160.00, \"talla_disponible\": [41, 42], \"color\": \"Negro\", \"en_stock\": false, \"fecha_lanzamiento\": \"2024-09-30\" }\n{ \"index\": {} }\n{ \"nombre\": \"Trailblazer\", \"marca\": \"New Balance\", \"modelo\": \"2024\", \"precio\": 150.00, \"talla_disponible\": [44, 45], \"color\": \"Marrón\", \"en_stock\": true, \"fecha_lanzamiento\": \"2024-10-10\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Eliminar index",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtro por marca",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"match\": {\n      \"marca\": \"Nike\"\n    }\n  }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtro por marca con ord asc por color",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"match_phrase\": {\n      \"marca\": \"Nike\"\n    }\n  },\n  \"sort\": [\n    {\n      \"color\": {\n        \"order\": \"asc\"\n      }\n    }\n  ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filtro por ID",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    \"match\": {\n      \"_id\": \"AmLanJIBGQaZoPyZQvKn\"\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas_deportivas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas_deportivas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
