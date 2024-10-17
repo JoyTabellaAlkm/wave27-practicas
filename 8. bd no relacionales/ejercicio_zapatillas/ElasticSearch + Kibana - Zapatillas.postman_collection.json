@@ -1,0 +1,233 @@
+{
+	"info": {
+		"_postman_id": "3cafea11-7af2-4ddd-84a9-03da4d8aba5c",
+		"name": "ElasticSearch + Kibana - Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38158098"
+	},
+	"item": [
+		{
+			"name": "Queries",
+			"item": [
+				{
+					"name": "Traer zapatillas de mujer",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\":{\n        \"match\":{\n            \"sexo\":\"Mujer\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer zapatillas de menos de 10.000",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"range\": {\n            \"precio\": {\n                \"lt\": 120\n            }\n        }\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Traer zapatillas marca Nike",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"match\": {\n            \"marca\": \"Nike\"\n        }\n    }\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9200/zapatillas/_search",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9200",
+							"path": [
+								"zapatillas",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear Base de Datos",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\":{\n        \"properties\": {\n            \"nombre\":{ \"type\": \"text\" },\n            \"sexo\":{ \"type\": \"text\" },\n            \"precio\":{ \"type\": \"double\" },\n            \"marca\":{ \"type\": \"text\" },\n            \"talle\" : { \"type\": \"integer\" },\n            \"descripcion\":{\"type\": \"text\"}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar datos docs todos juntos",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"index\": {\"_id\": \"1\"}}\n{\"nombre\": \"Nike Air Zoom Pegasus 39\", \"sexo\": \"Hombre\", \"precio\": 120.00, \"marca\": \"Nike\", \"talle\": 42, \"descripcion\": \"Zapatillas ligeras para correr con excelente amortiguación.\"}\n{\"index\": {\"_id\": \"2\"}}\n{\"nombre\": \"Adidas Ultraboost 22\", \"sexo\": \"Mujer\", \"precio\": 180.00, \"marca\": \"Adidas\", \"talle\": 38, \"descripcion\": \"Zapatillas de running con tecnología de retorno de energía.\"}\n{\"index\": {\"_id\": \"3\"}}\n{\"nombre\": \"Puma Ignite Flash Evoknit\", \"sexo\": \"Unisex\", \"precio\": 95.00, \"marca\": \"Puma\", \"talle\": 40, \"descripcion\": \"Zapatillas cómodas ideales para entrenamiento.\"}\n{\"index\": {\"_id\": \"4\"}}\n{\"nombre\": \"New Balance Fresh Foam 1080\", \"sexo\": \"Hombre\", \"precio\": 160.00, \"marca\": \"New Balance\", \"talle\": 44, \"descripcion\": \"Zapatillas con amortiguación avanzada para largas distancias.\"}\n{\"index\": {\"_id\": \"5\"}}\n{\"nombre\": \"Reebok Floatride Energy 3\", \"sexo\": \"Mujer\", \"precio\": 100.00, \"marca\": \"Reebok\", \"talle\": 39, \"descripcion\": \"Zapatillas ligeras y rápidas para correr.\"}\n{\"index\": {\"_id\": \"6\"}}\n{\"nombre\": \"Asics Gel-Nimbus 24\", \"sexo\": \"Unisex\", \"precio\": 150.00, \"marca\": \"Asics\", \"talle\": 41, \"descripcion\": \"Zapatillas de running con gran soporte y comodidad.\"}\n{\"index\": {\"_id\": \"7\"}}\n{\"nombre\": \"Saucony Triumph 20\", \"sexo\": \"Hombre\", \"precio\": 165.00, \"marca\": \"Saucony\", \"talle\": 43, \"descripcion\": \"Zapatillas para correr con excelente amortiguación.\"}\n{\"index\": {\"_id\": \"8\"}}\n{\"nombre\": \"Hoka One One Clifton 8\", \"sexo\": \"Mujer\", \"precio\": 140.00, \"marca\": \"Hoka\", \"talle\": 37, \"descripcion\": \"Zapatillas de running con gran amortiguación y soporte.\"}\n{\"index\": {\"_id\": \"9\"}}\n{\"nombre\": \"Brooks Ghost 14\", \"sexo\": \"Unisex\", \"precio\": 130.00, \"marca\": \"Brooks\", \"talle\": 40, \"descripcion\": \"Zapatillas para correr cómodas y versátiles.\"}\n{\"index\": {\"_id\": \"10\"}}\n{\"nombre\": \"Nike React Infinity Run\", \"sexo\": \"Hombre\", \"precio\": 160.00, \"marca\": \"Nike\", \"talle\": 44, \"descripcion\": \"Zapatillas diseñadas para minimizar el riesgo de lesiones.\"}\n{\"index\": {\"_id\": \"11\"}}\n{\"nombre\": \"Adidas Solar Glide 4\", \"sexo\": \"Mujer\", \"precio\": 140.00, \"marca\": \"Adidas\", \"talle\": 38, \"descripcion\": \"Zapatillas para correr con gran estabilidad.\"}\n{\"index\": {\"_id\": \"12\"}}\n{\"nombre\": \"On Cloudstratus\", \"sexo\": \"Unisex\", \"precio\": 170.00, \"marca\": \"On\", \"talle\": 41, \"descripcion\": \"Zapatillas para correr con amortiguación doble.\"}\n{\"index\": {\"_id\": \"13\"}}\n{\"nombre\": \"Mizuno Wave Rider 25\", \"sexo\": \"Hombre\", \"precio\": 135.00, \"marca\": \"Mizuno\", \"talle\": 43, \"descripcion\": \"Zapatillas con buena respuesta y comodidad.\"}\n{\"index\": {\"_id\": \"14\"}}\n{\"nombre\": \"Salomon Speedcross 5\", \"sexo\": \"Mujer\", \"precio\": 130.00, \"marca\": \"Salomon\", \"talle\": 39, \"descripcion\": \"Zapatillas ideales para trail running.\"}\n{\"index\": {\"_id\": \"15\"}}\n{\"nombre\": \"Under Armour HOVR Phantom\", \"sexo\": \"Unisex\", \"precio\": 150.00, \"marca\": \"Under Armour\", \"talle\": 40, \"descripcion\": \"Zapatillas con tecnología de energía de retorno.\"}\n{\"index\": {\"_id\": \"16\"}}\n{\"nombre\": \"Vans UltraRange EXO\", \"sexo\": \"Hombre\", \"precio\": 100.00, \"marca\": \"Vans\", \"talle\": 42, \"descripcion\": \"Zapatillas casuales con comodidad para el día a día.\"}\n{\"index\": {\"_id\": \"17\"}}\n{\"nombre\": \"Nike Free RN 5.0\", \"sexo\": \"Mujer\", \"precio\": 110.00, \"marca\": \"Nike\", \"talle\": 38, \"descripcion\": \"Zapatillas ligeras para entrenamiento y correr.\"}\n{\"index\": {\"_id\": \"18\"}}\n{\"nombre\": \"Adidas NMD R1\", \"sexo\": \"Unisex\", \"precio\": 140.00, \"marca\": \"Adidas\", \"talle\": 41, \"descripcion\": \"Zapatillas urbanas con estilo y comodidad.\"}\n{\"index\": {\"_id\": \"19\"}}\n{\"nombre\": \"New Balance 990v5\", \"sexo\": \"Hombre\", \"precio\": 185.00, \"marca\": \"New Balance\", \"talle\": 44, \"descripcion\": \"Zapatillas clásicas con un diseño atemporal.\"}\n{\"index\": {\"_id\": \"20\"}}\n{\"nombre\": \"Brooks Adrenaline GTS 22\", \"sexo\": \"Mujer\", \"precio\": 140.00, \"marca\": \"Brooks\", \"talle\": 39, \"descripcion\": \"Zapatillas de soporte para corredores.\"}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Agregar un solo doc",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Brooks Adrenaline GTS 22\",\n    \"sexo\": \"Mujer\",\n    \"precio\": 140.00,\n    \"marca\": \"Brooks\",\n    \"talle\": 39,\n    \"descripcion\": \"Zapatillas de soporte para corredores.\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_doc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
