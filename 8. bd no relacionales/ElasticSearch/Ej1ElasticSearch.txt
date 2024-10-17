@@ -1,0 +1,69 @@
+PUT /zapatillas_deportivas
+{
+  "mappings": {
+    "properties": {
+      "nombre": { "type": "text" },
+      "marca": { "type": "keyword" },
+      "modelo": { "type": "text" },
+      "precio": { "type": "float" },
+      "talla_disponible": { "type": "integer" },
+      "color": { "type": "keyword" },
+      "en_stock": { "type": "boolean" },
+      "fecha_lanzamiento": { "type": "date" },
+      "origen": {"type": "text"}
+    }
+  }
+}
+
+DELETE /zapatillas_deportivas/_alias
+
+POST /zapatillas_deportivas/_doc
+{
+  "nombre": "Under Armour HOVR",
+  "marca": "Under Armour",
+  "modelo": "2024",
+  "precio": 179.99,
+  "talla_disponible": [37, 38, 39, 41, 43],
+  "color": "Negro y Blanco",
+  "en_stock": true,
+  "fecha_lanzamiento": "2024-03-10",
+  "origen": "China"
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match": {
+      "nombre": "Under Armour HOVR"
+    }
+  }
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match_phrase": {
+      "nombre": "Air Max"
+    }
+  },
+  "sort": [
+    {
+      "color": {
+        "order": "asc"
+      }
+    }
+  ]
+}
+
+GET /zapatillas_deportivas/_search
+{
+  "query": {
+    "match": {
+      "_id": "Ji4KnJIBCjPeJTlATPFH"
+    }
+  }
+}
+
+
+
+
