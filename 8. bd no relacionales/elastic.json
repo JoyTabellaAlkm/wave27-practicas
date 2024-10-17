@@ -1,0 +1,181 @@
+{
+	"info": {
+		"_postman_id": "04017f5a-ddf6-47c8-8236-0963a4bba5a2",
+		"name": "Elasticsearch",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38178465"
+	},
+	"item": [
+		{
+			"name": "Create index",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"id\": {\n                \"type\": \"integer\"\n            },\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"talle\": {\n                \"type\": \"integer\"\n            },\n            \"sku\": {\n                \"type\": \"text\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas-deportivas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas-deportivas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View index",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{elastic}}/zapatillas-deportivas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas-deportivas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all indexes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{elastic}}/_cat/indices",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"_cat",
+						"indices"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create document",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\": 1,\n    \"marca\": \"Nike\",\n    \"sku\": \"nike1\",\n    \"talle\": 40\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas-deportivas/_doc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas-deportivas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View documents",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{elastic}}/zapatillas-deportivas/_search?q=40",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas-deportivas",
+						"_search"
+					],
+					"query": [
+						{
+							"key": "q",
+							"value": "40"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View documents filtered",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\": {\n            \"marca\": \"Nike\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas-deportivas/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas-deportivas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"packages": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "elastic",
+			"value": "http://localhost:9200",
+			"type": "string"
+		}
+	]
+}
