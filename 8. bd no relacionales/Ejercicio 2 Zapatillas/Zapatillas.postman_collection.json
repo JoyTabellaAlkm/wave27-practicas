@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "192e5236-01c9-4970-8211-6e5db267b6df",
+		"name": "Zapatillas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "CREAR INDEX",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\":{\n        \"properties\": {\n            \"nombre\":{ \"type\": \"text\" },\n            \"descripcion\" : {\"type\": \"text\"},\n            \"precio\":{ \"type\": \"float\" },\n            \"marca\":{ \"type\": \"text\" },\n            \"talla\" : { \"type\": \"double\" },\n            \"stock\" : {\"type\" : \"integer\"}\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "INSERTAR DATOS",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_id\": \"1\" } }\n{ \"marca\": \"Nike\", \"modelo\": \"Air Max 270\", \"talla\": 42, \"color\": \"Negro\", \"precio\": 120.00, \"stock\": 10, \"descripcion\": \"Zapatillas deportivas con tecnología Air.\" }\n{ \"index\": { \"_id\": \"2\" } }\n{ \"marca\": \"Adidas\", \"modelo\": \"UltraBoost\", \"talla\": 41, \"color\": \"Blanco\", \"precio\": 180.00, \"stock\": 5, \"descripcion\": \"Zapatillas de running con gran amortiguación.\" }\n{ \"index\": { \"_id\": \"3\" } }\n{ \"marca\": \"Puma\", \"modelo\": \"RS-X\", \"talla\": 43, \"color\": \"Rojo\", \"precio\": 110.00, \"stock\": 8, \"descripcion\": \"Zapatillas con diseño moderno.\" }\n{ \"index\": { \"_id\": \"4\" } }\n{ \"marca\": \"Reebok\", \"modelo\": \"Classic\", \"talla\": 40, \"color\": \"Blanco\", \"precio\": 75.00, \"stock\": 12, \"descripcion\": \"Zapatillas clásicas de Reebok.\" }\n{ \"index\": { \"_id\": \"5\" } }\n{ \"marca\": \"New Balance\", \"modelo\": \"Fresh Foam\", \"talla\": 39, \"color\": \"Azul\", \"precio\": 130.00, \"stock\": 6, \"descripcion\": \"Zapatillas ligeras para correr.\" }\n{ \"index\": { \"_id\": \"6\" } }\n{ \"marca\": \"Asics\", \"modelo\": \"Gel-Kayano\", \"talla\": 44, \"color\": \"Gris\", \"precio\": 160.00, \"stock\": 7, \"descripcion\": \"Zapatillas para estabilidad en carrera.\" }\n{ \"index\": { \"_id\": \"7\" } }\n{ \"marca\": \"Saucony\", \"modelo\": \"Kinvara\", \"talla\": 38, \"color\": \"Verde\", \"precio\": 110.00, \"stock\": 4, \"descripcion\": \"Zapatillas ligeras para carreras rápidas.\" }\n{ \"index\": { \"_id\": \"8\" } }\n{ \"marca\": \"Under Armour\", \"modelo\": \"HOVR\", \"talla\": 41, \"color\": \"Negro\", \"precio\": 150.00, \"stock\": 3, \"descripcion\": \"Zapatillas con tecnología de amortiguación.\" }\n{ \"index\": { \"_id\": \"9\" } }\n{ \"marca\": \"Mizuno\", \"modelo\": \"Wave Rider\", \"talla\": 45, \"color\": \"Naranja\", \"precio\": 140.00, \"stock\": 5, \"descripcion\": \"Zapatillas versátiles para entrenamiento.\" }\n{ \"index\": { \"_id\": \"10\" } }\n{ \"marca\": \"Brooks\", \"modelo\": \"Ghost\", \"talla\": 39, \"color\": \"Turquesa\", \"precio\": 130.00, \"stock\": 9, \"descripcion\": \"Zapatillas cómodas para correr largas distancias.\" }\n{ \"index\": { \"_id\": \"11\" } }\n{ \"marca\": \"Vans\", \"modelo\": \"Old Skool\", \"talla\": 38, \"color\": \"Negro\", \"precio\": 70.00, \"stock\": 15, \"descripcion\": \"Zapatillas clásicas de skate.\" }\n{ \"index\": { \"_id\": \"12\" } }\n{ \"marca\": \"Converse\", \"modelo\": \"Chuck Taylor\", \"talla\": 41, \"color\": \"Blanco\", \"precio\": 60.00, \"stock\": 20, \"descripcion\": \"Zapatillas icónicas.\" }\n{ \"index\": { \"_id\": \"13\" } }\n{ \"marca\": \"Fila\", \"modelo\": \"Disruptor\", \"talla\": 42, \"color\": \"Beige\", \"precio\": 80.00, \"stock\": 10, \"descripcion\": \"Zapatillas de estilo retro.\" }\n{ \"index\": { \"_id\": \"14\" } }\n{ \"marca\": \"Hoka One One\", \"modelo\": \"Clifton\", \"talla\": 43, \"color\": \"Negro\", \"precio\": 160.00, \"stock\": 6, \"descripcion\": \"Zapatillas con gran amortiguación.\" }\n{ \"index\": { \"_id\": \"15\" } }\n{ \"marca\": \"Salomon\", \"modelo\": \"Speedcross\", \"talla\": 44, \"color\": \"Verde\", \"precio\": 120.00, \"stock\": 8, \"descripcion\": \"Zapatillas de trail running.\" }\n{ \"index\": { \"_id\": \"16\" } }\n{ \"marca\": \"On\", \"modelo\": \"Cloudstratus\", \"talla\": 40, \"color\": \"Gris\", \"precio\": 180.00, \"stock\": 4, \"descripcion\": \"Zapatillas para correr con gran confort.\" }\n{ \"index\": { \"_id\": \"17\" } }\n{ \"marca\": \"Merrell\", \"modelo\": \"Moab\", \"talla\": 45, \"color\": \"Marrón\", \"precio\": 100.00, \"stock\": 5, \"descripcion\": \"Zapatillas de senderismo resistentes.\" }\n{ \"index\": { \"_id\": \"18\" } }\n{ \"marca\": \"Timberland\", \"modelo\": \"6-Inch Boot\", \"talla\": 42, \"color\": \"Amarillo\", \"precio\": 200.00, \"stock\": 2, \"descripcion\": \"Botas icónicas y duraderas.\" }\n{ \"index\": { \"_id\": \"19\" } }\n{ \"marca\": \"Skechers\", \"modelo\": \"Go Walk\", \"talla\": 39, \"color\": \"Rosa\", \"precio\": 90.00, \"stock\": 12, \"descripcion\": \"Zapatillas cómodas para caminar.\" }\n{ \"index\": { \"_id\": \"20\" } }\n{ \"marca\": \"Nike\", \"modelo\": \"Zoom Fly\", \"talla\": 44, \"color\": \"Azul\", \"precio\": 150.00, \"stock\": 9, \"descripcion\": \"Zapatillas para carreras rápidas.\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTAR POR TALLA",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":{\n        \"match\":{\n            \"talla\":\"40\"\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "CONSULTAR POR PRECIO",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"range\" : {\n            \"precio\" : {\n                \"gte\" : 100,\n                \"lte\" : 140\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

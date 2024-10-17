@@ -1,0 +1,25 @@
+GET /clientes/_search
+{
+"query" : {
+  "match": {
+    "localidad": "Posadas"
+  }
+}
+}
+
+POST /clientes/_doc
+{
+  "nombre" : "Leandro",
+  "apellido" : "Ramirez",
+  "pais" : "CO",
+  "localidad" : "Ciudad Bolivar"
+}
+
+GET /clientes/_search
+{
+"query" : {
+  "match": {
+    "nombre": "Leandro"
+  }
+}
+}
