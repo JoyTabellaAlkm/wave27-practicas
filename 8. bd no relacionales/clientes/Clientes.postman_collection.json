@@ -1,0 +1,67 @@
+{
+	"info": {
+		"_postman_id": "06949742-fa6b-45f8-bfb7-b00c228b1157",
+		"name": "Clientes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409508"
+	},
+	"item": [
+		{
+			"name": "read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"query\": {\n    //\"match_all\": {}\n    \"match\":{\n    \"Pais\": \"IT\"\n    }\n  }, \n  \"from\": 0,\n  \"size\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/clientes/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"clientes",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"nombre\": \"Paolo\",\n  \"apellido\": \"Maldini\",\n  \"Pais\": \"IT\",\n  \"localidad\": \"Posadas\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/clientes/_doc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"clientes",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

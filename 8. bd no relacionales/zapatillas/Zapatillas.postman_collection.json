@@ -1,0 +1,204 @@
+{
+	"info": {
+		"_postman_id": "4bed348e-7bad-4288-aaec-64e34912df04",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409508"
+	},
+	"item": [
+		{
+			"name": "create index",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"nombre\": {\n                \"type\": \"text\"\n            },\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"talla\": {\n                \"type\": \"short\"\n            },\n            \"precio\": {\n                \"type\": \"double\"\n            },\n            \"material\": {\n                \"type\": \"text\"\n            },\n            \"color\": {\n                \"type\": \"text\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete index",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete doc",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/XUj5m5IBrYybCAU0kCxc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"XUj5m5IBrYybCAU0kCxc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"simba\",\n    \"marca\": \"Yordan3\",\n    \"talla\": 43,\n    \"valor\": 333.34\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add docs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Air Zoom Pegasus\", \"marca\" : \"Nike\", \"talla\" : 42, \"precio\" : 120.50, \"material\" : \"malla\", \"color\" : \"negro\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Ultraboost 22\", \"marca\" : \"Adidas\", \"talla\" : 40, \"precio\" : 180.00, \"material\" : \"sintético\", \"color\" : \"blanco\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Classic Clog\", \"marca\" : \"Crocs\", \"talla\" : 38, \"precio\" : 50.00, \"material\" : \"resina\", \"color\" : \"azul\" }\n{ \"index\" : { \"_index\" : \"zapatos\" } }\n{ \"nombre\" : \"Old Skool\", \"marca\" : \"Vans\", \"talla\" : 41, \"precio\" : 75.99, \"material\" : \"lona\", \"color\" : \"negro\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Chuck Taylor All Star\", \"marca\" : \"Converse\", \"talla\" : 43, \"precio\" : 60.00, \"material\" : \"lona\", \"color\" : \"rojo\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Gel-Nimbus 24\", \"marca\" : \"Asics\", \"talla\" : 44, \"precio\" : 160.00, \"material\" : \"malla\", \"color\" : \"gris\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Stan Smith\", \"marca\" : \"Adidas\", \"talla\" : 42, \"precio\" : 85.00, \"material\" : \"cuero\", \"color\" : \"blanco\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Mercurial Vapor 14\", \"marca\" : \"Nike\", \"talla\" : 40, \"precio\" : 200.00, \"material\" : \"sintético\", \"color\" : \"verde\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"RS-X Bold\", \"marca\" : \"Puma\", \"talla\" : 39, \"precio\" : 110.00, \"material\" : \"malla\", \"color\" : \"amarillo\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Superstar\", \"marca\" : \"Adidas\", \"talla\" : 41, \"precio\" : 90.00, \"material\" : \"cuero\", \"color\" : \"blanco\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Classic Slip-On\", \"marca\" : \"Vans\", \"talla\" : 40, \"precio\" : 60.00, \"material\" : \"lona\", \"color\" : \"negro\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"NMD_R1\", \"marca\" : \"Adidas\", \"talla\" : 42, \"precio\" : 150.00, \"material\" : \"malla\", \"color\" : \"azul\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Jordan 1 Retro High\", \"marca\" : \"Nike\", \"talla\" : 43, \"precio\" : 220.00, \"material\" : \"cuero\", \"color\" : \"negro\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Wave Rider 25\", \"marca\" : \"Mizuno\", \"talla\" : 44, \"precio\" : 130.00, \"material\" : \"malla\", \"color\" : \"rojo\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Fresh Foam 1080v11\", \"marca\" : \"New Balance\", \"talla\" : 42, \"precio\" : 150.00, \"material\" : \"malla\", \"color\" : \"gris\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"ZoomX Invincible Run Flyknit\", \"marca\" : \"Nike\", \"talla\" : 41, \"precio\" : 180.00, \"material\" : \"malla\", \"color\" : \"azul\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"FuelCell Rebel v2\", \"marca\" : \"New Balance\", \"talla\" : 43, \"precio\" : 130.00, \"material\" : \"malla\", \"color\" : \"verde\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"GT-2000 10\", \"marca\" : \"Asics\", \"talla\" : 44, \"precio\" : 140.00, \"material\" : \"malla\", \"color\" : \"negro\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Speedcross 5\", \"marca\" : \"Salomon\", \"talla\" : 42, \"precio\" : 130.00, \"material\" : \"malla\", \"color\" : \"verde\" }\n{ \"index\" : { \"_index\" : \"zapatillas\" } }\n{ \"nombre\" : \"Clifton 8\", \"marca\" : \"Hoka\", \"talla\" : 41, \"precio\" : 140.00, \"material\" : \"malla\", \"color\" : \"azul\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_bulk",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update docs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"simba\",\n    \"marca\": \"Yordan3\",\n    \"talla\": 43,\n    \"valor\": 333.34,\n    \"color\": \"azul\",\n    \"material\": \"cuero\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/XaUwnJIBVnjx_Zj7Wi4h",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"XaUwnJIBVnjx_Zj7Wi4h"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match_all\": {}\n    },\n    \"from\": 0,\n    \"size\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
