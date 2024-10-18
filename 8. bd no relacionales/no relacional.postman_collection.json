@@ -1,0 +1,288 @@
+{
+	"info": {
+		"_postman_id": "185ba6eb-db8d-45cd-84af-96e9fa241f35",
+		"name": "no relacional",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38538953"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n     \"mappings\": {\n    \"properties\": {\n      \"nombre\": {\n        \"type\":\"text\"\n      },\n      \"marca\": {\n        \"type\":\"text\"\n      },\n      \"color\": {\n        \"type\":\"text\"\n      },\n      \"talla\": {\n        \"type\":\"double\"\n      },\n      \"precio\": {\n        \"type\":\"double\"\n      },\n      \"stock\": {\n        \"type\":\"int\"\n      }\n\n    }\n  }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatilla/_doc",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"zapatos panda\",\n    \"color\":\"Blanco\",\n    \"talla\":38,\n    \"marca\":\"adidas\",\n    \"precio\":20000000,\n    \"stock\":2\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_doc",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:9200/zapatillas/_bulk",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"1\" } }\n{ \"marca\": \"Nike\", \"talla\": 42, \"color\": \"Negro\", \"precio\": 120.00, \"stock\": 10, \"nombre\": \"Zapatillas deportivas con tecnología Air.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"2\" } }\n{ \"marca\": \"Adidas\", \"talla\": 41, \"color\": \"Blanco\", \"precio\": 180.00, \"stock\": 5, \"nombre\": \"Zapatillas de running con gran amortiguación.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"3\" } }\n{ \"marca\": \"Puma\", \"talla\": 43, \"color\": \"Rojo\", \"precio\": 110.00, \"stock\": 8, \"nombre\": \"Zapatillas con diseño moderno.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"4\" } }\n{ \"marca\": \"Reebok\", \"talla\": 40, \"color\": \"Blanco\", \"precio\": 75.00, \"stock\": 12, \"nombre\": \"Zapatillas clásicas de Reebok.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"5\" } }\n{ \"marca\": \"New Balance\", \"talla\": 39, \"color\": \"Azul\", \"precio\": 130.00, \"stock\": 6, \"nombre\": \"Zapatillas ligeras para correr.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"6\" } }\n{ \"marca\": \"Asics\", \"talla\": 44, \"color\": \"Gris\", \"precio\": 160.00, \"stock\": 7, \"nombre\": \"Zapatillas para estabilidad en carrera.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"7\" } }\n{ \"marca\": \"Saucony\", \"talla\": 38, \"color\": \"Verde\", \"precio\": 110.00, \"stock\": 4, \"nombre\": \"Zapatillas ligeras para carreras rápidas.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"8\" } }\n{ \"marca\": \"Under Armour\", \"talla\": 41, \"color\": \"Negro\", \"precio\": 150.00, \"stock\": 3, \"nombre\": \"Zapatillas con tecnología de amortiguación.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"9\" } }\n{ \"marca\": \"Mizuno\", \"talla\": 45, \"color\": \"Naranja\", \"precio\": 140.00, \"stock\": 5, \"nombre\": \"Zapatillas versátiles para entrenamiento.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"10\" } }\n{ \"marca\": \"Brooks\", \"talla\": 39, \"color\": \"Turquesa\", \"precio\": 130.00, \"stock\": 9, \"nombre\": \"Zapatillas cómodas para correr largas distancias.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"11\" } }\n{ \"marca\": \"Vans\", \"talla\": 38, \"color\": \"Negro\", \"precio\": 70.00, \"stock\": 15, \"nombre\": \"Zapatillas clásicas de skate.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"12\" } }\n{ \"marca\": \"Converse\", \"talla\": 41, \"color\": \"Blanco\", \"precio\": 60.00, \"stock\": 20, \"nombre\": \"Zapatillas icónicas de lona.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"13\" } }\n{ \"marca\": \"Fila\", \"talla\": 42, \"color\": \"Beige\", \"precio\": 80.00, \"stock\": 10, \"nombre\": \"Zapatillas de estilo retro.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"14\" } }\n{ \"marca\": \"Hoka One One\", \"talla\": 43, \"color\": \"Negro\", \"precio\": 160.00, \"stock\": 6, \"nombre\": \"Zapatillas con gran amortiguación.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"15\" } }\n{ \"marca\": \"Salomon\", \"talla\": 44, \"color\": \"Verde\", \"precio\": 120.00, \"stock\": 8, \"nombre\": \"Zapatillas de trail running.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"16\" } }\n{ \"marca\": \"On\", \"talla\": 40, \"color\": \"Gris\", \"precio\": 180.00, \"stock\": 4, \"nombre\": \"Zapatillas para correr con gran confort.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"17\" } }\n{ \"marca\": \"Merrell\", \"talla\": 45, \"color\": \"Marrón\", \"precio\": 100.00, \"stock\": 5, \"nombre\": \"Zapatillas de senderismo resistentes.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"18\" } }\n{ \"marca\": \"Timberland\", \"talla\": 42, \"color\": \"Amarillo\", \"precio\": 200.00, \"stock\": 2, \"nombre\": \"Botas icónicas y duraderas.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"19\" } }\n{ \"marca\": \"Skechers\", \"talla\": 39, \"color\": \"Rosa\", \"precio\": 90.00, \"stock\": 12, \"nombre\": \"Zapatillas cómodas para caminar.\" }\n{ \"index\": { \"_index\": \"zapatillas\", \"_id\": \"20\" } }\n{ \"marca\": \"Nike\", \"talla\": 44, \"color\": \"Azul\", \"precio\": 150.00, \"stock\": 9, \"nombre\": \"Zapatillas para carreras rápidas.\" }\n\n\n\n\n\n\n\n\n\n\n\n\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "talla  41",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\":{\n        \"match\":{\n            \"talla\": 41\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "precio mayor que 100",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"range\" : {\n            \"precio\" : {\n                \"gte\" : 100\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "stock mayor 2",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"range\" : {\n            \"stock\" : {\n                \"gte\" : 2\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "precio entre 200 y 300",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"range\" : {\n            \"precio\" : {\n                \"gte\" : 200,\n                \"lte\" : 300\n            }\n        }\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "color blanco",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\" : {\n            \"color\" : \"Blanco\"\n        }\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "marca adidas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match\" : {\n            \"marca\" : \"Adidas\"\n        }\n    }\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/zapatillas/_search",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
