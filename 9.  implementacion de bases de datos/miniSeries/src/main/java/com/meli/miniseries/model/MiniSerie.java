@@ -8,12 +8,13 @@ import lombok.Setter;
 @Setter
 @Entity
 public class MiniSerie {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    @Column(length = 45, nullable = false)
     String name;
+    @Column(nullable = false)
     Double rating;
-    @Column(name = "awards")
-    int amount_of_awards;
+    @Column(name = "amount_of_awards")
+    int amountOfAwards;
+
 }
