@@ -1,0 +1,177 @@
+{
+	"info": {
+		"_postman_id": "a2770afe-a6e5-4410-b831-c74949514052",
+		"name": "Elastic",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "create index",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"mappings\": {\n        \"properties\": {\n            \"nombre\": {\n                \"type\": \"text\"\n            },\n            \"marca\": {\n                \"type\": \"text\"\n            },\n            \"talla\": {\n                \"type\": \"short\"\n            },\n            \"precio\": {\n                \"type\": \"double\"\n            },\n            \"material\": {\n                \"type\": \"text\"\n            },\n            \"color\": {\n                \"type\": \"text\"\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete index",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete doc",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/XUj5m5IBrYybCAU0kCxc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"XUj5m5IBrYybCAU0kCxc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add docs",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"simba\",\n    \"marca\": \"Yordan3\",\n    \"talla\": 43,\n    \"valor\": 333.34\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update docs",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"simba\",\n    \"marca\": \"Yordan3\",\n    \"talla\": 43,\n    \"valor\": 333.34,\n    \"color\": \"azul\",\n    \"material\": \"cuero\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_doc/YEgOnJIBrYybCAU0SSxq",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_doc",
+						"YEgOnJIBrYybCAU0SSxq"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "read",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"query\": {\n        \"match_all\": {}\n    },\n    \"from\": 0,\n    \"size\": 100\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{elastic}}/zapatillas/_search",
+					"host": [
+						"{{elastic}}"
+					],
+					"path": [
+						"zapatillas",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
