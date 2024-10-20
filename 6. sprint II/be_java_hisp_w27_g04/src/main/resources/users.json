@@ -56,14 +56,34 @@
         "name": "Charlie",
         "followers": [],
         "followed": [],
-        "posts": []
+        "posts": [
+        ]
     },
     {
         "id": 4,
         "name": "David",
         "followers": [],
         "followed": [],
-        "posts": []
+        "posts": [
+            {
+                "post_id": 3,
+                "user_id": 4,
+                "product": {
+                    "product_id": 3,
+                    "product_name": "Mouse Gamer3",
+                    "type": "Gamer",
+                    "brand": "Racer",
+                    "color": "Red y Black",
+                    "notes": "Special Edition"
+
+                },
+                "category": 100,
+                "price": 1500.50,
+                "post_date": "2024-10-10",
+                "has_promo": false,
+                "discount": 0
+            }
+        ]
     },
     {
         "id": 5,

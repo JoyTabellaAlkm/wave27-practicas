@@ -21,40 +21,11 @@ import java.util.Optional;
 
 @Repository
 public class PostRepositoryImpl implements IPostRepository {
-    List<Post> postList;
-    private Integer actualId = 100;
+    List<Post> postList = new LinkedList<>();
+    private Integer actualId = 1;
 
     public PostRepositoryImpl() throws IOException {
         postList = new LinkedList<>();
-        loadDataBase();
-    }
-
-    private void loadDataBase() throws IOException {
-
-        try {
-            File file = ResourceUtils.getFile("classpath:posts.json");
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.setPropertyNamingStrategy(new PropertyNamingStrategies.SnakeCaseStrategy());
-
-            // Registrar el módulo para manejar LocalDate
-
-            objectMapper.registerModule(new JavaTimeModule());
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-            postList = objectMapper.readValue(file, new TypeReference<List<Post>>() {
-            });
-            postList.forEach(
-                    post -> {
-                        if (post.getPostId() == 1) {
-                            post.setPostDate(LocalDate.now());
-                        }
-                    }
-            );
-
-
-        } catch (IOException e) {
-            throw new RuntimeException("Error loading character data: " + e.getMessage(), e);
-        }
     }
 
     @Override

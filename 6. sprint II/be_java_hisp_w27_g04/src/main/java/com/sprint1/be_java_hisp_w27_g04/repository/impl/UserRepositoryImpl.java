@@ -21,37 +21,8 @@ import java.util.stream.Collectors;
 @Repository
 public class UserRepositoryImpl implements IUserRepository {
 
-    List<User> listOfUsers;
+    List<User> listOfUsers = new LinkedList<>();
     public UserRepositoryImpl() throws IOException {
-        loadDataBase();
-    }
-
-    private void loadDataBase() throws IOException {
-
-        try {
-            File file = ResourceUtils.getFile("classpath:users.json");
-            ObjectMapper objectMapper = new ObjectMapper();
-            objectMapper.setPropertyNamingStrategy(new PropertyNamingStrategies.SnakeCaseStrategy());
-
-            // Registrar el módulo para manejar LocalDate
-
-            objectMapper.registerModule(new JavaTimeModule());
-            objectMapper.configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
-
-            listOfUsers = objectMapper.readValue(file, new TypeReference<List<User>>() {});
-            for( User users : listOfUsers ) {
-                users.getPosts().forEach(
-                        post -> {
-                            if(post.getPostId() == 1) {
-                                post.setPostDate(LocalDate.now());
-                            }
-                        }
-                );
-            }
-
-        } catch (IOException e) {
-            throw new RuntimeException("Error loading character data: " + e.getMessage(), e);
-        }
     }
 
     @Override
