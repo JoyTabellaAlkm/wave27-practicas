@@ -1,0 +1,150 @@
+{
+	"info": {
+		"_postman_id": "13cb5517-3c87-47ca-84ec-9324a1764fec",
+		"name": "Joyeria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409319"
+	},
+	"item": [
+		{
+			"name": "Crear joya",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{          \"nombre\" : \"Anillo\",\n\n        \"material\": \"oro\",\n\n        \"peso\": 300,\n\n        \"particularidad\" : \"Forma circular con triángulos\",\n\n        \"posee_piedra\" : false,\n\n        \"ventaONo\" : true\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jewerly/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewerly",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer joyas",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{          \"nombre\" : \"Anillo\",\n\n        \"material\": \"oro\",\n\n        \"peso\": 300,\n\n        \"particularidad\" : \"Forma circular con triángulos\",\n\n        \"posee_piedra\" : false,\n\n        \"ventaONo\" : true\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jewerly",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewerly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete joya",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{          \"nombre\" : \"Anillo\",\n\n        \"material\": \"oro\",\n\n        \"peso\": 300,\n\n        \"particularidad\" : \"Forma circular con triángulos\",\n\n        \"posee_piedra\" : false,\n\n        \"ventaONo\" : true\n\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jewerly/delete/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewerly",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Editar joya",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\n{          \"nombre\" : \"Anillo\",\n\n        \"material\": \"oro\",\n\n        \"peso\": 300,\n\n        \"particularidad\" : \"Otra particularidad\",\n\n        \"posee_piedra\" : false,\n\n        \"ventaONo\" : true\n\n}\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/jewerly/update/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewerly",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Traer joya por id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/jewerly/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"jewerly",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
