@@ -26,7 +26,6 @@ public class LinkController {
         return new ResponseEntity<>(service.saveLink(newLink), HttpStatus.CREATED);
     }
 
-
     @GetMapping("/metrics/{linkID}")
     public ResponseEntity<?> metricById(@PathVariable Integer linkID){
         return new ResponseEntity<>(service.getLinkMetrics(linkID), HttpStatus.OK);
