@@ -1,0 +1,37 @@
+{
+	"info": {
+		"_postman_id": "76fa5f72-ca4e-42ea-88d1-9d55afad4b49",
+		"name": "Compras (clave comp)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "crearCompra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"cliente_id\": 1,\n    \"fecha\": \"2024-10-10\",\n    \"total\": 100.10,\n    \"nombre_producto\": \"huevos\",\n    \"cantidad_producto\": 30\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/api/nuevaCompra",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"api",
+						"nuevaCompra"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
