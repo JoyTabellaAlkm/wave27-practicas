@@ -26,12 +26,12 @@ public class JewelController {
         return new ResponseEntity<>(jewelService.listJewelry(), HttpStatus.OK);
     }
 
-    @GetMapping("/delete/{id}")
+    @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteJewel(@PathVariable @Valid Long id){
         return new ResponseEntity<>(jewelService.deleteJewel(id), HttpStatus.OK);
     }
 
-    @PostMapping("/update/{id}")
+    @PutMapping("/update/{id}")
     public ResponseEntity<?> updateJewel(@PathVariable Long id, @RequestBody @Valid JewelRequestDto newJewel){
         return new ResponseEntity<>(jewelService.updateJewel(id, newJewel), HttpStatus.OK);
     }

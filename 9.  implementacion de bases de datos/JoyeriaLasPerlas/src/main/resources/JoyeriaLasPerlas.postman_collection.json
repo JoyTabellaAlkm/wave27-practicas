@@ -53,7 +53,7 @@
 		{
 			"name": "update Jewel",
 			"request": {
-				"method": "POST",
+				"method": "PUT",
 				"header": [],
 				"body": {
 					"mode": "raw",
@@ -81,7 +81,7 @@
 		{
 			"name": "delete Jewel",
 			"request": {
-				"method": "GET",
+				"method": "DELETE",
 				"header": [],
 				"url": {
 					"raw": "{{local}}/jewerly/delete/2",
