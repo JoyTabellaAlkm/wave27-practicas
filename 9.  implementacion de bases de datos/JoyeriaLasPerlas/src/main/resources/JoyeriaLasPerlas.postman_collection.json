@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "36feabdb-de90-4cc9-9b17-4932d0b8006e",
+		"name": "JoyeriaLasPerlas",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "createJewel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"Anillo\", \n    \"material\":\"oro\",\n    \"peso\": 300.0,\n    \"particularidad\":\"Forma circular con triangulos\",\n    \"poseePiedra\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/jewerly/new",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"jewerly",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list Jewelry",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/jewerly",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"jewerly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update Jewel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\":\"joya1\", \n    \"material\":\"plata\",\n    \"peso\": 20.0,\n    \"particularidad\":\"ninguna\",\n    \"poseePiedra\":true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/jewerly/update/1",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"jewerly",
+						"update",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete Jewel",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/jewerly/delete/2",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"jewerly",
+						"delete",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
