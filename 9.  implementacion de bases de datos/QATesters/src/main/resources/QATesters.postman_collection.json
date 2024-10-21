@@ -1,0 +1,160 @@
+{
+	"info": {
+		"_postman_id": "5905e731-c924-4f6e-87f2-be5faeee1750",
+		"name": "QA Testers",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38463793",
+		"_collection_link": "https://sprint-team-4581.postman.co/workspace/Sprint-team-Workspace~7a23e9df-3364-47a7-9e3f-7c1c38e0e4da/collection/38463793-5905e731-c924-4f6e-87f2-be5faeee1750?action=share&source=collection_link&creator=38463793"
+	},
+	"item": [
+		{
+			"name": "Create New Test Case",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\" : \"Prueba de que el login muestre un mensaje de error cuando el usuario digita mal su clave o contraseña\",\n    \"tested\": true,\n    \"passed\" : false,\n    \"number_of_tries\": 2,\n    \"last_update\": \"09/09/2024\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/new",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test Cases",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Test Case By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Test Case",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"description\" : \"Prueba de que el login muestre un mensaje exitoso cuando el usuario digita bien su clave y contraseña\",\n    \"tested\": true,\n    \"passed\" : null,\n    \"number_of_tries\": 2,\n    \"last_update\": \"12/09/2024\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Test Case",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Test Case After Date",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/testcases/filter?last_update=10/09/2024",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"testcases",
+						"filter"
+					],
+					"query": [
+						{
+							"key": "last_update",
+							"value": "10/09/2024"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
