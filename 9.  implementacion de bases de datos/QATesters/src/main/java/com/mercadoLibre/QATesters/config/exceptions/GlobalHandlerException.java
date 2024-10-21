@@ -18,6 +18,8 @@ public class GlobalHandlerException {
 
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public ResponseEntity<?> handleMethodArgumentNotValidException(MethodArgumentNotValidException e) {
-        return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(new ResponseDTO(HttpStatus.BAD_REQUEST, e.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).toList().toString()));
+        return ResponseEntity.status(HttpStatus.BAD_REQUEST)
+                .body(new ResponseDTO(HttpStatus.BAD_REQUEST,
+                        e.getAllErrors().stream().map(DefaultMessageSourceResolvable::getDefaultMessage).toList().toString()));
     }
 }

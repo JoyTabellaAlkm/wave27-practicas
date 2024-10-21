@@ -50,6 +50,7 @@ public class TestCaseServiceImpl implements ITestCaseService{
     public ResponseDTO updateTestCase(TestCaseRequestDTO testCaseRequestDTO, Long id) {
         TestCase testCase = testCaseRepository.findById(id).orElseThrow(() -> new NotFoundException("No se encontró el Test Case"));
         TestCase updatedTestCase = modelMapper.map(testCaseRequestDTO, TestCase.class);
+        updatedTestCase.setIdCase(testCase.getIdCase());
         testCaseRepository.save(updatedTestCase);
         return new ResponseDTO(HttpStatus.ACCEPTED, "Test Case modificado exitosamente");
     }
