@@ -17,7 +17,7 @@ public class JoyaController {
     private IJoyaService iJoyaService;
 
     @PostMapping("/crear")
-    public ResponseEntity<?> crearJoya(@RequestBody JoyaCreateDto joyaCreateDto){
+    public ResponseEntity<?> guardarJoya(@RequestBody JoyaCreateDto joyaCreateDto){
         return new ResponseEntity<>(iJoyaService.saveJoya(joyaCreateDto), HttpStatus.CREATED);
     }
 
