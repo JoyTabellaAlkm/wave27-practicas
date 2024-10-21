@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "e7bcf937-5222-4c11-995e-6d691d044ba5",
+		"name": "Joyeria",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "Create Joya",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Anillo\",\n    \"material\": \"oro\",\n    \"peso\": 300,\n    \"particularidad\": \"Forma circular con triángulos\",\n    \"posee_piedra\": false\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}jewelry/new",
+					"host": [
+						"{{host}}jewelry"
+					],
+					"path": [
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all Joyas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}jewelry",
+					"host": [
+						"{{host}}jewelry"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Joya",
+			"request": {
+				"method": "PATCH",
+				"header": [],
+				"url": {
+					"raw": "{{host}}jewelry/delete/1",
+					"host": [
+						"{{host}}jewelry"
+					],
+					"path": [
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Joya",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Collar\",\n    \"material\": \"Diamante\",\n    \"peso\": 500,\n    \"particularidad\": \"Forma circular con triángulos\",\n    \"posee_piedra\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}jewelry/update/2",
+					"host": [
+						"{{host}}jewelry"
+					],
+					"path": [
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
