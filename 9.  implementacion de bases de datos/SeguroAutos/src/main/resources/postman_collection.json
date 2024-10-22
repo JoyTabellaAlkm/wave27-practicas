@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "032358c0-1976-4d42-b521-125ade1861a6",
+		"name": "SiniestroVehiculo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38175774"
+	},
+	"item": [
+		{
+			"name": "Add vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patente\" : \"A10B20\",\n    \"marca\" : \"Fiat\",\n    \"modelo\" : \"Chronos\",\n    \"anio_fabricacion\" : \"2024\",\n    \"cantidad_ruedas\" : 6,\n    \"siniestros\" :[\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/vehiculos",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Patentes",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehiculos/patente",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos",
+						"patente"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "patente_marca",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehiculos/patente_marca",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos",
+						"patente_marca"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Fabricacion y Ruedas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehiculos/fabricacion_ruedas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos",
+						"fabricacion_ruedas"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "siniestros_mayores",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehiculos/siniestros_mayores",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos",
+						"siniestros_mayores"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "siniestros_mayores_total",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/vehiculos/siniestros_mayores_total",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"vehiculos",
+						"siniestros_mayores_total"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
