@@ -1,0 +1,153 @@
+{
+	"info": {
+		"_postman_id": "9b61fd08-51c2-4586-892b-c5cd15c73fd9",
+		"name": "Obras Literarias Elastic Search",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38463793"
+	},
+	"item": [
+		{
+			"name": "Obras por Autor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/obras-literarias/autor?autor=Gabriel",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias",
+						"autor"
+					],
+					"query": [
+						{
+							"key": "autor",
+							"value": "Gabriel"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obras contains title",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/obras-literarias/title?title=quijote",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias",
+						"title"
+					],
+					"query": [
+						{
+							"key": "title",
+							"value": "quijote"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top5 mas páginas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/obras-literarias/top5-pages",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias",
+						"top5-pages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obras After Year",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/obras-literarias/after-year/1990",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias",
+						"after-year",
+						"1990"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Obras By Editorial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{path}}/obras-literarias/editorial?editorial=Francisco de la Torre",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias",
+						"editorial"
+					],
+					"query": [
+						{
+							"key": "editorial",
+							"value": "Francisco de la Torre"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Añadir",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Guardar obra literaria",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"id\" : 1000,\n    \"titulo\" : \"Prueba\",\n    \"autor\" : \"Autor\",\n    \"paginas\" : 10000,\n    \"editorial\" : \"Editorial\",\n    \"anioPublicacion\" : 2020\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{path}}/obras-literarias",
+					"host": [
+						"{{path}}"
+					],
+					"path": [
+						"obras-literarias"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
