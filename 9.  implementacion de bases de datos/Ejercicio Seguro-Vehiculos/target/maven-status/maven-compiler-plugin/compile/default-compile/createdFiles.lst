@@ -1,0 +1,9 @@
+com/example/segurovehiculos/SeguroVehiculosApplication.class
+com/example/segurovehiculos/controller/VehiculoController.class
+com/example/segurovehiculos/dto/VehiculoPatenteMarcaDTO.class
+com/example/segurovehiculos/entity/Siniestro.class
+com/example/segurovehiculos/entity/Vehiculo.class
+com/example/segurovehiculos/service/impl/VehiculoService.class
+com/example/segurovehiculos/dto/VehiculoPatenteMarcaModeloDTO.class
+com/example/segurovehiculos/service/IVehiculoService.class
+com/example/segurovehiculos/repository/IVehicleRepository.class

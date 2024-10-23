@@ -1,0 +1,9 @@
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/SeguroVehiculosApplication.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/controller/VehiculoController.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/dto/VehiculoPatenteMarcaDTO.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/dto/VehiculoPatenteMarcaModeloDTO.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/entity/Siniestro.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/entity/Vehiculo.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/repository/IVehicleRepository.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/service/IVehiculoService.java
+/Users/martinexequi/IdeaProjects/ejerciciosBootcamp/seguro-vehiculos/src/main/java/com/example/segurovehiculos/service/impl/VehiculoService.java
