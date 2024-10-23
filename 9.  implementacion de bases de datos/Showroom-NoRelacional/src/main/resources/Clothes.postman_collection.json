@@ -1,0 +1,451 @@
+{
+	"info": {
+		"_postman_id": "e5428715-324b-4d3b-bdd1-d72ba4c74ffb",
+		"name": "Clothes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38410588"
+	},
+	"item": [
+		{
+			"name": "Save clothes",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de Jean\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaY\",\n  \"color\": \"Negro\",\n  \"size\": 40,\n  \"quantity\": 10,\n  \"selling_price\": 3\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all clothes",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get one",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/api/clothes/srlyuZIB0b-O1K2H4vN8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes",
+						"srlyuZIB0b-O1K2H4vN8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit clothes",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de Algodon\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": \"M\",\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes/srlyuZIB0b-O1K2H4vN8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes",
+						"srlyuZIB0b-O1K2H4vN8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete clothes",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de bbb\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes/srlyuZIB0b-O1K2H4vN8",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes",
+						"srlyuZIB0b-O1K2H4vN8"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all clothes by size",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes/size/M",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes",
+						"size",
+						"M"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all clothes by name",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/clothes?name=camisa",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"clothes"
+					],
+					"query": [
+						{
+							"key": "name",
+							"value": "camisa"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create sale",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n            \"id\": \"srlyuZIB0b-O1K2H4vN8\",\n            \"name\": \"Camisa de dsadalgodon\",\n            \"type\": \"Camisa\",\n            \"brand\": \"MarcaX\",\n            \"color\": \"Azul\",\n            \"size\": \"M\",\n            \"quantity\": 50,\n            \"selling_price\": 29.99\n        }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sales",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get sale",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update sale",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"23/11/2024\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale/6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale",
+						"6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete sale",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale/4",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale",
+						"4"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get clothes by date",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale/date?date=23/10/2023",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale",
+						"date"
+					],
+					"query": [
+						{
+							"key": "date",
+							"value": "23/10/2023"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get clothes by sale",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8080/api/sale/clothes/9",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"sale",
+						"clothes",
+						"9"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
