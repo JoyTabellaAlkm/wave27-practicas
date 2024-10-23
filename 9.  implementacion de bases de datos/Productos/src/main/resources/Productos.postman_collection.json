@@ -1,0 +1,64 @@
+{
+	"info": {
+		"_postman_id": "dd9d7cd1-2e30-4c85-8aec-f2c9c0f48c0e",
+		"name": "Productos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Producto Ejemplo\",\n    \"tipo\": \"Electrónico\",\n    \"precio_venta\": 199.99,\n    \"precio_costo\": 150.00,\n    \"stock\": 50\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}productos/crear",
+					"host": [
+						"{{host}}productos"
+					],
+					"path": [
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}productos",
+					"host": [
+						"{{host}}productos"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get all products Copy",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}productos",
+					"host": [
+						"{{host}}productos"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,90 @@
+{
+	"info": {
+		"_postman_id": "b3b0b624-83b2-41cc-af21-72c3a0888be6",
+		"name": "Empleados",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "Create Empleado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Luisa\",\n    \"apellido\": \"Vezga\",\n    \"edad\": 30,\n    \"ciudad\": \"Bogotá\",\n    \"departamento\": \"Cundinamarca\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}empleados/crear",
+					"host": [
+						"{{host}}empleados"
+					],
+					"path": [
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Empleado",
+			"protocolProfileBehavior": {
+				"disabledSystemHeaders": {}
+			},
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Luisa\",\n    \"apellido\": \"Vezga\",\n    \"edad\": 30,\n    \"ciudad\": \"Bogotá\",\n    \"departamento\": \"Cundinamarca\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}empleados/crear",
+					"host": [
+						"{{host}}empleados"
+					],
+					"path": [
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
