@@ -79,10 +79,16 @@
 			"response": []
 		},
 		{
-			"name": "New Request",
+			"name": "Get Empleados",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "{{host}}empleados",
+					"host": [
+						"{{host}}empleados"
+					]
+				}
 			},
 			"response": []
 		}

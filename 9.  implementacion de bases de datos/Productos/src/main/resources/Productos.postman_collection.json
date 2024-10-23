@@ -47,14 +47,27 @@
 			"response": []
 		},
 		{
-			"name": "Get all products Copy",
+			"name": "Update Product",
 			"request": {
-				"method": "GET",
+				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"nombre\": \"Ryzen 7 7700x\",\n    \"tipo\": \"Electrónico\",\n    \"precio_venta\": 199.99,\n    \"precio_costo\": 150.00,\n    \"stock\": 50\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "{{host}}productos",
+					"raw": "{{host}}productos/actualizar/Vfmht5IBGAKZr07uUHMh",
 					"host": [
 						"{{host}}productos"
+					],
+					"path": [
+						"actualizar",
+						"Vfmht5IBGAKZr07uUHMh"
 					]
 				}
 			},
