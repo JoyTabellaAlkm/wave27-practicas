@@ -12,3 +12,20 @@ select first_name, last_name, rating from actors where first_name like 'Sam%';
 select title, release_date from movies where release_date between '2004-01-01' and '2008-12-31';
 select title, release_date, rating from movies where rating > 3 and awards > 1 and
  release_date between '1998-01-01' and '2009-12-31' order by rating;
+
+/*
+ 
+SELECT e.* FROM empleado as e
+JOIN departamento AS d ON e.depto_nro = d.depto_nro
+WHERE d.nombre_depto = 'Ventas'
+and e.salario =
+(SELECT MAX(salario) FROM empleado AS e
+JOIN departamento AS d ON e.depto_nro = d.depto_nro
+WHERE d.nombre_depto = 'Ventas');
+
+*/
+
+
+
+
+

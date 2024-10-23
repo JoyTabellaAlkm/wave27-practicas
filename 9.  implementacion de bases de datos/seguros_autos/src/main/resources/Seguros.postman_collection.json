@@ -1,0 +1,198 @@
+{
+	"info": {
+		"_postman_id": "c6507832-6478-405c-b892-d163c4236528",
+		"name": "Seguros",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38182952"
+	},
+	"item": [
+		{
+			"name": "Queries",
+			"item": [
+				{
+					"name": "patente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/vehiculos/list/patente",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"vehiculos",
+								"list",
+								"patente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatentesAndMarcaOrderByAnioFabricacion",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/vehiculos/list/PatentesAndMarcaOrderByAnioFabricacion",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"vehiculos",
+								"list",
+								"PatentesAndMarcaOrderByAnioFabricacion"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "PatentesByCantidadRuedasAndAnioFabricacionCurrentYear",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/vehiculos/list/PatentesByCantidadRuedasAndAnioFabricacionCurrentYear",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"vehiculos",
+								"list",
+								"PatentesByCantidadRuedasAndAnioFabricacionCurrentYear"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listLostOverTenThousand",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/siniestros/listLostOverTenThousand",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"siniestros",
+								"listLostOverTenThousand"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listLostOverTenThousandAndSum",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/siniestros/listLostOverTenThousandAndSum",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"siniestros",
+								"listLostOverTenThousandAndSum"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Crear vehiculo",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"patente\":\"No c\",\n    \"marca\":\"Mazda\",\n    \"modelo\":\"2024\",\n    \"anio_fabricacion\":2024,\n    \"cantidad_ruedas\":5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/vehiculos/new",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehiculos",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Crear siniestro",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"fecha_siniestro\": \"2024-10-10\",\n    \"perdida_economica\": 15000,\n    \"vehiculo_id\":1\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/siniestros/new",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"siniestros",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de siniestro",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/siniestros/list",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"siniestros",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Lista de vehiculo",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/vehiculos/list",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"vehiculos",
+						"list"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
