@@ -1,0 +1,125 @@
+{
+	"info": {
+		"_postman_id": "842e0a8e-2b0f-48ca-83d0-3a81810eb235",
+		"name": "Obras Literarias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409454"
+	},
+	"item": [
+		{
+			"name": "Crear Obra",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"nombre\": \"Ficciones\",\n    \"autor\": \"Jorge Luis Borges\",\n    \"cantidad_paginas\": 224,\n    \"editorial\": \"El Ateneo\",\n    \"año_primera_publicacion\": 1944 \n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}obras/crear",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"crear"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver obras por autor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}obras/autor/Gabriel",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"autor",
+						"Gabriel"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver obras por nombre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}obras/nombre/quijote",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"nombre",
+						"quijote"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Top 5 obras por numero de paginas",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}obras/top5",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"top5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver obras anteriores a un año",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}obras/anio/1940",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"anio",
+						"1940"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Ver obras por editorial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}obras/editorial/Santillana",
+					"host": [
+						"{{host}}obras"
+					],
+					"path": [
+						"editorial",
+						"Santillana"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
