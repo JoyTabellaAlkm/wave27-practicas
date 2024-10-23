@@ -5,6 +5,7 @@ import ar.com.mercadolibre.test.model.dto.request.TestCaseRequestDTO;
 import ar.com.mercadolibre.test.model.dto.response.MessageResponse;
 import ar.com.mercadolibre.test.model.dto.response.TestCaseResponseDTO;
 import ar.com.mercadolibre.test.service.ITestService;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -46,7 +47,8 @@ public class TestController {
     }
 
     @GetMapping("/filter")
-    public ResponseEntity<List<TestCaseResponseDTO>> getAfterDate(@RequestParam(name = "last_update") LocalDate date){
+    public ResponseEntity<List<TestCaseResponseDTO>> getAfterDate(@RequestParam(name = "last_update")
+                                                                      @DateTimeFormat(pattern = "dd/MM/yyyy") LocalDate date){
         return ResponseEntity.ok(service.getAfterDate(date));
     }
 

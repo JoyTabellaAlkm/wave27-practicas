@@ -27,9 +27,6 @@ public class TestCase {
     @Column(name = "last_update")
     private LocalDate lastUpdate;
 
-    @ManyToOne
-    @JoinColumn(name = "test_id")
-    private Test test;
 
     public void update(TestCase update){
         this.description = update.getDescription() != null ? update.getDescription() : this.description;
