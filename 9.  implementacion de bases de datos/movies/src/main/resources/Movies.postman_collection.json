@@ -1,0 +1,142 @@
+{
+	"info": {
+		"_postman_id": "4a775e0b-e02d-47fc-94d0-97796dbe1f92",
+		"name": "Movies",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "listActorsWithFavoriteMovie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/actor/listActorsWithFavoriteMovie",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"actor",
+						"listActorsWithFavoriteMovie"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listActorsByRating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/actor/listActorsByRating/5",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"actor",
+						"listActorsByRating",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listActorsByMovie",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/actor/listActorsByMovie/Titanic",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"actor",
+						"listActorsByMovie",
+						"Titanic"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listEpisodeByActor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/episode/episodeByActor/Emilia",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"episode",
+						"episodeByActor",
+						"Emilia"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listMoviesWithActorsByRating",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/movie/movieActorsByRating/5",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"movie",
+						"movieActorsByRating",
+						"5"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "listMoviesByGenre",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/movie/moviesByGenre/Accion",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"movie",
+						"moviesByGenre",
+						"Accion"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/serie/seriesByNumberOfSeasons/4",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"serie",
+						"seriesByNumberOfSeasons",
+						"4"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
