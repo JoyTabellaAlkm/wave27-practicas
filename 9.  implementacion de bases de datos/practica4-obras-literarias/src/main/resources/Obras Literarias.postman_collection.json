@@ -1,0 +1,179 @@
+{
+	"info": {
+		"_postman_id": "f61ec58a-e2ce-450b-9eef-bfbf9c5c27d0",
+		"name": "Obras Literarias",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "delete index",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9200/obras_literarias",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"obras_literarias"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "fill index",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \"index\": {} }\n{ \"id\": 1, \"autor\": \"Gabriel García Márquez\", \"titulo\": \"Cien años de soledad\", \"cantidad_paginas\": 417, \"editorial\": \"Editorial Sudamericana\", \"anio_publicacion\": \"1967\" }\n{ \"index\": {} }\n{ \"id\": 2, \"autor\": \"Julio Cortázar\", \"titulo\": \"Rayuela\", \"cantidad_paginas\": 560, \"editorial\": \"Editorial Sudamericana\", \"anio_publicacion\": \"1963\" }\n{ \"index\": {} }\n{ \"id\": 3, \"autor\": \"Jorge Luis Borges\", \"titulo\": \"Ficciones\", \"cantidad_paginas\": 320, \"editorial\": \"Editorial Sur\", \"anio_publicacion\": \"1944\" }\n{ \"index\": {} }\n{ \"id\": 4, \"autor\": \"Mario Vargas Llosa\", \"titulo\": \"La ciudad y los perros\", \"cantidad_paginas\": 400, \"editorial\": \"Editorial Seix Barral\", \"anio_publicacion\": \"1963\" }\n{ \"index\": {} }\n{ \"id\": 5, \"autor\": \"Pablo Neruda\", \"titulo\": \"Veinte poemas de amor y una canción desesperada\", \"cantidad_paginas\": 112, \"editorial\": \"Editorial Losada\", \"anio_publicacion\": \"1924\" }\n{ \"index\": {} }\n{ \"id\": 6, \"autor\": \"Isabel Allende\", \"titulo\": \"La casa de los espíritus\", \"cantidad_paginas\": 480, \"editorial\": \"Editorial Plaza & Janés\", \"anio_publicacion\": \"1982\" }\n{ \"index\": {} }\n{ \"id\": 7, \"autor\": \"Gabriel García Márquez\", \"titulo\": \"El amor en los tiempos del cólera\", \"cantidad_paginas\": 368, \"editorial\": \"Editorial Planeta\", \"anio_publicacion\": \"1985\" }\n{ \"index\": {} }\n{ \"id\": 8, \"autor\": \"Friedrich Nietzsche\", \"titulo\": \"Así habló Zaratustra\", \"cantidad_paginas\": 300, \"editorial\": \"Editorial Alianza\", \"anio_publicacion\": \"1885\" }\n{ \"index\": {} }\n{ \"id\": 9, \"autor\": \"Chimamanda Ngozi Adichie\", \"titulo\": \"Medio sol amarillo\", \"cantidad_paginas\": 448, \"editorial\": \"Editorial Anagrama\", \"anio_publicacion\": \"2006\" }\n{ \"index\": {} }\n{ \"id\": 10, \"autor\": \"George Orwell\", \"titulo\": \"1984\", \"cantidad_paginas\": 328, \"editorial\": \"Editorial Seix Barral\", \"anio_publicacion\": \"1949\" }\n{ \"index\": {} }\n{ \"id\": 11, \"autor\": \"Jane Austen\", \"titulo\": \"Orgullo y prejuicio\", \"cantidad_paginas\": 432, \"editorial\": \"Editorial Espasa\", \"anio_publicacion\": \"1813\" }\n{ \"index\": {} }\n{ \"id\": 12, \"autor\": \"Leo Tolstoy\", \"titulo\": \"Guerra y paz\", \"cantidad_paginas\": 1225, \"editorial\": \"Editorial Espasa\", \"anio_publicacion\": \"1869\" }\n{ \"index\": {} }\n{ \"id\": 13, \"autor\": \"Mark Twain\", \"titulo\": \"Las aventuras de Tom Sawyer\", \"cantidad_paginas\": 274, \"editorial\": \"Editorial Alfaguara\", \"anio_publicacion\": \"1876\" }\n{ \"index\": {} }\n{ \"id\": 14, \"autor\": \"Virginia Woolf\", \"titulo\": \"La señora Dalloway\", \"cantidad_paginas\": 194, \"editorial\": \"Editorial Lumen\", \"anio_publicacion\": \"1925\" }\n{ \"index\": {} }\n{ \"id\": 15, \"autor\": \"Haruki Murakami\", \"titulo\": \"Kafka en la orilla\", \"cantidad_paginas\": 544, \"editorial\": \"Tusquets Editores\", \"anio_publicacion\": \"2002\" }\n{ \"index\": {} }\n{ \"id\": 16, \"autor\": \"Franz Kafka\", \"titulo\": \"La metamorfosis\", \"cantidad_paginas\": 102, \"editorial\": \"Editorial Losada\", \"anio_publicacion\": \"1915\" }\n{ \"index\": {} }\n{ \"id\": 17, \"autor\": \"Herman Melville\", \"titulo\": \"Moby Dick\", \"cantidad_paginas\": 635, \"editorial\": \"Editorial Atlántida\", \"anio_publicacion\": \"1851\" }\n{ \"index\": {} }\n{ \"id\": 18, \"autor\": \"Gabriel García Márquez\", \"titulo\": \"El otoño del patriarca\", \"cantidad_paginas\": 264, \"editorial\": \"Editorial Oveja Negra\", \"anio_publicacion\": \"1975\" }\n{ \"index\": {} }\n{ \"id\": 19, \"autor\": \"Kurt Vonnegut\", \"titulo\": \"Slaughterhouse-Five\", \"cantidad_paginas\": 275, \"editorial\": \"Dial Press\", \"anio_publicacion\": \"1969\" }\n{ \"index\": {} }\n{ \"id\": 20, \"autor\": \"Margaret Atwood\", \"titulo\": \"El cuento de la criada\", \"cantidad_paginas\": 368, \"editorial\": \"Editorial Salamandra\", \"anio_publicacion\": \"1985\" }\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9200/obras_literarias/_bulk",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9200",
+					"path": [
+						"obras_literarias",
+						"_bulk"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create Book",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \n    \"id\": 21, \n    \"autor\": \"OscarWilde\", \n    \"titulo\": \"El retrato de Dorian Gray\", \n    \"cantidad_paginas\": 256, \n    \"editorial\": \"Editorial Vaso Roto\", \n    \"anio_publicacion\": \"1890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{local}}/books/new",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByAutor",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/books/autor/OscarWilde",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"autor",
+						"OscarWilde"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByWordInTitle",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/books/title/amor",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"title",
+						"amor"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "top5ByPages",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/books/topFiveByPages",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"topFiveByPages"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByYear",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/books/findByYear/2001",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"findByYear",
+						"2001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "findByEditorial",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{local}}/books/findByEditorial/Sudamericana",
+					"host": [
+						"{{local}}"
+					],
+					"path": [
+						"books",
+						"findByEditorial",
+						"Sudamericana"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

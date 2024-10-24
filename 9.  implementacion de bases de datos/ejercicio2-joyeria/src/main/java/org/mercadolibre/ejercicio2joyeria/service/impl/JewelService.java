@@ -34,7 +34,7 @@ public class JewelService implements IJewelService {
 
     @Override
     public List<JewelResponseDTO> getAllJewel() {
-        System.out.println(iJewelRepository.findAll());
+
         List<JewelResponseDTO> jewelDTO = iJewelRepository.findAll()
                 .stream().map(j -> mapper.map(j, JewelResponseDTO.class))
                 .toList();
@@ -64,8 +64,9 @@ public class JewelService implements IJewelService {
         jewel.setSaleOrNot(jewelDTO.getSaleOrNot());
 
         iJewelRepository.save(jewel);
+        JewelDTO j = mapper.map(jewel, JewelDTO.class);
 
-        return new JewelUpdateDTO(String.format("The jewel with the id: %d, was successfully updated", jewel.getId()), HttpStatus.OK, jewel);
+        return new JewelUpdateDTO(String.format("The jewel with the id: %d, was successfully updated", jewel.getId()), HttpStatus.OK, j);
     }
 
     private Jewel findJewelById(Long id){

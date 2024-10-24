@@ -1,0 +1,101 @@
+{
+	"info": {
+		"_postman_id": "35cdae88-94fb-4a82-8ab5-35ad48fdf12a",
+		"name": "Jewerly",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38409177"
+	},
+	"item": [
+		{
+			"name": "Create Jewel",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Collar\",\n    \"material\": \"PLATA\",\n    \"weight\": 3.0,\n    \"peculiarity\": \"Con Broche\",\n    \"hasStone\": true,\n    \"saleOrNot\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/jewerly/new",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"jewerly",
+						"new"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get All Jewerly",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/jewerly",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"jewerly"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Jewel",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "{{host}}/jewerly/delete/1",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"jewerly",
+						"delete",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Jewel",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Pulsera\",\n    \"material\": \"PLATA\",\n    \"weight\": 2.0,\n    \"peculiarity\": \"Con Broche\",\n    \"hasStone\": true,\n    \"saleOrNot\": true\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "{{host}}/jewerly/update/2",
+					"host": [
+						"{{host}}"
+					],
+					"path": [
+						"jewerly",
+						"update",
+						"2"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -1,0 +1,295 @@
+{
+	"info": {
+		"_postman_id": "c596d796-6063-4723-a1b2-33c7a3ae5376",
+		"name": "Showroom",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38406962"
+	},
+	"item": [
+		{
+			"name": "Prendas",
+			"item": [
+				{
+					"name": "crear prenda",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"remera\",\n  \"tipo\": \"Parte Superior\",\n  \"marca\": \"Nike\",\n  \"color\": \"Azul\",\n  \"talla\": \"M\",\n  \"cantidad\": 10,\n  \"precio_venta\": 25.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/clothes",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar prendas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/clothes",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "remera",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devolver prenda por codigo",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/clothes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar prenda por codigo",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"nombre\": \"remera Actualizada\",\n  \"tipo\": \"Parte Superior\",\n  \"marca\": \"Adidas\",\n  \"color\": \"Rojo\",\n  \"talla\": \"L\",\n  \"cantidad\": 5,\n  \"precio_venta\": 22.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/clothes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar prenda por codigo",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/clothes/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar prendas por talla",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/clothes/size/M",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"clothes",
+								"size",
+								"M"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Ventas",
+			"item": [
+				{
+					"name": "crear venta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fecha\": \"2024-10-22\",\n  \"total\": 150.75,\n  \"medio_de_pago\": \"Tarjeta de Crédito\",\n  \"lista_de_prendas\": [2, 3, 4]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/sale",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar ventas",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/sale?date=23/10/2024",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "23/10/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "devolver venta por numero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/sale/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar venta por numero",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"fecha\": \"2024-10-23\",\n  \"total\": 120.50,\n  \"medio_de_pago\": \"Efectivo\",\n  \"lista_de_prendas\": [1, 4, 3]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}/api/sale/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar venta por numero",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/sale/1",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "listar prendas de una venta",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{local}}/api/sale/clothes/2",
+							"host": [
+								"{{local}}"
+							],
+							"path": [
+								"api",
+								"sale",
+								"clothes",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

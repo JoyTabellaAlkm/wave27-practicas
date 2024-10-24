@@ -1,17 +1,15 @@
-package org.mercadolibre.ejercicio2joyeria.dto.response;
+package org.mercadolibre.practica2qatesters.dto.response;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.mercadolibre.ejercicio2joyeria.dto.request.JewelDTO;
-import org.mercadolibre.ejercicio2joyeria.entity.Jewel;
 import org.springframework.http.HttpStatus;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class JewelUpdateDTO {
+public class UpdateTestCaseDTO {
     private String menssage;
     private HttpStatus status;
-    private JewelDTO j;
+    private TestCaseResponseDTO testCase;
 }

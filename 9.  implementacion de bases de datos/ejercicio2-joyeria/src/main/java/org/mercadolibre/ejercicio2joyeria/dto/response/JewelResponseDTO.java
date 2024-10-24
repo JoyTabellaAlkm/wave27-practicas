@@ -14,12 +14,9 @@ import org.mercadolibre.ejercicio2joyeria.entity.Material;
 public class JewelResponseDTO {
     private Long id;
     private String name;
-    @Enumerated(EnumType.STRING)
     private Material material;
     private Double weight;
     private String peculiarity;
-    @Column(name = "has_stone")
     private Boolean hasStone;
-    @Column(name = "sale_or_not")
     private Boolean saleOrNot;
 }
