@@ -1,0 +1,420 @@
+{
+	"info": {
+		"_postman_id": "0093b755-1f35-458e-908b-9d1e747bd95c",
+		"name": "Clothes",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "38158098"
+	},
+	"item": [
+		{
+			"name": "Relacional",
+			"item": [
+				{
+					"name": "Save clothes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de lino\",\n  \"type\": \"Camisa\",\n  \"brand\": \"Marca\",\n  \"color\": \"Negro\",\n  \"size\": 40,\n  \"quantity\": 10,\n  \"selling_price\": 3\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all clothes",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get one",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/clothes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Edit clothes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de Algodon\",\n  \"type\": \"Camisa\",\n  \"brand\": \"Sin Marca\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete clothes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de bbb\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all clothes by size",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes/size/40",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes",
+								"size",
+								"40"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all clothes by name",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Camisa de Algodón\",\n  \"type\": \"Camisa\",\n  \"brand\": \"MarcaX\",\n  \"color\": \"Azul\",\n  \"size\": 38.5,\n  \"quantity\": 50,\n  \"selling_price\": 29.99\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/clothes?name=camisa",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"clothes"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "camisa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create sale",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"23/10/2024\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n            \"id\": 1,\n            \"name\": \"Camisa de lino\",\n            \"type\": \"Camisa\",\n            \"brand\": \"Marca\",\n            \"color\": \"Negro\",\n            \"size\": 40,\n            \"quantity\": 10,\n            \"selling_price\": 3\n        }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sales",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sale",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sale/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update sale",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"23/11/2024\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sale/6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete sale",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"date\": \"2023-10-23\",\n    \"total\": 199.99,\n    \"paymentMethod\": \"Credit Card\",\n    \"clothes\": [\n        {\n        \"id\": 1,\n        \"name\": \"Camisa de tela\",\n        \"type\": \"Camisa\",\n        \"brand\": \"MarcaX\",\n        \"color\": \"Azul\",\n        \"size\": 38.5,\n        \"quantity\": 50,\n        \"selling_price\": 29.99\n    }\n    ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/sale/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get clothes by date",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sale/date?date=23/10/2024",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"date"
+							],
+							"query": [
+								{
+									"key": "date",
+									"value": "23/10/2024"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get clothes by sale",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/sale/clothes/5",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"sale",
+								"clothes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
