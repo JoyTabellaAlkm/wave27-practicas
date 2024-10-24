@@ -8,11 +8,11 @@
         <version>3.3.4</version>
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
-    <groupId>com.bootcamp</groupId>
-    <artifactId>obras-literarias</artifactId>
+    <groupId>ar.com.mercadolibre</groupId>
+    <artifactId>Showroom-elastic</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>obras-literarias</name>
-    <description>obras-literarias</description>
+    <name>Showroom-elastic</name>
+    <description>Showroom-elastic</description>
     <url/>
     <licenses>
         <license/>
@@ -27,7 +27,7 @@
         <url/>
     </scm>
     <properties>
-        <java.version>21</java.version>
+        <java.version>17</java.version>
     </properties>
     <dependencies>
         <dependency>
